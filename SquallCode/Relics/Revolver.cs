@@ -44,7 +44,7 @@ public class Revolver() : SquallRelic
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CardsVar(3),
-        new DynamicVar("AmountVar", 3)
+        new DynamicVar("AmountVar", 2)
     ];
 
     private bool IsActivating

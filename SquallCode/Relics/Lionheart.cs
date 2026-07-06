@@ -44,7 +44,7 @@ public class Lionheart() : SquallRelic
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CardsVar(3),
-        new DynamicVar("AmountVar", 5)
+        new DynamicVar("AmountVar", 4)
     ];
 
     private bool IsActivating

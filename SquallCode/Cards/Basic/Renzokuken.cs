@@ -6,15 +6,16 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Cards.Ancient;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Mechanics.Crisis;
 using Squall.SquallCode.Powers;
 using Squall.SquallCode.Relics;
 
-namespace Squall.SquallCode.Cards.Ancient;
+namespace Squall.SquallCode.Cards.Basic;
 
 public class Renzokuken() : SquallCard(2, CardType.Attack,
-    CardRarity.Ancient, TargetType.AnyEnemy)
+    CardRarity.Basic, TargetType.AnyEnemy)
 {
     private bool _finisher;
     protected override bool ShouldGlowGoldInternal => Owner.HasPower<FinisherPower>();

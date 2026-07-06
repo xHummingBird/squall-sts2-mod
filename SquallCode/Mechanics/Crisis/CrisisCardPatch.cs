@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using Godot;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards.Holders;
 using MegaCrit.Sts2.Core.Nodes.HoverTips;
 using Squall.SquallCode.Cards;
 using Squall.SquallCode.Cards.Ancient;
+using Squall.SquallCode.Cards.Basic;
 using Squall.SquallCode.Relics;
 
 namespace Squall.SquallCode.Mechanics.Crisis;
@@ -68,7 +70,7 @@ public static class CrisisCardPatch
                 ? HoverTipFactory.FromCard<BlastingZone>(true)
                 : HoverTipFactory.FromCard<BlastingZone>()
         ),
-
+        
         new(
             "LionheartIconContainer",
             "res://Squall/scenes/CrisisCardDisplay_Lionheart.tscn",
@@ -76,9 +78,40 @@ public static class CrisisCardPatch
             model => model.IsUpgraded
                 ? HoverTipFactory.FromCard<LionheartCard>(true)
                 : HoverTipFactory.FromCard<LionheartCard>(),
-            model => model.Owner?.GetRelic<Lionheart>() != null
+            model =>
+            {
+                if (!TryGetOwner(model, out var owner))
+                    return false;
+
+                return owner.GetRelic<Lionheart>() != null;
+            }
         )
+
     };
+    
+    
+    private static bool TryGetOwner(CardModel model, out Player? owner)
+    {
+        owner = null;
+
+        if (model == null)
+            return false;
+
+        // Compendium cards are canonical
+        if (!model.IsMutable)
+            return false;
+
+        try
+        {
+            owner = model.Owner;
+            return owner != null;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
 
     public static void EnsureAndRefresh(NHandCardHolder holder)
     {

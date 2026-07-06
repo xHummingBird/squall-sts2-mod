@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Models;
 using Squall.SquallCode.Cards.Ancient;
+using Squall.SquallCode.Cards.Basic;
 
 namespace Squall.SquallCode.Powers;
 

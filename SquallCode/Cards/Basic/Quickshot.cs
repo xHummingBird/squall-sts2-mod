@@ -23,7 +23,7 @@ public class Quickshot() : SquallCard(0, CardType.Attack,
             new ExtraDamageVar(3m),
             new CalculatedDamageVar(ValueProp.Move)
                 .WithMultiplier((CardModel card, Creature? _) =>
-                    card.Owner.Creature.HasPower<FirepowerPower>() ? 0 : 1)
+                    card.Owner.Creature.HasPower<FirepowerPower>() ? 1 : 0)
         ];
 
     protected override async Task OnPlay(
@@ -39,6 +39,7 @@ public class Quickshot() : SquallCard(0, CardType.Attack,
             if (duration > 0f)
                 await Task.Delay((int)(0.36f * 1000f));
             SfxCmd.Play("res://Squall/sfx/gunblade_explosion.wav");
+            SfxCmd.Play("res://Squall/sfx/gunblade_effect.wav");
             squall.PlayVfxOnTarget(
                 play.Target,
                 "res://Squall/scenes/vfx.tscn",
@@ -47,7 +48,6 @@ public class Quickshot() : SquallCard(0, CardType.Attack,
         }
 
         await CommonActions.CardAttack(this, play.Target)
-            .WithHitFx(null, "res://Squall/sfx/gunblade_effect.wav")
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
     }

@@ -28,6 +28,10 @@ public partial class CrisisDisplayOverlay : Control
 
     private static readonly Color CrisisGainGreen = new Color(0.4f, 1f, 0.4f);
     private static readonly Color CrisisMaxRed = new Color(1f, 0.25f, 0.2f);
+    
+    private static readonly Color CrisisDefaultBlue =
+        new Color(0.55f, 0.75f, 1.0f);
+
 
     public override void _Ready()
     {
@@ -132,7 +136,7 @@ public partial class CrisisDisplayOverlay : Control
             GD.PushWarning("[Squall Crisis] Failed to load res://themes/kreon_bold_shared.tres");
         }
 
-        _label.AddThemeColorOverride("default_color", Colors.White);
+        _label.AddThemeColorOverride("default_color", CrisisDefaultBlue);
         _label.Position += new Vector2(-5, -5);
         _label.AddThemeColorOverride("font_outline_color", new Color(0.2f, 0.2f, 0.2f));
         _label.AddThemeConstantOverride("outline_size", 12);
@@ -188,7 +192,7 @@ public partial class CrisisDisplayOverlay : Control
         _popTween.Parallel().TweenProperty(
                 label,
                 "modulate",
-                stayRedAfter ? CrisisMaxRed : Colors.White,
+                stayRedAfter ? CrisisMaxRed : CrisisDefaultBlue,
                 0.40f
             )
             .SetTrans(Tween.TransitionType.Quad)
@@ -206,7 +210,7 @@ public partial class CrisisDisplayOverlay : Control
         NHoverTipSet.Clear();
 
         var tip = NHoverTipSet.CreateAndShow(this, _hoverTip);
-        tip.GlobalPosition = GlobalPosition + new Vector2(-75f, -550f);
+        tip.GlobalPosition = GlobalPosition + new Vector2(-25f, -550f);
         tip.MouseFilter = MouseFilterEnum.Ignore;
     }
 
