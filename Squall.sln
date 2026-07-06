@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squall", "Squall.csproj", "{DE676EBA-D607-4FBF-B169-9C4CB9E24F9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE676EBA-D607-4FBF-B169-9C4CB9E24F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE676EBA-D607-4FBF-B169-9C4CB9E24F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE676EBA-D607-4FBF-B169-9C4CB9E24F9A}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{DE676EBA-D607-4FBF-B169-9C4CB9E24F9A}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{DE676EBA-D607-4FBF-B169-9C4CB9E24F9A}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{DE676EBA-D607-4FBF-B169-9C4CB9E24F9A}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

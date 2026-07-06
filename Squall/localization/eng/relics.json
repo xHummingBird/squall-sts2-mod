@@ -1,0 +1,9 @@
+{
+  "SQUALL-REVOLVER.description": "After 3 attacks, gain 3 [gold]Firepower[/gold].",
+  "SQUALL-REVOLVER.flavor": "",
+  "SQUALL-REVOLVER.title": "Revolver",
+
+  "SQUALL-LIONHEART.description": "Gain [gold]Lionheart[/gold] finisher. After 3 attacks, gain 5 [gold]Firepower[/gold].",
+  "SQUALL-LIONHEART.flavor": "Heart of a Lion",
+  "SQUALL-LIONHEART.title": "Lionheart"
+}
