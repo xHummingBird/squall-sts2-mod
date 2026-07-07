@@ -16,13 +16,13 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Relics;
 
-public class Lionheart() : SquallRelic
+public class Lionheart() : SquallRelic, IFirepowerRelic
 {
     private bool _isActivating;
-    private int _attacksPlayedThisCombat;
+    private int _firepowerProgress;
     private bool _firepowerPrimed;
 
-    public override RelicRarity Rarity => RelicRarity.Ancient;
+    public override RelicRarity Rarity => RelicRarity.Starter;
 
     public override bool ShowCounter => CombatManager.Instance.IsInProgress;
 
@@ -37,9 +37,48 @@ public class Lionheart() : SquallRelic
                 return cardsRequired;
             }
 
-            return AttacksPlayedThisCombat % cardsRequired;
+            return FirepowerProgress;
         }
     }
+    
+    
+    public void GainFirepowerProgress(int amount = 1)
+    {
+        if (FirepowerPrimed)
+            return;
+
+        int cardsRequired = base.DynamicVars.Cards.IntValue;
+
+        FirepowerProgress += amount;
+
+        if (FirepowerProgress >= cardsRequired)
+        {
+            FirepowerProgress = cardsRequired;
+            FirepowerPrimed = true;
+        }
+    }
+
+
+    public void ConsumeFirepower()
+    {
+        FirepowerPrimed = false;
+        FirepowerProgress = 0;
+    }
+
+    
+    
+    
+    public int GetFirepowerProgressForUI()
+    {
+        return FirepowerProgress;
+    }
+
+
+    public bool IsFirepowerChargedForUI()
+    {
+        return FirepowerPrimed;
+    }
+
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -58,16 +97,18 @@ public class Lionheart() : SquallRelic
         }
     }
 
-    private int AttacksPlayedThisCombat
+    
+    private int FirepowerProgress
     {
-        get => _attacksPlayedThisCombat;
+        get => _firepowerProgress;
         set
         {
             AssertMutable();
-            _attacksPlayedThisCombat = value;
+            _firepowerProgress = value;
             UpdateDisplay();
         }
     }
+
 
     private bool FirepowerPrimed
     {
@@ -90,7 +131,7 @@ public class Lionheart() : SquallRelic
         }
         else
         {
-            int progress = AttacksPlayedThisCombat % cardsRequired;
+            int progress = FirepowerProgress;
 
             base.Status = progress == cardsRequired - 1
                 ? RelicStatus.Active
@@ -104,7 +145,7 @@ public class Lionheart() : SquallRelic
     {
         IsActivating = false;
         FirepowerPrimed = false;
-        AttacksPlayedThisCombat = 0;
+        FirepowerProgress = 0;
         base.Status = RelicStatus.Normal;
 
         return Task.CompletedTask;
@@ -133,27 +174,21 @@ public class Lionheart() : SquallRelic
         
         if (FirepowerPrimed)
         {
-            FirepowerPrimed = false;
-            UpdateDisplay();
+            ConsumeFirepower();
             return;
         }
+        
+        GainFirepowerProgress();
 
-        AttacksPlayedThisCombat++;
-
-        int cardsRequired = base.DynamicVars.Cards.IntValue;
-
-        if (AttacksPlayedThisCombat % cardsRequired != 0)
+        if (!FirepowerPrimed)
         {
             return;
         }
 
-        FirepowerPrimed = true;
-
         TaskHelper.RunSafely(DoActivateVisuals());
 
         await ApplyFirepower(choiceContext);
-        
-        
+
     }
 
     public override Task AfterSideTurnEnd(
@@ -203,7 +238,7 @@ public class Lionheart() : SquallRelic
         base.Status = RelicStatus.Normal;
         IsActivating = false;
         FirepowerPrimed = false;
-        AttacksPlayedThisCombat = 0;
+        FirepowerProgress = 0;
 
         return Task.CompletedTask;
     }

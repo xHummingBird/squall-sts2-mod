@@ -12,7 +12,7 @@ using Squall.SquallCode.Relics;
 
 namespace Squall.SquallCode.Mechanics.Crisis;
 
-public static class CrisisCardUI
+public static class CrisisCardDisplayUI
 {
     private sealed class IconConfig
     {
@@ -194,13 +194,13 @@ public static class CrisisDisplayUI_Ready
         {
             Callable.From(() =>
             {
-                CrisisCardUI.EnsureAndRefresh(__instance);
+                CrisisCardDisplayUI.EnsureAndRefresh(__instance);
             }).CallDeferred();
         };
 
         Callable.From(() =>
         {
-            CrisisCardUI.EnsureAndRefresh(__instance);
+            CrisisCardDisplayUI.EnsureAndRefresh(__instance);
         }).CallDeferred();
     }
 }
@@ -210,6 +210,6 @@ public static class CrisisDisplayUI_UpdateVisuals
 {
     public static void Postfix(NCard __instance)
     {
-        CrisisCardUI.EnsureAndRefresh(__instance);
+        CrisisCardDisplayUI.EnsureAndRefresh(__instance);
     }
 }

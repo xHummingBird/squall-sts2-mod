@@ -11,18 +11,21 @@
   "SQUALL-RENZOKUKEN.description": "Deal {Damage:diff()} damage. \nConsume [blue]100[/blue] [gold]Crisis[/gold] to perform a [gold]Finisher[/gold].",
   "SQUALL-RENZOKUKEN.title": "Renzokuken",
 
-  "SQUALL-BLASTING_ZONE.description": "",
+  "SQUALL-BLASTING_ZONE.description": "test",
   "SQUALL-BLASTING_ZONE.title": "Blasting Zone",
 
-  "SQUALL-FATED_CIRCLE.description": "",
+  "SQUALL-FATED_CIRCLE.description": "test",
   "SQUALL-FATED_CIRCLE.title": "Fated Circle",
 
-  "SQUALL-ROUGH_DIVIDE.description": "",
+  "SQUALL-ROUGH_DIVIDE.description": "test",
   "SQUALL-ROUGH_DIVIDE.title": "Rough Divide",
 
-  "SQUALL-LIONHEART_CARD.description": "",
+  "SQUALL-LIONHEART_CARD.description": "Test",
   "SQUALL-LIONHEART_CARD.title": "Lionheart",
 
-  "SQUALL-BLIZZARD_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]: Apply {WeakPower:diff()} [gold]Weak[/gold].",
-  "SQUALL-BLIZZARD_BARRET.title": "Blizzard Barret"
+  "SQUALL-BLIZZARD_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "SQUALL-BLIZZARD_BARRET.title": "Blizzard Barret",
+
+  "SQUALL-FIRE_BARRET.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
+  "SQUALL-FIRE_BARRET.title": "Fire Barret"
 }

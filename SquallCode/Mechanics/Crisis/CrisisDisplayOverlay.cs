@@ -105,7 +105,7 @@ public partial class CrisisDisplayOverlay : Control
 
         // Same position as Cloud Limit.
         // Adjust this if Squall gets multiple overlays like Crisis/AP/Firepower.
-        _crisisDisplay.Position = new Vector2(70, 80);
+        _crisisDisplay.Position = new Vector2(95, 95);
         _crisisDisplay.Visible = true;
 
         _label = _crisisDisplay.GetNodeOrNull<RichTextLabel>("%CrisisLabel");
@@ -137,10 +137,10 @@ public partial class CrisisDisplayOverlay : Control
         }
 
         _label.AddThemeColorOverride("default_color", CrisisDefaultBlue);
-        _label.Position += new Vector2(-5, -5);
+        _label.Position += new Vector2(30f, -15f);
         _label.AddThemeColorOverride("font_outline_color", new Color(0.2f, 0.2f, 0.2f));
         _label.AddThemeConstantOverride("outline_size", 12);
-        _label.AddThemeFontSizeOverride("normal_font_size", 32);
+        _label.AddThemeFontSizeOverride("normal_font_size", 26);
 
         _hoverTip = SquallStaticHoverTip.Crisis;
 
@@ -210,7 +210,7 @@ public partial class CrisisDisplayOverlay : Control
         NHoverTipSet.Clear();
 
         var tip = NHoverTipSet.CreateAndShow(this, _hoverTip);
-        tip.GlobalPosition = GlobalPosition + new Vector2(-25f, -550f);
+        tip.GlobalPosition = GlobalPosition + new Vector2(-75f, -550f);
         tip.MouseFilter = MouseFilterEnum.Ignore;
     }
 

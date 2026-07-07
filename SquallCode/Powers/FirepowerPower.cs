@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Cards.Basic;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Mechanics.Crisis;
 
@@ -39,6 +40,7 @@ public class FirepowerPower : SquallPower
         {
             return Task.CompletedTask;
         }
+        
         Data internalData = GetInternalData<Data>();
         if (internalData.commandToModify != null)
         {

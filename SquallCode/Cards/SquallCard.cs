@@ -4,6 +4,7 @@ using BaseLib.Utils;
 using Squall.SquallCode.Character;
 using Squall.SquallCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 
 namespace Squall.SquallCode.Cards;
 
@@ -23,4 +24,22 @@ public abstract class SquallCard(int cost, CardType type, CardRarity rarity, Tar
     //Uses card_portraits/card_name.png as image path. These should be smaller images.
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
+    
+    private bool TryGetOwner(out Player? owner)
+    {
+        owner = null;
+
+        if (!IsMutable)
+            return false;
+
+        try
+        {
+            owner = Owner;
+            return owner != null;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 }

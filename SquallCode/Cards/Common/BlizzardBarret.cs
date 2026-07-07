@@ -31,7 +31,7 @@ public class BlizzardBarret() : SquallCard(1, CardType.Attack,
 
         if (ownerCreature != null && Owner?.Character is Character.Squall squall)
         {
-            AudioHelper.PlayRandomPhrase();
+            SfxCmd.Play("res://Squall/sounds/ice.wav");
             float duration = squall.PlayAnimation(ownerCreature, "shoot").total;
             if (duration > 0f)
                 await Task.Delay((int)(0.36f * 1000f));
@@ -54,5 +54,6 @@ public class BlizzardBarret() : SquallCard(1, CardType.Attack,
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.Weak.UpgradeValueBy(1);
     }
 }

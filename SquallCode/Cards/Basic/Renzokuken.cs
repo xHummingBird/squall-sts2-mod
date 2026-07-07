@@ -18,6 +18,7 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
     CardRarity.Basic, TargetType.AnyEnemy)
 {
     private bool _finisher;
+    public bool IsPerformingFinisher => _finisher;
     protected override bool ShouldGlowGoldInternal => Owner.HasPower<FinisherPower>();
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
