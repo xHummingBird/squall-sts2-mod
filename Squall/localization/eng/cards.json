@@ -27,5 +27,23 @@
   "SQUALL-BLIZZARD_BARRET.title": "Blizzard Barret",
 
   "SQUALL-FIRE_BARRET.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
-  "SQUALL-FIRE_BARRET.title": "Fire Barret"
+  "SQUALL-FIRE_BARRET.title": "Fire Barret",
+
+  "SQUALL-THUNDER_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SQUALL-THUNDER_BARRET.title": "Thunder Barret",
+
+  "SQUALL-TRIGGER_HAPPY.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
+  "SQUALL-TRIGGER_HAPPY.title": "Trigger Happy",
+
+  "SQUALL-FOCUS_FIRE.description": "Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SQUALL-FOCUS_FIRE.title": "Focus Fire",
+
+  "SQUALL-SOLID_BARREL.description": "Deal {Damage:diff()} damage.\n[gold]Firepower[/gold]\nGain {Energy:energyIcons()}.",
+  "SQUALL-SOLID_BARREL.title": "Solid Barrel",
+
+  "SQUALL-RELOAD.description": "Gain {Block:diff()} [gold]Block[/gold]. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and draw 1 card.",
+  "SQUALL-RELOAD.title": "Reload",
+
+  "SQUALL-CRISIS_TEST.description": "Test",
+  "SQUALL-CRISIS_TEST.title": "CrisisTest"
 }

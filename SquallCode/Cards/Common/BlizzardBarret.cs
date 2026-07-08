@@ -12,7 +12,7 @@ using Squall.SquallCode.Powers;
 namespace Squall.SquallCode.Cards.Common;
 
 public class BlizzardBarret() : SquallCard(1, CardType.Attack,
-    CardRarity.Basic, TargetType.AnyEnemy)
+    CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     
@@ -20,7 +20,6 @@ public class BlizzardBarret() : SquallCard(1, CardType.Attack,
     [
         new DamageVar(7m, ValueProp.Move),
         new PowerVar<WeakPower>(1)
-        
     ];
 
     protected override async Task OnPlay(

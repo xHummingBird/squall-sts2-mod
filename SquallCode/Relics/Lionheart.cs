@@ -267,4 +267,17 @@ public class Lionheart() : SquallRelic, IFirepowerRelic
             null
         );
     }
+    
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants,
+        ICombatState combatState)
+    {
+        if (side != base.Owner.Creature.Side)
+            return;
+        CrisisManager.GainCrisis(Owner, 5);
+        await Owner.Creature.CheckCrisisReady(
+            null,
+            Owner.Creature,
+            null
+        );
+    }
 }

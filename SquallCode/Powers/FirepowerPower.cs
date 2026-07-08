@@ -85,7 +85,7 @@ public class FirepowerPower : SquallPower
     {
         Data internalData = GetInternalData<Data>();
         
-        CrisisManager.GainCrisis(base.Owner.Player, internalData.amountWhenAttackStarted);
+        CrisisManager.GainCrisis(base.Owner.Player, 5);
         
         if (command == internalData.commandToModify)
         {

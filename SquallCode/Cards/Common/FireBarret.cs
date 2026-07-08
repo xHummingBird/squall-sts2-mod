@@ -16,7 +16,7 @@ using Squall.SquallCode.Powers;
 namespace Squall.SquallCode.Cards.Common;
 
 public class FireBarret() : SquallCard(1, CardType.Attack,
-    CardRarity.Basic, TargetType.AnyEnemy)
+    CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     
@@ -42,11 +42,6 @@ public class FireBarret() : SquallCard(1, CardType.Attack,
             if (duration > 0f)
                 await Task.Delay((int)(0.36f * 1000f));
             SfxCmd.Play("res://Squall/sfx/gunblade_explosion.wav");
-            squall.PlayVfxOnTarget(
-                play.Target,
-                "res://Squall/scenes/vfx.tscn",
-                "ice_1"
-            );
         }
         await CommonActions.CardAttack(this, play.Target)
             .BeforeDamage(async delegate

@@ -19,6 +19,7 @@ using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Cards.Basic;
+using Squall.SquallCode.Mechanics.Crisis;
 using Squall.SquallCode.Relics;
 
 namespace Squall.SquallCode.Character;
@@ -211,7 +212,8 @@ public class Squall : PlaceholderCharacterModel
     public async Task Retreat(
         Creature player,
         string? animation = "retreat",
-        bool goIdle = true)
+        bool goIdle = true,
+        float duration = 0.3f)
     {
         var node = NCombatRoom.Instance?.GetCreatureNode(player);
         if (node == null || !_originalPosition.HasValue) return;
@@ -220,7 +222,7 @@ public class Squall : PlaceholderCharacterModel
             PlayAnimation(player, animation);
 
         var tween = node.CreateTween();
-        tween.TweenProperty(node, "global_position", _originalPosition.Value, 0.3f)
+        tween.TweenProperty(node, "global_position", _originalPosition.Value, duration)
             .SetTrans(Tween.TransitionType.Quad)
             .SetEase(Tween.EaseType.InOut);
 
@@ -311,6 +313,8 @@ public class Squall : PlaceholderCharacterModel
 
                 var node = NCombatRoom.Instance?.GetCreatureNode(creature);
                 var animPlayer = node?.Visuals?.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
+                
+                CrisisManager.SetCrisis(creature.Player, 0);
 
                 if (animPlayer == null)
                     continue;
