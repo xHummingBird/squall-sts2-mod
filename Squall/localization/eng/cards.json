@@ -45,5 +45,95 @@
   "SQUALL-RELOAD.title": "Reload",
 
   "SQUALL-CRISIS_TEST.description": "Test",
-  "SQUALL-CRISIS_TEST.title": "CrisisTest"
+  "SQUALL-CRISIS_TEST.title": "CrisisTest",
+
+  "SQUALL-PUNISHMENT.description": "Deal {Damage:diff()} damage.",
+  "SQUALL-PUNISHMENT.title": "Punishment",
+
+  "SQUALL-CUTTING_TRIGGER.description": "Deal {Damage:diff()} damage.",
+  "SQUALL-CUTTING_TRIGGER.title": "Cutting Trigger",
+
+  "SQUALL-PROTECT.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-PROTECT.title": "Protect",
+
+  "SQUALL-QUAKE.description": "Deal {Damage:diff()} damage to ALL enemies.",
+  "SQUALL-QUAKE.title": "Quake",
+
+  "SQUALL-TWIN_LANCE.description": "Deal {Damage:diff()} damage {Repeat:diff()} times.",
+  "SQUALL-TWIN_LANCE.title": "Twin Lance",
+
+  "SQUALL-SEED_TRAINING.description": "Gain {Block:diff()} [gold]Block[/gold]. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SQUALL-SEED_TRAINING.title": "SeeD Training",
+
+  "SQUALL-BLIND.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "SQUALL-BLIND.title": "Blind",
+
+  "SQUALL-SCATTER_AMMO.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
+  "SQUALL-SCATTER_AMMO.title": "Scatter Ammo",
+
+  "SQUALL-SHELL.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-SHELL.title": "Shell",
+
+  "SQUALL-SHEAR_TRIGGER.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SQUALL-SHEAR_TRIGGER.title": "Shear Trigger",
+
+  "SQUALL-HASTE.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \n[gold]Exhaust[/gold].",
+  "SQUALL-HASTE.title": "Haste",
+
+  "SQUALL-TORNADO.description": "Deal {Damage:diff()} damage to ALL enemies.",
+  "SQUALL-TORNADO.title": "Tornado",
+
+  "SQUALL-STR_JUNCTION.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold]. \n[gold]Exhaust[/gold].",
+  "SQUALL-STR_JUNCTION.title": "Str Junction",
+
+  "SQUALL-VIT_JUNCTION.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold]. \n[gold]Exhaust[/gold].",
+  "SQUALL-VIT_JUNCTION.title": "Vit Junction",
+
+  "SQUALL-PAIN.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "SQUALL-PAIN.title": "Pain",
+
+  "SQUALL-FLAME_SABER.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-FLAME_SABER.title": "Flame Saber",
+
+  "SQUALL-FAST_AMMO.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
+  "SQUALL-FAST_AMMO.title": "Fast Ammo",
+
+  "SQUALL-DRAW_MAGIC.description": "Draw {Cards:diff()} {Cards:plural:card|cards}. \nDiscard 1 card.",
+  "SQUALL-DRAW_MAGIC.title": "Draw",
+
+  "SQUALL-CACTUAR.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {ThornsPower:diff()} [gold]Thorns[/gold].",
+  "SQUALL-CACTUAR.title": "Cactuar",
+
+  "SQUALL-PULSE_AMMO.description": "Gain {FirepowerPower:diff()} [gold]Firepower[/gold]. \n[gold]Exhaust[/gold].",
+  "SQUALL-PULSE_AMMO.title": "Pulse Ammo",
+
+  "SQUALL-ULTIMA.description": "Deal {Damage:diff()} damage to ALL enemies.",
+  "SQUALL-ULTIMA.title": "Ultima",
+
+  "SQUALL-APOCALYPSE.description": "Deal {Damage:diff()} damage. \n[gold]Exhaust[/gold].",
+  "SQUALL-APOCALYPSE.title": "Apocalypse",
+
+  "SQUALL-AURA.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \n[gold]Exhaust[/gold].",
+  "SQUALL-AURA.title": "Aura",
+
+  "SQUALL-MIGHTY_GUARD.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-MIGHTY_GUARD.title": "Mighty Guard",
+
+  "SQUALL-BERSERK.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
+  "SQUALL-BERSERK.title": "Berserk",
+
+  "SQUALL-CARBUNCLE.description": "Gain {BufferPower:diff()} [gold]Buffer[/gold]. \n[gold]Exhaust[/gold].",
+  "SQUALL-CARBUNCLE.title": "Carbuncle",
+
+  "SQUALL-CURAGA.description": "Heal {Heal:diff()} HP. \n[gold]Exhaust[/gold].",
+  "SQUALL-CURAGA.title": "Curaga",
+
+  "SQUALL-METEOR.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
+  "SQUALL-METEOR.title": "Meteor",
+
+  "SQUALL-REVOLVER.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
+  "SQUALL-REVOLVER.title": "Revolver",
+
+  "SQUALL-REFLECT.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {ThornsPower:diff()} [gold]Thorns[/gold].",
+  "SQUALL-REFLECT.title": "Reflect"
 }
