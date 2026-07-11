@@ -10,7 +10,7 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Rare;
 
-public class Revolver() : SquallCard(1, CardType.Attack,
+public class PerfectTrigger() : SquallCard(1, CardType.Attack,
     CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();

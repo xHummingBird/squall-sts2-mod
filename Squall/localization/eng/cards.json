@@ -131,8 +131,8 @@
   "SQUALL-METEOR.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
   "SQUALL-METEOR.title": "Meteor",
 
-  "SQUALL-REVOLVER.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
-  "SQUALL-REVOLVER.title": "Revolver",
+  "SQUALL-PERFECT_TRIGGER.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
+  "SQUALL-PERFECT_TRIGGER.title": "Perfect Trigger",
 
   "SQUALL-REFLECT.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {ThornsPower:diff()} [gold]Thorns[/gold].",
   "SQUALL-REFLECT.title": "Reflect"
