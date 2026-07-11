@@ -4,11 +4,12 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
+using Squall.SquallCode.Mechanics.Crisis;
 
 namespace Squall.SquallCode.Cards.Ancient;
 
 public class LionheartCard() : SquallCard(0, CardType.Attack,
-    CardRarity.Ancient, TargetType.AllEnemies)
+    CardRarity.Ancient, TargetType.AllEnemies), IFinisherCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(5, ValueProp.Move)];
 

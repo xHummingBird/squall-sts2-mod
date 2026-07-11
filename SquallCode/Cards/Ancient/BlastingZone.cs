@@ -6,11 +6,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
+using Squall.SquallCode.Mechanics.Crisis;
 
 namespace Squall.SquallCode.Cards.Ancient;
 
 public class BlastingZone() : SquallCard(0, CardType.Attack,
-    CardRarity.Ancient, TargetType.AnyEnemy)
+    CardRarity.Ancient, TargetType.AnyEnemy), IFinisherCard
 {
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars =>

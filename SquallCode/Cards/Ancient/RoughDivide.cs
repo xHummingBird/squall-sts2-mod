@@ -7,11 +7,12 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
+using Squall.SquallCode.Mechanics.Crisis;
 
 namespace Squall.SquallCode.Cards.Ancient;
 
 public class RoughDivide() : SquallCard(0, CardType.Attack,
-    CardRarity.Ancient, TargetType.AnyEnemy)
+    CardRarity.Ancient, TargetType.AnyEnemy), IFinisherCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

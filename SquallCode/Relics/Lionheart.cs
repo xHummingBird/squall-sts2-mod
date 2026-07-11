@@ -206,9 +206,11 @@ public class Lionheart() : SquallRelic, IFirepowerRelic
 
     private bool IsValidAttack(CardPlay cardPlay)
     {
+        //Finishers neither consume nor build Firepower.
         return cardPlay.Card.Owner == base.Owner &&
                CombatManager.Instance.IsInProgress &&
-               cardPlay.Card.Type == CardType.Attack;
+               cardPlay.Card.Type == CardType.Attack &&
+               cardPlay.Card is not IFinisherCard;
     }
 
     private async Task ApplyFirepower(PlayerChoiceContext choiceContext)

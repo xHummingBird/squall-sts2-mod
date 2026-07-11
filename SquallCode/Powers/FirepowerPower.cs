@@ -50,6 +50,10 @@ public class FirepowerPower : SquallPower
         {
             return Task.CompletedTask;
         }
+        if (command.ModelSource is IFinisherCard)
+        {
+            return Task.CompletedTask;
+        }
         if (!command.DamageProps.IsPoweredAttack())
         {
             return Task.CompletedTask;
@@ -66,6 +70,10 @@ public class FirepowerPower : SquallPower
             return 0m;
         }
         if (!props.IsPoweredAttack())
+        {
+            return 0m;
+        }
+        if (cardSource is IFinisherCard)
         {
             return 0m;
         }
