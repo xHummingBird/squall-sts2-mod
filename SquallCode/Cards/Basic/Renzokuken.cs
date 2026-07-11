@@ -40,31 +40,15 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
         
         if (CrisisManager.GetCrisis(base.Owner) >= 100)
         {
-            List<CardModel> cards;
             if (base.IsUpgraded)
             {
                 CardCmd.Upgrade(rd);
                 CardCmd.Upgrade(fc);
                 CardCmd.Upgrade(bz);
                 CardCmd.Upgrade(lh);
-
-                cards = new()
-                {
-                    rd,
-                    fc,
-                    bz
-                };
             }
 
-            else
-            {
-                cards = new()
-                {
-                    rd,
-                    fc,
-                    bz
-                };
-            }
+            List<CardModel> cards = [rd, fc, bz];
 
             if (lionheart != null)
             {
@@ -79,19 +63,21 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
         var squall = Owner?.Character as Character.Squall;
 
         CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
+
+        Func<string, int, Task> fakeHit = async (sfx, delay) =>
+        {
+            SfxCmd.Play(sfx);
+            SquallExtensions.CombatHelpers.SquallFakeHit(play.Target);
+            await Task.Delay(delay);
+        };
+        
         if (ownerCreature != null && squall != null)
         {
             SfxCmd.Play("res://Squall/sounds/ikuzo.wav");
             await squall.DashTo(ownerCreature, play.Target, distance: 300f, overrideAnim:"renzokuken");
-            SfxCmd.Play("res://Squall/sfx/hit_1.wav");
-            SquallExtensions.CombatHelpers.SquallFakeHit(play.Target);
-            await Task.Delay(300);
-            SfxCmd.Play("res://Squall/sfx/hit_2.wav");
-            SquallExtensions.CombatHelpers.SquallFakeHit(play.Target);
-            await Task.Delay(600);
-            SfxCmd.Play("res://Squall/sfx/hit_3.wav");
-            SquallExtensions.CombatHelpers.SquallFakeHit(play.Target);
-            await Task.Delay(300);
+            await fakeHit("res://Squall/sfx/hit_1.wav", 300);
+            await fakeHit("res://Squall/sfx/hit_2.wav", 600);
+            await fakeHit("res://Squall/sfx/hit_3.wav", 300);
             SfxCmd.Play("res://Squall/sfx/hit_1.wav");
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/gunblade_effect.wav") 
@@ -107,7 +93,6 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
                 await CardCmd.AutoPlay(choiceContext, selectedFinisher, play.Target);
             }
         }
-        
         else
         {
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target)
