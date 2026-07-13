@@ -32,6 +32,9 @@ public class ThunderBarret() : SquallCard(1, CardType.Attack,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        bool hasFirePower = false;
+        if (base.Owner.HasPower<FirepowerPower>())
+            hasFirePower = true;
         var ownerCreature = Owner?.Creature;
 
         if (ownerCreature != null && Owner?.Character is Character.Squall squall)
@@ -46,8 +49,8 @@ public class ThunderBarret() : SquallCard(1, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx("vfx/vfx_attack_lightning", "event:/sfx/characters/defect/defect_lightning_passive")
             .Execute(choiceContext);
-        if (base.Owner.HasPower<FirepowerPower>() && play.Target != null)
-            await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
+        if (hasFirePower && play.Target != null)
+            await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
         await Task.Delay((int)(0.36f * 1000f));
     }
 

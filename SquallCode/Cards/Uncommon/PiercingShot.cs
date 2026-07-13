@@ -26,6 +26,9 @@ public class PiercingShot() : SquallCard(1, CardType.Attack,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
+        bool hasFirePower = false;
+        if (base.Owner.HasPower<FirepowerPower>())
+            hasFirePower = true;
         var ownerCreature = Owner?.Creature;
         if (ownerCreature != null && Owner?.Character is Character.Squall squall)
         {
@@ -45,7 +48,7 @@ public class PiercingShot() : SquallCard(1, CardType.Attack,
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target)
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
-        if (base.Owner.HasPower<FirepowerPower>())
+        if (hasFirePower)
             await PowerCmd.Apply<MarkedPower>(choiceContext, play.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
     }
 

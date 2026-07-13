@@ -41,7 +41,7 @@ public class BeatFang() : SquallCard(2, CardType.Attack,
                 await CommonActions.CardAttack(this, play.Target)
                     .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
                     .Execute(choiceContext);
-                await Task.Delay(250);
+                await Task.Delay(200);
                 await squall.Retreat(ownerCreature);
                 CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
             }

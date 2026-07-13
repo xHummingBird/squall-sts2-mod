@@ -34,9 +34,13 @@ public class BlizzardBarret() : SquallCard(1, CardType.Attack,
         CardPlay play)
     {
         var ownerCreature = Owner?.Creature;
+        bool hasFirePower = false;
+        if (base.Owner.HasPower<FirepowerPower>())
+            hasFirePower = true;
 
         if (ownerCreature != null && Owner?.Character is Character.Squall squall)
         {
+            
             SfxCmd.Play("res://Squall/sounds/ice.wav");
             float duration = squall.PlayAnimation(ownerCreature, "shoot").total;
             if (duration > 0f)
@@ -52,7 +56,7 @@ public class BlizzardBarret() : SquallCard(1, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx(null, "res://Squall/sfx/ice.wav")
             .Execute(choiceContext);
-        if (base.Owner.HasPower<FirepowerPower>() && play.Target != null)
+        if (hasFirePower && play.Target != null)
             await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
         await Task.Delay((int)(0.36f * 1000f));
     }

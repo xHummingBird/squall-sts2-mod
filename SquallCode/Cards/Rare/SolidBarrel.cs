@@ -27,9 +27,12 @@ public class SolidBarrel() : SquallCard(2, CardType.Attack,
     {
         var ownerCreature = Owner?.Creature;
         var squall = Owner?.Character as Character.Squall;
+        bool hasFirePower = false;
+        if (base.Owner.HasPower<FirepowerPower>())
+            hasFirePower = true;
 
         CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
-        if (base.Owner.HasPower<FirepowerPower>())
+        if (hasFirePower)
             await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, base.Owner);
         if (ownerCreature != null && squall != null)
         {

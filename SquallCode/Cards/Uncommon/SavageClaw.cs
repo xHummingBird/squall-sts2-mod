@@ -15,10 +15,11 @@ using Squall.SquallCode.Powers;
 namespace Squall.SquallCode.Cards.Uncommon;
 
 public class SavageClaw() : SquallCard(3, CardType.Attack,
-    CardRarity.Common, TargetType.AnyEnemy)
+    CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(14, ValueProp.Move),
+        new EnergyVar(1)
     ];
 
     protected override async Task OnPlay(
@@ -39,7 +40,7 @@ public class SavageClaw() : SquallCard(3, CardType.Attack,
             await CommonActions.CardAttack(this, play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
                 .Execute(choiceContext);
-            await Task.Delay(880);
+            await Task.Delay(860);
             await squall.Retreat(ownerCreature);
             CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
         }

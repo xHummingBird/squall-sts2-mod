@@ -86,7 +86,7 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
                 .Execute(choiceContext);
             if (!_finisher || selectedFinisher == bz)
             {
-                await Task.Delay(250);
+                await Task.Delay(200);
                 await squall.Retreat(ownerCreature, "renzokuken_return", true, 0.467f);
                 if (!_finisher)
                     CenterCardCinematic.End(RunManager.Instance.NetService.NetId);

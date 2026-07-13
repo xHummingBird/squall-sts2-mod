@@ -308,23 +308,57 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
     {
         if (side != base.Owner.Creature.Side)
             return;
-
+        
         if (combatState.RoundNumber <= 1)
         {
-            bool hasLeviathan = base.Owner?.GetRelic<LeviathanScale>() != null;
-            bool hasDiabolos = base.Owner?.GetRelic<MagicLamp>() != null;
+            int crisisGainFromHpLoss = base.Owner.Creature.MaxHp - base.Owner.Creature.CurrentHp;
+            CrisisManager.GainCrisis(Owner, crisisGainFromHpLoss);
+            var choiceContext = new ThrowingPlayerChoiceContext();
+            
+            CardModel? selectedJunction = null;
+            LeviathanScale? hasLeviathan = base.Owner?.GetRelic<LeviathanScale>();
+            MagicLamp? hasDiabolos = base.Owner?.GetRelic<MagicLamp>();
         
             var ifrit = combatState.CreateCard<Ifrit>(base.Owner);
             var shiva = combatState.CreateCard<Shiva>(base.Owner);
-            var ramuh = combatState.CreateCard<Quezacoatl>(base.Owner);
-            var odin = combatState.CreateCard<Leviathan>(base.Owner);
-            var bahamut = combatState.CreateCard<Diabolos>(base.Owner);
+            var quezacoatl = combatState.CreateCard<Quezacoatl>(base.Owner);
+            var leviathan = combatState.CreateCard<Leviathan>(base.Owner);
+            var diabolos = combatState.CreateCard<Diabolos>(base.Owner);
+            
+            List<CardModel> cards = [];
+
+            if (!base.Owner.HasPower<IfritPower>())
+                cards.Add(ifrit);
+
+            if (!base.Owner.HasPower<ShivaPower>())
+                cards.Add(shiva);
+
+            if (!base.Owner.HasPower<QuezacoatlPower>())
+                cards.Add(quezacoatl);
+
+            if (hasLeviathan != null && !base.Owner.HasPower<LeviathanPower>())
+                cards.Add(leviathan);
+
+            if (hasDiabolos != null && !base.Owner.HasPower<DiabolosPower>())
+                cards.Add(diabolos);
+            
+            selectedJunction = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards.ToList(), base.Owner, canSkip: false);
+
+            if (selectedJunction == ifrit)
+                await PowerCmd.Apply<IfritPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+            if (selectedJunction == shiva)
+                await PowerCmd.Apply<ShivaPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+            if (selectedJunction == diabolos)
+                await PowerCmd.Apply<DiabolosPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+            if (selectedJunction == quezacoatl)
+                await PowerCmd.Apply<QuezacoatlPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+            if (selectedJunction == leviathan)
+                await PowerCmd.Apply<LeviathanPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
         }
         
         if (base.Owner.Creature.HasPower<DiabolosPower>())
-            CrisisManager.GainCrisis(Owner, 10);
-        else CrisisManager.GainCrisis(Owner, 5);
-
+            CrisisManager.GainCrisis(Owner, 5);
+        
         await Owner.Creature.CheckCrisisReady(
             null,
             Owner.Creature,

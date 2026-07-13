@@ -7,11 +7,11 @@
   "SQUALL-FINISHER_POWER.smartDescription": "Perform finisher after [gold]Renzokuken[/gold].",
   "SQUALL-FINISHER_POWER.title": "Finisher Ready",
 
-  "SQUALL-MARKED_POWER.description": "Marked creatures take 75% more damage from the next attack.",
-  "SQUALL-MARKED_POWER.smartDescription": "Take 75% more damage from the next [gold]{amount}[/gold] {Amount:plural:attack|attacks}.",
+  "SQUALL-MARKED_POWER.description": "Marked creatures take 50% more damage from the next attack.",
+  "SQUALL-MARKED_POWER.smartDescription": "Take 50% more damage from the next [gold]{amount}[/gold] {Amount:plural:attack|attacks}.",
   "SQUALL-MARKED_POWER.title": "Marked",
 
-  "SQUALL-DIABOLOS_POWER.description": "Double [gold]Crisis[/gold] gain per turn and from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
+  "SQUALL-DIABOLOS_POWER.description": "Gain 5 [gold]Crisis[/gold] per turn and from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
   "SQUALL-DIABOLOS_POWER.smartDescription": "Double [gold]Crisis[/gold] gain per turn and from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
   "SQUALL-DIABOLOS_POWER.title": "Junction Diabolos",
 

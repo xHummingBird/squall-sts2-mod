@@ -57,7 +57,7 @@ public class MarkedPower : SquallPower
         if (!props.IsPoweredAttack())
             return 1m;
 
-        return 1.75m;
+        return 1.50m;
     }
 
     public override Task AfterDamageReceived(

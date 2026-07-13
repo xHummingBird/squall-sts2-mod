@@ -1,3 +1,4 @@
+using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -29,6 +30,9 @@ public class PrecisionShot() : SquallCard(1, CardType.Attack,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        bool wasMarked = false;
+        if (play.Target.HasPower<MarkedPower>())
+            wasMarked = true;
         var ownerCreature = Owner?.Creature;
 
         if (ownerCreature != null && Owner?.Character is Character.Squall squall)
@@ -49,7 +53,7 @@ public class PrecisionShot() : SquallCard(1, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
-        if (play.Target.HasPower<MarkedPower>())
+        if (wasMarked)
             await PowerCmd.Apply<MarkedPower>(choiceContext, play.Target, DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
     }
 

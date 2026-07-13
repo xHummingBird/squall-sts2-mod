@@ -26,6 +26,9 @@ public class DrainSlash() : SquallCard(1, CardType.Attack,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
+        bool hasFirePower = false;
+        if (base.Owner.HasPower<FirepowerPower>())
+            hasFirePower = true;
         var ownerCreature = Owner?.Creature;
         decimal healAmount = DynamicVars.Damage.PreviewValue * (1.0m + DynamicVars.Heal.BaseValue / 100m);
         if (ownerCreature != null && Owner?.Character is Character.Squall squall)
@@ -39,7 +42,7 @@ public class DrainSlash() : SquallCard(1, CardType.Attack,
             await CommonActions.CardAttack(this, play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
                 .Execute(choiceContext);
-            await Task.Delay(250);
+            await Task.Delay(200);
             await squall.Retreat(ownerCreature);
             CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
         }
@@ -47,7 +50,7 @@ public class DrainSlash() : SquallCard(1, CardType.Attack,
             .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
             .Execute(choiceContext);
 
-        if (base.Owner.HasPower<FirepowerPower>())
+        if (hasFirePower)
             await CreatureCmd.Heal(base.Owner.Creature, healAmount);
     }
 
