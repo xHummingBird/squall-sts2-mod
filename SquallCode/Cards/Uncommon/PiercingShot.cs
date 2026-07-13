@@ -16,7 +16,7 @@ public class PiercingShot() : SquallCard(1, CardType.Attack,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(6m, ValueProp.Move),
-        new PowerVar<MarkedPower>(2m)
+        new PowerVar<MarkedPower>(1m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

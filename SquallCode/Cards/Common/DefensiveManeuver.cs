@@ -1,45 +1,39 @@
-using BaseLib.Utils;
+﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Powers;
 using Squall.SquallCode.Relics;
 
-namespace Squall.SquallCode.Cards.Uncommon;
+namespace Squall.SquallCode.Cards.Common;
 
-public class PulseAmmo() : SquallCard(1, CardType.Skill,
-    CardRarity.Uncommon, TargetType.Self)
+public class DefensiveManeuver() : SquallCard(1, CardType.Skill,
+    CardRarity.Common, TargetType.Self)
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        CardKeyword.Exhaust
+        new BlockVar(5m, ValueProp.Move)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<FirepowerPower>(),
-        HoverTipFactory.FromPower<VigorPower>()
-    ];
-
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new PowerVar<VigorPower>(5m)
+        HoverTipFactory.FromPower<FirepowerPower>()
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        AudioHelper.PlayRandomDefend();
-        await PowerCmd.Apply<VigorPower>(choiceContext, base.Owner.Creature, DynamicVars["VigorPower"].BaseValue, base.Owner.Creature, this);
         var firepowerRelic = Owner.Relics
             .OfType<IFirepowerRelic>()
             .FirstOrDefault();
+        AudioHelper.PlayRandomDefend();
+        await CommonActions.CardBlock(this, play);
         if (Owner.Creature.HasPower<FirepowerPower>())
         {
-            await PowerCmd.Apply<VigorPower>(choiceContext, base.Owner.Creature, DynamicVars["VigorPower"].BaseValue, base.Owner.Creature, this);
+            await CommonActions.CardBlock(this, play);
             await firepowerRelic?.ConsumeFirepower(choiceContext);
             await PowerCmd.Remove<FirepowerPower>(Owner.Creature);
         }
@@ -47,6 +41,6 @@ public class PulseAmmo() : SquallCard(1, CardType.Skill,
 
     protected override void OnUpgrade()
     {
-        RemoveKeyword(CardKeyword.Exhaust);
+        DynamicVars.Block.UpgradeValueBy(3m);
     }
 }

@@ -9,15 +9,15 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Powers;
 
-namespace Squall.SquallCode.Cards.Uncommon;
+namespace Squall.SquallCode.Cards.Rare;
 
 public class SolidBarrel() : SquallCard(2, CardType.Attack,
-    CardRarity.Uncommon, TargetType.AnyEnemy)
+    CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(14, ValueProp.Move),
+        new DamageVar(18, ValueProp.Move),
         new EnergyVar(1)
     ];
 

@@ -1,6 +1,9 @@
-﻿namespace Squall.SquallCode.Cards.Basic;
+﻿using MegaCrit.Sts2.Core.Entities.Cards;
 
-public class SummonGf
+namespace Squall.SquallCode.Cards.Basic;
+
+public class SummonGf() : SquallCard(2, CardType.Skill,
+    CardRarity.Basic, TargetType.Self)
 {
     
 }

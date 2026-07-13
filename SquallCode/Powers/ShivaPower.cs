@@ -2,6 +2,7 @@
 
 namespace Squall.SquallCode.Powers;
 
+
 public class ShivaPower : SquallPower
 {
     public override PowerType Type => PowerType.Buff;

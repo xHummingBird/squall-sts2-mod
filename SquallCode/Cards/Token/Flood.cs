@@ -1,6 +1,7 @@
 ﻿namespace Squall.SquallCode.Cards.Token;
 
-public class Waterga
+public class Flood
+
 {
     
 }

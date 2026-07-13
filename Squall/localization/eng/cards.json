@@ -60,13 +60,13 @@
   "SQUALL-QUAKE.title": "Quake",
 
   "SQUALL-TWIN_LANCE.description": "Deal {Damage:diff()} damage {Repeat:diff()} times.",
-  "SQUALL-TWIN_LANCE.title": "Twin Lance",
+  "SQUALL-TWIN_LANCE.title": "Keen Edge",
 
   "SQUALL-SEED_TRAINING.description": "Gain {Block:diff()} [gold]Block[/gold]. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "SQUALL-SEED_TRAINING.title": "SeeD Training",
 
-  "SQUALL-BLIND.description": "Apply {WeakPower:diff()} [gold]Weak[/gold].",
-  "SQUALL-BLIND.title": "Blind",
+  "SQUALL-BLIND_AMMO.description": "Apply {WeakPower:diff()} [gold]Weak[/gold].",
+  "SQUALL-BLIND_AMMO.title": "Blind Ammo",
 
   "SQUALL-SCATTERSHOT.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDamage ALL enemies.",
   "SQUALL-SCATTERSHOT.title": "Scattershot",
@@ -89,8 +89,8 @@
   "SQUALL-VIT_JUNCTION.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
   "SQUALL-VIT_JUNCTION.title": "Vit Junction",
 
-  "SQUALL-PAIN.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold].",
-  "SQUALL-PAIN.title": "Pain",
+  "SQUALL-PRECISION_SHOT.description": "Deal {Damage:diff()} damage. \nIf enemy is [gold]Marked[/gold], re-apply [gold]Marked[/gold].",
+  "SQUALL-PRECISION_SHOT.title": "Precision Shot",
 
   "SQUALL-BACKSHOT.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-BACKSHOT.title": "Backshot",
@@ -119,7 +119,7 @@
   "SQUALL-MIGHTY_GUARD.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-MIGHTY_GUARD.title": "Mighty Guard",
 
-  "SQUALL-BERSERK.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
+  "SQUALL-BERSERK.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and gain 1 [gold]Strength[/gold].",
   "SQUALL-BERSERK.title": "Berserk",
 
   "SQUALL-CARBUNCLE.description": "Gain {BufferPower:diff()} [gold]Buffer[/gold].",
@@ -147,5 +147,47 @@
   "SQUALL-DRAIN_SLASH.title": "Drain Slash",
 
   "SQUALL-FUSILLADE.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {WeakPower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold] to ALL enemies.",
-  "SQUALL-FUSILLADE.title": "Fusillade"
+  "SQUALL-FUSILLADE.title": "Fusillade",
+
+  "SQUALL-SAVAGE_CLAW.description": "Deal {Damage:diff()} damage. \nCosts 1 less {Energy:energyIcons()} for each Attack played this turn.",
+  "SQUALL-SAVAGE_CLAW.title": "Savage Claw",
+
+  "SQUALL-DEVASTATING_SLUG.description": "Deal {Damage:diff()} damage. \nNext attack cost 0 {Energy:energyIcons()}.",
+  "SQUALL-DEVASTATING_SLUG.title": "Devastating Slug",
+
+  "SQUALL-DEFENSIVE_MANEUVER.description": "Gain {Block:diff()} [gold]Block[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain [blue]Block[/blue] an additional time.",
+  "SQUALL-DEFENSIVE_MANEUVER.title": "Defensive Maneuver",
+
+  "SQUALL-UPPER_BLUES.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nGain [blue]Block[/gold] equal to damage dealt.",
+  "SQUALL-UPPER_BLUES.title": "Upper Blues",
+
+  "SQUALL-ICE_ARMOR.description": "Gain {PlatingPower:diff()} [gold]Plating[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain double [gold]Plating[/gold].",
+  "SQUALL-ICE_ARMOR.title": "Ice Armor",
+
+  "SQUALL-COMBAT_FOCUS.description": "Gain {Block:diff()} [gold]Block[/gold]. \n\nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
+  "SQUALL-COMBAT_FOCUS.title": "Combat Focus",
+
+  "SQUALL-RICOCHET.description": "Deal {Damage:diff()} damage. \nIf the target is [gold]Marked[/gold], damage ALL other enemies equal to the damage dealt.",
+  "SQUALL-RICOCHET.title": "Ricochet",
+
+  "SQUALL-SHIVA.description": "",
+  "SQUALL-SHIVA.title": "Junction Shiva",
+
+  "SQUALL-QUEZACOATL.description": "",
+  "SQUALL-QUEZACOATL.title": "Junction Quezacoatl",
+
+  "SQUALL-LEVIATHAN.description": "",
+  "SQUALL-LEVIATHAN.title": "Junction Leviathan",
+
+  "SQUALL-DIABOLOS.description": "",
+  "SQUALL-DIABOLOS.title": "Junction Diabolos",
+  
+  "SQUALL-IFRIT.description": "",
+  "SQUALL-IFRIT.title": "Junction Ifrit",
+
+  "SQUALL-SUMMON_GF.description": "",
+  "SQUALL-SUMMON_GF.title": "Summon GF",
+
+  "SQUALL-PERFECT_JUNCTION.description": "",
+  "SQUALL-PERFECT_JUNCTION.title": "Perfect Junction"
 }

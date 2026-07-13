@@ -20,6 +20,11 @@ public class Hypershot() : SquallCard(3, CardType.Skill,
     [
         new DamageVar(15m, ValueProp.Move),
     ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<FirepowerPower>(),
+    ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

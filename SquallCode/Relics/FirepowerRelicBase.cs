@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Cards.Ancient;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Mechanics.Crisis;
+using Squall.SquallCode.Mechanics.GF;
 using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Relics;
@@ -116,6 +117,14 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
                 null
             );
         }
+        
+        if (base.Owner.Creature.HasPower<LeviathanPower>())
+        {
+            await CreatureCmd.Heal(
+                base.Owner.Creature,
+                2m, true
+            );
+        }
 
         if (base.Owner.Creature.HasPower<QuezacoatlPower>())
         {
@@ -176,7 +185,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         if (card.Owner != Owner)
             return;
 
-        if (card is not IFinisherCard)
+        if (card is not IFinisherCard && card is not IGFCard)
         {
             CrisisManager.GainCrisis(Owner, 5);
         }
@@ -225,7 +234,8 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         return cardPlay.Card.Owner == base.Owner &&
                CombatManager.Instance.IsInProgress &&
                cardPlay.Card.Type == CardType.Attack &&
-               cardPlay.Card is not IFinisherCard;
+               cardPlay.Card is not IFinisherCard &&
+               cardPlay.Card is not IGFCard;
     }
 
     private async Task ApplyFirepower(PlayerChoiceContext choiceContext)

@@ -5,14 +5,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
 
-namespace Squall.SquallCode.Cards.Common;
+namespace Squall.SquallCode.Cards.Uncommon;
 
 public class Shell() : SquallCard(2, CardType.Skill,
-    CardRarity.Common, TargetType.Self)
+    CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(12m, ValueProp.Move)
+        new BlockVar(14m, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Cards.Basic;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Mechanics.Crisis;
+using Squall.SquallCode.Mechanics.GF;
 
 namespace Squall.SquallCode.Powers;
 
@@ -51,6 +52,10 @@ public class FirepowerPower : SquallPower
             return Task.CompletedTask;
         }
         if (command.ModelSource is IFinisherCard)
+        {
+            return Task.CompletedTask;
+        }
+        if (command.ModelSource is IGFCard)
         {
             return Task.CompletedTask;
         }
