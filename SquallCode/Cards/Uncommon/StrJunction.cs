@@ -7,17 +7,12 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Squall.SquallCode.Cards.Uncommon;
 
-public class StrJunction() : SquallCard(2, CardType.Skill,
+public class StrJunction() : SquallCard(2, CardType.Power,
     CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<StrengthPower>()
-    ];
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-    [
-        CardKeyword.Exhaust
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

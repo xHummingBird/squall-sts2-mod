@@ -22,7 +22,7 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
     protected override bool ShouldGlowGoldInternal => Owner.HasPower<FinisherPower>();
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(15, ValueProp.Move),
+        new DamageVar(14, ValueProp.Move),
     ];
 
     protected override async Task OnPlay(
@@ -78,15 +78,23 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
             await fakeHit("res://Squall/sfx/hit_1.wav", 300);
             await fakeHit("res://Squall/sfx/hit_2.wav", 600);
             await fakeHit("res://Squall/sfx/hit_3.wav", 300);
-            SfxCmd.Play("res://Squall/sfx/hit_1.wav");
+            await fakeHit("res://Squall/sfx/hit_1.wav", 500);
+            SfxCmd.Play("res://Squall/sfx/hit_2.wav");
+            SfxCmd.Play("res://Squall/sounds/attack_special_4.wav");
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/gunblade_effect.wav") 
                 .Execute(choiceContext);
-            if (!_finisher)
+            if (!_finisher || selectedFinisher == bz)
             {
-                await Task.Delay(320);
-                await squall.Retreat(ownerCreature);
-                CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
+                await Task.Delay(250);
+                await squall.Retreat(ownerCreature, "retreat_renzokuken", true, 0.467f);
+                if (!_finisher)
+                    CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
+                else if (selectedFinisher != null)
+                {
+                    CrisisManager.SetCrisis(base.Owner, 0);
+                    await CardCmd.AutoPlay(choiceContext, selectedFinisher, null);
+                }
             }
             else if (_finisher && selectedFinisher != null){
                 CrisisManager.SetCrisis(base.Owner, 0);

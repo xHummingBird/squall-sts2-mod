@@ -9,9 +9,9 @@ namespace Squall.SquallCode.Cards.Uncommon;
 public class DrawMagic() : SquallCard(1, CardType.Skill,
     CardRarity.Uncommon, TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        new CardsVar(3)
+        CardKeyword.Exhaust
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -27,6 +27,6 @@ public class DrawMagic() : SquallCard(1, CardType.Skill,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Cards.UpgradeValueBy(1m);
+        RemoveKeyword(CardKeyword.Exhaust);
     }
 }

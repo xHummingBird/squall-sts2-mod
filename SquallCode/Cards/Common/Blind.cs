@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Squall.SquallCode.Cards.Common;
 
-public class Blind() : SquallCard(1, CardType.Attack,
+public class Blind() : SquallCard(1, CardType.Skill,
     CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -19,21 +19,16 @@ public class Blind() : SquallCard(1, CardType.Attack,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(6m, ValueProp.Move),
-        new PowerVar<WeakPower>(1m)
+        new PowerVar<WeakPower>(2m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target)
-            .WithHitFx("res://Squall/sfx/gunblade_effect.wav")
-            .Execute(choiceContext);
-        if (play.Target != null)
-            await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
+        await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Weak.UpgradeValueBy(1m);
     }
 }

@@ -93,17 +93,9 @@ public class FirepowerPower : SquallPower
     {
         Data internalData = GetInternalData<Data>();
         
-        CrisisManager.GainCrisis(base.Owner.Player, 5);
-        
         if (command == internalData.commandToModify)
         {
             await PowerCmd.ModifyAmount(choiceContext, this, -internalData.amountWhenAttackStarted, null, null);
         }
-        
-        await Owner.Player.Creature.CheckCrisisReady(
-            choiceContext,
-            Owner.Player.Creature,
-            null
-        );
     }
 }

@@ -11,13 +11,13 @@
   "SQUALL-RENZOKUKEN.description": "Deal {Damage:diff()} damage. \nConsume [blue]100[/blue] [gold]Crisis[/gold] to perform a [gold]Finisher[/gold].",
   "SQUALL-RENZOKUKEN.title": "Renzokuken",
 
-  "SQUALL-BLASTING_ZONE.description": "test",
+  "SQUALL-BLASTING_ZONE.description": "Deal {Damage:diff()} damage ALL enemies.",
   "SQUALL-BLASTING_ZONE.title": "Blasting Zone",
 
-  "SQUALL-FATED_CIRCLE.description": "test",
+  "SQUALL-FATED_CIRCLE.description": "Deal {Damage:diff()} damage ALL enemies. \n[gold]Stun[/gold] the selected enemy.",
   "SQUALL-FATED_CIRCLE.title": "Fated Circle",
 
-  "SQUALL-ROUGH_DIVIDE.description": "test",
+  "SQUALL-ROUGH_DIVIDE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold[Vulnerable[/gold].",
   "SQUALL-ROUGH_DIVIDE.title": "Rough Divide",
 
   "SQUALL-LIONHEART_CARD.description": "Test",
@@ -35,13 +35,13 @@
   "SQUALL-TRIGGER_HAPPY.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
   "SQUALL-TRIGGER_HAPPY.title": "Trigger Happy",
 
-  "SQUALL-FOCUS_FIRE.description": "Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SQUALL-FOCUS_FIRE.description": "Apply {MarkedPower:diff()} [gold]Marked[/gold].",
   "SQUALL-FOCUS_FIRE.title": "Focus Fire",
 
   "SQUALL-SOLID_BARREL.description": "Deal {Damage:diff()} damage.\n[gold]Firepower[/gold]\nGain {Energy:energyIcons()}.",
   "SQUALL-SOLID_BARREL.title": "Solid Barrel",
 
-  "SQUALL-RELOAD.description": "Gain {Block:diff()} [gold]Block[/gold]. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and draw 1 card.",
+  "SQUALL-RELOAD.description": "Gain {Block:diff()} [gold]Block[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and draw {Cards:diff()} {Cards:plural:card|cards}.",
   "SQUALL-RELOAD.title": "Reload",
 
   "SQUALL-CRISIS_TEST.description": "Test",
@@ -65,11 +65,11 @@
   "SQUALL-SEED_TRAINING.description": "Gain {Block:diff()} [gold]Block[/gold]. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "SQUALL-SEED_TRAINING.title": "SeeD Training",
 
-  "SQUALL-BLIND.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "SQUALL-BLIND.description": "Apply {WeakPower:diff()} [gold]Weak[/gold].",
   "SQUALL-BLIND.title": "Blind",
 
-  "SQUALL-SCATTER_AMMO.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
-  "SQUALL-SCATTER_AMMO.title": "Scatter Ammo",
+  "SQUALL-SCATTERSHOT.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDamage ALL enemies.",
+  "SQUALL-SCATTERSHOT.title": "Scattershot",
 
   "SQUALL-SHELL.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-SHELL.title": "Shell",
@@ -77,43 +77,43 @@
   "SQUALL-SHEAR_TRIGGER.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "SQUALL-SHEAR_TRIGGER.title": "Shear Trigger",
 
-  "SQUALL-HASTE.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \n[gold]Exhaust[/gold].",
+  "SQUALL-HASTE.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "SQUALL-HASTE.title": "Haste",
 
   "SQUALL-TORNADO.description": "Deal {Damage:diff()} damage to ALL enemies.",
   "SQUALL-TORNADO.title": "Tornado",
 
-  "SQUALL-STR_JUNCTION.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold]. \n[gold]Exhaust[/gold].",
+  "SQUALL-STR_JUNCTION.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
   "SQUALL-STR_JUNCTION.title": "Str Junction",
 
-  "SQUALL-VIT_JUNCTION.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold]. \n[gold]Exhaust[/gold].",
+  "SQUALL-VIT_JUNCTION.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
   "SQUALL-VIT_JUNCTION.title": "Vit Junction",
 
   "SQUALL-PAIN.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold].",
   "SQUALL-PAIN.title": "Pain",
 
-  "SQUALL-FLAME_SABER.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
-  "SQUALL-FLAME_SABER.title": "Flame Saber",
+  "SQUALL-BACKSHOT.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-BACKSHOT.title": "Backshot",
 
   "SQUALL-FAST_AMMO.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
   "SQUALL-FAST_AMMO.title": "Fast Ammo",
 
-  "SQUALL-DRAW_MAGIC.description": "Draw {Cards:diff()} {Cards:plural:card|cards}. \nDiscard 1 card.",
+  "SQUALL-DRAW_MAGIC.description": "Cast magic based on [gold]Junctioned[/gold] GF.",
   "SQUALL-DRAW_MAGIC.title": "Draw",
 
   "SQUALL-CACTUAR.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {ThornsPower:diff()} [gold]Thorns[/gold].",
   "SQUALL-CACTUAR.title": "Cactuar",
 
-  "SQUALL-PULSE_AMMO.description": "Gain {FirepowerPower:diff()} [gold]Firepower[/gold]. \n[gold]Exhaust[/gold].",
+  "SQUALL-PULSE_AMMO.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and double [gold]Vigor[/gold] gain.",
   "SQUALL-PULSE_AMMO.title": "Pulse Ammo",
 
   "SQUALL-ULTIMA.description": "Deal {Damage:diff()} damage to ALL enemies.",
   "SQUALL-ULTIMA.title": "Ultima",
 
-  "SQUALL-APOCALYPSE.description": "Deal {Damage:diff()} damage. \n[gold]Exhaust[/gold].",
+  "SQUALL-APOCALYPSE.description": "Deal {Damage:diff()} damage.",
   "SQUALL-APOCALYPSE.title": "Apocalypse",
 
-  "SQUALL-AURA.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \n[gold]Exhaust[/gold].",
+  "SQUALL-AURA.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
   "SQUALL-AURA.title": "Aura",
 
   "SQUALL-MIGHTY_GUARD.description": "Gain {Block:diff()} [gold]Block[/gold].",
@@ -122,10 +122,10 @@
   "SQUALL-BERSERK.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
   "SQUALL-BERSERK.title": "Berserk",
 
-  "SQUALL-CARBUNCLE.description": "Gain {BufferPower:diff()} [gold]Buffer[/gold]. \n[gold]Exhaust[/gold].",
+  "SQUALL-CARBUNCLE.description": "Gain {BufferPower:diff()} [gold]Buffer[/gold].",
   "SQUALL-CARBUNCLE.title": "Carbuncle",
 
-  "SQUALL-CURAGA.description": "Heal {Heal:diff()} HP. \n[gold]Exhaust[/gold].",
+  "SQUALL-CURAGA.description": "Heal {Heal:diff()} HP.",
   "SQUALL-CURAGA.title": "Curaga",
 
   "SQUALL-METEOR.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
@@ -134,6 +134,18 @@
   "SQUALL-PERFECT_TRIGGER.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
   "SQUALL-PERFECT_TRIGGER.title": "Perfect Trigger",
 
-  "SQUALL-REFLECT.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {ThornsPower:diff()} [gold]Thorns[/gold].",
-  "SQUALL-REFLECT.title": "Reflect"
+  "SQUALL-HYPERSHOT.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nTriple damage dealt.",
+  "SQUALL-HYPERSHOT.title": "Hypershot",
+
+  "SQUALL-BEAT_FANG.description": "Deal {Damage:diff()} damage. \nApply {MarkedPower:diff()} [gold]Marked[/gold].",
+  "SQUALL-BEAT_FANG.title": "Beat Fang",
+
+  "SQUALL-PIERCING_SHOT.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nApply {MarkedPower:diff()} [gold]Marked[/gold].",
+  "SQUALL-PIERCING_SHOT.title": "Piercing Shot",
+
+  "SQUALL-DRAIN_SLASH.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nHeal equal to [blue]{Heal:diff()}%[/blue] of damage dealt.",
+  "SQUALL-DRAIN_SLASH.title": "Drain Slash",
+
+  "SQUALL-FUSILLADE.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {WeakPower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold] to ALL enemies.",
+  "SQUALL-FUSILLADE.title": "Fusillade"
 }

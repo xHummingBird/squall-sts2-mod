@@ -51,7 +51,9 @@ public class TriggerHappy() : SquallCard(2, CardType.Attack,
         }
         else await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
             .FromCard(this, play)
-            .TargetingRandomOpponents(base.CombatState).Execute(choiceContext);
+            .TargetingRandomOpponents(base.CombatState)
+            .WithHitCount(base.DynamicVars.Repeat.IntValue)
+            .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()

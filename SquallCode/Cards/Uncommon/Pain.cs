@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Uncommon;
 
@@ -20,7 +21,7 @@ public class Pain() : SquallCard(1, CardType.Attack,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(7m, ValueProp.Move),
-        new PowerVar<WeakPower>(2m)
+        new PowerVar<MarkedPower>(1m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -28,12 +29,12 @@ public class Pain() : SquallCard(1, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx("res://Squall/sfx/gunblade_effect.wav")
             .Execute(choiceContext);
-        if (play.Target != null)
-            await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
+        if (play.Target.HasPower<MarkedPower>())
+            await PowerCmd.Apply<MarkedPower>(choiceContext, play.Target, DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Weak.UpgradeValueBy(1m);
+        DynamicVars.Damage.UpgradeValueBy(4m);
     }
 }

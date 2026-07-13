@@ -17,17 +17,20 @@ public class Cactuar() : SquallCard(1, CardType.Skill,
     [
         HoverTipFactory.FromPower<ThornsPower>()
     ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
+    ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(7m, ValueProp.Move),
-        new PowerVar<ThornsPower>(2m)
+        new PowerVar<ThornsPower>(3m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         AudioHelper.PlayRandomDefend();
-        await CommonActions.CardBlock(this, play);
         await PowerCmd.Apply<ThornsPower>(choiceContext, base.Owner.Creature, DynamicVars["ThornsPower"].BaseValue, base.Owner.Creature, this);
     }
 

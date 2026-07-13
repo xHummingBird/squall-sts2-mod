@@ -5,5 +5,9 @@
 
   "SQUALL-FINISHER_POWER.description": "Perform finisher after [gold]Renzokuken[/gold].",
   "SQUALL-FINISHER_POWER.smartDescription": "Perform finisher after [gold]Renzokuken[/gold].",
-  "SQUALL-FINISHER_POWER.title": "Finisher Ready"
+  "SQUALL-FINISHER_POWER.title": "Finisher Ready",
+
+  "SQUALL-MARKED_POWER.description": "Marked creatures take 75% more damage from the next attack.",
+  "SQUALL-MARKED_POWER.smartDescription": "Take 75% more damage from the next [gold]{amount}[/gold] attack.",
+  "SQUALL-MARKED_POWER.title": "Marked"
 }

@@ -11,7 +11,7 @@ using Squall.SquallCode.Mechanics.Crisis;
 namespace Squall.SquallCode.Cards.Ancient;
 
 public class BlastingZone() : SquallCard(0, CardType.Attack,
-    CardRarity.Ancient, TargetType.AnyEnemy), IFinisherCard
+    CardRarity.Ancient, TargetType.AllEnemies), IFinisherCard
 {
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -27,15 +27,8 @@ public class BlastingZone() : SquallCard(0, CardType.Attack,
         CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
         if (ownerCreature != null && squall != null)
         {
-            squall.PlayAnimation(ownerCreature, "blasting_zone");
-            await Task.Delay((int)(0.13f * 1000f));
-            SfxCmd.Play("res://Squall/sounds/attack_special_4.wav");
-            SfxCmd.Play("res://Squall/sfx/hit_3.wav");
-            SquallExtensions.CombatHelpers.SquallFakeHit(play.Target);
-            await Task.Delay((int)(0.4f * 1000f));
-            await squall.Retreat(ownerCreature, null, false, 0.73f);
             SfxCmd.Play("res://Squall/sounds/koredetodomeda.wav");
-            await Task.Delay((int)(0.3f * 1000f));
+            await Task.Delay((int)(0.1f * 1000f));
             SfxCmd.Play("res://Squall/sfx/blasting_zone_charge.wav");
             await Task.Delay((int)(1.2f * 1000f));
             SfxCmd.Play("res://Squall/sfx/swing_1.wav");
@@ -60,6 +53,6 @@ public class BlastingZone() : SquallCard(0, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(8);
+        DynamicVars.Damage.UpgradeValueBy(5);
     }
 }

@@ -1,6 +1,9 @@
-﻿namespace Squall.SquallCode.Cards.Ancient;
+﻿using MegaCrit.Sts2.Core.Entities.Cards;
 
-public class Shiva
+namespace Squall.SquallCode.Cards.Ancient;
+
+public class Shiva() : SquallCard (0, CardType.Skill,
+    CardRarity.Ancient, TargetType.Self)
 {
     
 }

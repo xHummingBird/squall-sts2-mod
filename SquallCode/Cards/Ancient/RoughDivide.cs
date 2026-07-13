@@ -16,7 +16,7 @@ public class RoughDivide() : SquallCard(0, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(28m, ValueProp.Move),
+        new DamageVar(25m, ValueProp.Move),
         new PowerVar<VulnerablePower>(2m)
     ];
 
@@ -59,7 +59,7 @@ public class RoughDivide() : SquallCard(0, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(8m);
+        DynamicVars.Damage.UpgradeValueBy(7m);
         DynamicVars.Vulnerable.UpgradeValueBy(1m);
     }
 }
