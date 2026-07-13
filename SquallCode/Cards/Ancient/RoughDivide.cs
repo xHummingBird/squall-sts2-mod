@@ -7,15 +7,16 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
+using Squall.SquallCode.Mechanics.Crisis;
 
 namespace Squall.SquallCode.Cards.Ancient;
 
 public class RoughDivide() : SquallCard(0, CardType.Attack,
-    CardRarity.Ancient, TargetType.AnyEnemy)
+    CardRarity.Ancient, TargetType.AnyEnemy), IFinisherCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(28m, ValueProp.Move),
+        new DamageVar(25m, ValueProp.Move),
         new PowerVar<VulnerablePower>(2m)
     ];
 
@@ -58,7 +59,7 @@ public class RoughDivide() : SquallCard(0, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(8m);
+        DynamicVars.Damage.UpgradeValueBy(7m);
         DynamicVars.Vulnerable.UpgradeValueBy(1m);
     }
 }

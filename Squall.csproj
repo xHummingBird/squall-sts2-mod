@@ -60,7 +60,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="SquallCode\Cards\Token\" />
         <Folder Include="Squall\images\card_portraits\big\"/>
         <Folder Include="Squall\images\powers\big\"/>
         <Folder Include="Squall\images\relics\big\"/>

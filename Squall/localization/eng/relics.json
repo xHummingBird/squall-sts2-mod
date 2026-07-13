@@ -1,9 +1,17 @@
 {
-  "SQUALL-REVOLVER.description": "After 3 attacks, gain 2 [gold]Firepower[/gold]. At the start of combat, [gold]Junction[/gold] 1 G.F.",
+  "SQUALL-REVOLVER.description": "After 3 attacks, gain 2 [gold]Firepower[/gold]. At the start of combat, [gold]Junction[/gold] 1 Guardian Force (GF).",
   "SQUALL-REVOLVER.flavor": "",
   "SQUALL-REVOLVER.title": "Revolver",
 
-  "SQUALL-LIONHEART.description": "Gain [gold]Lionheart[/gold] finisher. After 3 attacks, gain 5 [gold]Firepower[/gold].",
+  "SQUALL-LIONHEART.description": "Gain [gold]Lionheart[/gold] finisher. After 3 attacks, gain 5 [gold]Firepower[/gold]. At the start of combat, [gold]Junction[/gold] 1 Guardian Force (GF)",
   "SQUALL-LIONHEART.flavor": "Heart of a Lion",
-  "SQUALL-LIONHEART.title": "Lionheart"
+  "SQUALL-LIONHEART.title": "Lionheart",
+
+  "SQUALL-LEVIATHAN_SCALE.description": "You can now [gold[Junction[/gold] Leviathan at the start of combat.",
+  "SQUALL-LEVIATHAN_SCALE.flavor": "",
+  "SQUALL-LEVIATHAN_SCALE.title": "Leviathan Scale",
+
+  "SQUALL-MAGIC_LAMP.description": "You can now [gold[Junction[/gold] Diabolos at the start of combat ",
+  "SQUALL-MAGIC_LAMP.flavor": "",
+  "SQUALL-MAGIC_LAMP.title": "Magic Lamp"
 }

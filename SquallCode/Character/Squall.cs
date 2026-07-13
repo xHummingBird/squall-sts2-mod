@@ -6,8 +6,15 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Multiplayer;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Extensions;
+using MegaCrit.Sts2.Core.GameActions;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
@@ -15,8 +22,10 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Screens.CardSelection;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.Runs;
+using MegaCrit.Sts2.Core.Saves;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Cards.Basic;
 using Squall.SquallCode.Mechanics.Crisis;
@@ -362,6 +371,82 @@ public class Squall : PlaceholderCharacterModel
                     AudioHelper.PlayRandomDamagedHigh();
                 }
             }
+        }
+    }
+    
+    [HarmonyPatch(typeof(CardSelectCmd), nameof(CardSelectCmd.FromChooseACardScreen))]
+    public static class SquallCardSelectCmd_FromChooseACardScreen_Patch
+    {
+        [HarmonyPrefix]
+        public static bool Prefix(
+            PlayerChoiceContext context,
+            IReadOnlyList<CardModel> cards,
+            Player player,
+            bool canSkip,
+            ref Task<CardModel?> __result)
+        {
+            __result = PatchedChoose(context, cards, player, canSkip);
+            return false; 
+        }
+
+        private static async Task<CardModel?> PatchedChoose(
+            PlayerChoiceContext context,
+            IReadOnlyList<CardModel> cards,
+            Player player,
+            bool canSkip)
+        {
+            if (cards.Count > 5)
+            {
+                throw new ArgumentException("Only works with 5 or fewer cards", nameof(cards));
+            }
+
+            if (cards.Count == 0)
+            {
+                return null;
+            }
+
+            uint choiceId = RunManager.Instance.PlayerChoiceSynchronizer.ReserveChoiceId(player);
+
+            await context.SignalPlayerChoiceBegun(PlayerChoiceOptions.None);
+
+            CardModel? result;
+			
+            if (LocalContext.IsMe(player))
+            {
+                NPlayerHand.Instance?.CancelAllCardPlay();
+
+                var screen = NChooseACardSelectionScreen.ShowScreen(cards, canSkip);
+
+                if (screen == null)
+                {
+                    await context.SignalPlayerChoiceEnded();
+                    return null;
+                }
+				
+                foreach (var card in cards)
+                {
+                    SaveManager.Instance.MarkCardAsSeen(card);
+                }
+
+                result = (await screen.CardsSelected()).FirstOrDefault();
+
+                int index = cards.IndexOf(result);
+                var choiceResult = PlayerChoiceResult.FromIndex(index);
+
+                RunManager.Instance.PlayerChoiceSynchronizer.SyncLocalChoice(player, choiceId, choiceResult);
+            }
+            else
+            {
+                int index = (await RunManager.Instance.PlayerChoiceSynchronizer
+                        .WaitForRemoteChoice(player, choiceId))
+                    .AsIndex();
+
+                result = index < 0 ? null : cards[index];
+            }
+
+            await context.SignalPlayerChoiceEnded();
+
+            return result;
         }
     }
 }

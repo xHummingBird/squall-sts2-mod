@@ -3,7 +3,9 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Powers;
@@ -16,8 +18,13 @@ public class Reload() : SquallCard(1, CardType.Skill,
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(8, ValueProp.Move),
+        new BlockVar(6, ValueProp.Move),
         new CardsVar(1)
+    ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<FirepowerPower>(),
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -27,18 +34,17 @@ public class Reload() : SquallCard(1, CardType.Skill,
             .FirstOrDefault();
         AudioHelper.PlayRandomDefend();
         await CommonActions.CardBlock(this, play);
-        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, base.Owner);
 
         if (Owner.Creature.HasPower<FirepowerPower>())
         {
-            await CardPileCmd.Draw(choiceContext, 1, base.Owner);
-            firepowerRelic?.ConsumeFirepower();
+            await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.IntValue, base.Owner);
+            await firepowerRelic?.ConsumeFirepower(choiceContext);
             await PowerCmd.Remove<FirepowerPower>(Owner.Creature);
         }
     }
     protected override void OnUpgrade()
     {
-        DynamicVars["Block"].UpgradeValueBy(2m);
+        DynamicVars["Block"].UpgradeValueBy(3m);
         DynamicVars.Cards.UpgradeValueBy(1m);
     }
 }

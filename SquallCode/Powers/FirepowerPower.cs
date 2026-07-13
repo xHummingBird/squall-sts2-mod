@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Cards.Basic;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Mechanics.Crisis;
+using Squall.SquallCode.Mechanics.GF;
 
 namespace Squall.SquallCode.Powers;
 
@@ -50,6 +51,14 @@ public class FirepowerPower : SquallPower
         {
             return Task.CompletedTask;
         }
+        if (command.ModelSource is IFinisherCard)
+        {
+            return Task.CompletedTask;
+        }
+        if (command.ModelSource is IGFCard)
+        {
+            return Task.CompletedTask;
+        }
         if (!command.DamageProps.IsPoweredAttack())
         {
             return Task.CompletedTask;
@@ -69,6 +78,10 @@ public class FirepowerPower : SquallPower
         {
             return 0m;
         }
+        if (cardSource is IFinisherCard)
+        {
+            return 0m;
+        }
         Data internalData = GetInternalData<Data>();
         if (internalData.commandToModify != null && cardSource != null && cardSource != internalData.commandToModify.ModelSource)
         {
@@ -85,17 +98,9 @@ public class FirepowerPower : SquallPower
     {
         Data internalData = GetInternalData<Data>();
         
-        CrisisManager.GainCrisis(base.Owner.Player, 5);
-        
         if (command == internalData.commandToModify)
         {
             await PowerCmd.ModifyAmount(choiceContext, this, -internalData.amountWhenAttackStarted, null, null);
         }
-        
-        await Owner.Player.Creature.CheckCrisisReady(
-            choiceContext,
-            Owner.Player.Creature,
-            null
-        );
     }
 }
