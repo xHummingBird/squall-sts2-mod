@@ -5,7 +5,7 @@
   "SQUALL-DEFEND_SQUALL.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-DEFEND_SQUALL.title": "Defend",
 
-  "SQUALL-QUICKSHOT.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]: Deal {ExtraDamage:diff()} additional damage.",
+  "SQUALL-QUICKSHOT.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
   "SQUALL-QUICKSHOT.title": "Quickshot",
 
   "SQUALL-RENZOKUKEN.description": "Deal {Damage:diff()} damage. \nConsume [blue]100[/blue] [gold]Crisis[/gold] to perform a [gold]Finisher[/gold].",
@@ -89,7 +89,7 @@
   "SQUALL-VIT_JUNCTION.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
   "SQUALL-VIT_JUNCTION.title": "Vit Junction",
 
-  "SQUALL-PRECISION_SHOT.description": "Deal {Damage:diff()} damage. \nIf enemy is [gold]Marked[/gold], re-apply [gold]Marked[/gold].",
+  "SQUALL-PRECISION_SHOT.description": "Deal {Damage:diff()} damage. \nIf enemy is [gold]Marked[/gold], apply [gold]Marked[/gold].",
   "SQUALL-PRECISION_SHOT.title": "Precision Shot",
 
   "SQUALL-BACKSHOT.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
