@@ -314,46 +314,12 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
             int crisisGainFromHpLoss = base.Owner.Creature.MaxHp - base.Owner.Creature.CurrentHp;
             CrisisManager.GainCrisis(Owner, crisisGainFromHpLoss);
             var choiceContext = new ThrowingPlayerChoiceContext();
-            
-            CardModel? selectedJunction = null;
-            LeviathanScale? hasLeviathan = base.Owner?.GetRelic<LeviathanScale>();
-            MagicLamp? hasDiabolos = base.Owner?.GetRelic<MagicLamp>();
-        
-            var ifrit = combatState.CreateCard<Ifrit>(base.Owner);
-            var shiva = combatState.CreateCard<Shiva>(base.Owner);
-            var quezacoatl = combatState.CreateCard<Quezacoatl>(base.Owner);
-            var leviathan = combatState.CreateCard<Leviathan>(base.Owner);
-            var diabolos = combatState.CreateCard<Diabolos>(base.Owner);
-            
-            List<CardModel> cards = [];
 
-            if (!base.Owner.HasPower<IfritPower>())
-                cards.Add(ifrit);
+            await GfRegistry.JunctionNewGf(choiceContext, base.Owner);
 
-            if (!base.Owner.HasPower<ShivaPower>())
-                cards.Add(shiva);
-
-            if (!base.Owner.HasPower<QuezacoatlPower>())
-                cards.Add(quezacoatl);
-
-            if (hasLeviathan != null && !base.Owner.HasPower<LeviathanPower>())
-                cards.Add(leviathan);
-
-            if (hasDiabolos != null && !base.Owner.HasPower<DiabolosPower>())
-                cards.Add(diabolos);
-            
-            selectedJunction = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards.ToList(), base.Owner, canSkip: false);
-
-            if (selectedJunction == ifrit)
-                await PowerCmd.Apply<IfritPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
-            if (selectedJunction == shiva)
-                await PowerCmd.Apply<ShivaPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
-            if (selectedJunction == diabolos)
-                await PowerCmd.Apply<DiabolosPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
-            if (selectedJunction == quezacoatl)
-                await PowerCmd.Apply<QuezacoatlPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
-            if (selectedJunction == leviathan)
-                await PowerCmd.Apply<LeviathanPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+            //Junction Ring grants one additional Junction.
+            if (base.Owner.GetRelic<JunctionRing>() != null)
+                await GfRegistry.JunctionNewGf(choiceContext, base.Owner);
         }
         
         if (base.Owner.Creature.HasPower<DiabolosPower>())

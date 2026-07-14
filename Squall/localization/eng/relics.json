@@ -13,5 +13,13 @@
 
   "SQUALL-MAGIC_LAMP.description": "You can now [gold[Junction[/gold] Diabolos at the start of combat ",
   "SQUALL-MAGIC_LAMP.flavor": "",
-  "SQUALL-MAGIC_LAMP.title": "Magic Lamp"
+  "SQUALL-MAGIC_LAMP.title": "Magic Lamp",
+
+  "SQUALL-SOLOMON_RING.description": "Your [gold]Summoned[/gold] GFs and the Magic added by [gold]Draw[/gold] are [gold]Upgraded[/gold].",
+  "SQUALL-SOLOMON_RING.flavor": "",
+  "SQUALL-SOLOMON_RING.title": "Solomon Ring",
+
+  "SQUALL-JUNCTION_RING.description": "[gold]Junction[/gold] an additional GF at the start of combat.",
+  "SQUALL-JUNCTION_RING.flavor": "",
+  "SQUALL-JUNCTION_RING.title": "Junction Ring"
 }

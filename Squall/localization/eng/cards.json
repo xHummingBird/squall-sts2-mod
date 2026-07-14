@@ -98,7 +98,7 @@
   "SQUALL-FAST_AMMO.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
   "SQUALL-FAST_AMMO.title": "Fast Ammo",
 
-  "SQUALL-DRAW_MAGIC.description": "Cast magic based on [gold]Junctioned[/gold] GF.",
+  "SQUALL-DRAW_MAGIC.description": "At the start of your turn, add a Magic card to your hand based on your [gold]Junctioned[/gold] GF.",
   "SQUALL-DRAW_MAGIC.title": "Draw",
 
   "SQUALL-CACTUAR.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {ThornsPower:diff()} [gold]Thorns[/gold].",
@@ -170,24 +170,65 @@
   "SQUALL-RICOCHET.description": "Deal {Damage:diff()} damage. \nIf the target is [gold]Marked[/gold], damage ALL other enemies equal to the damage dealt.",
   "SQUALL-RICOCHET.title": "Ricochet",
 
-  "SQUALL-SHIVA.description": "",
+  "SQUALL-SHIVA.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-SHIVA.title": "Junction Shiva",
 
-  "SQUALL-QUEZACOATL.description": "",
+  "SQUALL-QUEZACOATL.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
   "SQUALL-QUEZACOATL.title": "Junction Quezacoatl",
 
-  "SQUALL-LEVIATHAN.description": "",
+  "SQUALL-LEVIATHAN.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and {WeakPower:diff()} [gold]Weak[/gold].",
   "SQUALL-LEVIATHAN.title": "Junction Leviathan",
 
-  "SQUALL-DIABOLOS.description": "",
+  "SQUALL-DIABOLOS.description": "Deal {Damage:diff()} damage, plus {HpPercent:diff()}% of the target's current HP.",
   "SQUALL-DIABOLOS.title": "Junction Diabolos",
-  
-  "SQUALL-IFRIT.description": "",
+
+  "SQUALL-IFRIT.description": "Deal {Damage:diff()} damage to ALL enemies.",
   "SQUALL-IFRIT.title": "Junction Ifrit",
 
-  "SQUALL-SUMMON_GF.description": "",
+  "SQUALL-SUMMON_GF.description": "Gain {Block:diff()} [gold]Block[/gold]. \nSummon your [gold]Junctioned[/gold] GF in {ChannelingGfPower} turns.",
   "SQUALL-SUMMON_GF.title": "Summon GF",
 
-  "SQUALL-PERFECT_JUNCTION.description": "",
-  "SQUALL-PERFECT_JUNCTION.title": "Perfect Junction"
+  "SQUALL-PERFECT_JUNCTION.description": "Gain {Block:diff()} [gold]Block[/gold]. \nSummon your [gold]Junctioned[/gold] GF next turn.",
+  "SQUALL-PERFECT_JUNCTION.title": "Perfect Junction",
+
+  "SQUALL-CAST_MAGIC.description": "Cast a powerful Magic based on your [gold]Junctioned[/gold] GF. \nUpgrades with this card.",
+  "SQUALL-CAST_MAGIC.title": "Cast",
+
+  "SQUALL-STOCK.description": "[gold]Junction[/gold] another GF.",
+  "SQUALL-STOCK.title": "Stock",
+
+  "SQUALL-FIRE.description": "Deal {Damage:diff()} damage.",
+  "SQUALL-FIRE.title": "Fire",
+
+  "SQUALL-BLIZZARD.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-BLIZZARD.title": "Blizzard",
+
+  "SQUALL-THUNDER.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
+  "SQUALL-THUNDER.title": "Thunder",
+
+  "SQUALL-WATER.description": "Deal {Damage:diff()} damage to ALL enemies.",
+  "SQUALL-WATER.title": "Water",
+
+  "SQUALL-DEMI.description": "Deal damage equal to {HpPercent:diff()}% of the target's current HP.",
+  "SQUALL-DEMI.title": "Demi",
+
+  "SQUALL-FIRAGA.description": "Deal {Damage:diff()} damage.",
+  "SQUALL-FIRAGA.title": "Firaga",
+
+  "SQUALL-BLIZZAGA.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-BLIZZAGA.title": "Blizzaga",
+
+  "SQUALL-THUNDAGA.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
+  "SQUALL-THUNDAGA.title": "Thundaga",
+
+  "SQUALL-FLOOD.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "SQUALL-FLOOD.title": "Flood",
+
+  "SQUALL-GRAVIGA.description": "Deal damage equal to {HpPercent:diff()}% of each enemy's current HP.",
+  "SQUALL-GRAVIGA.title": "Graviga",
+
+  "SQUALL-GF_SELECT.junctionPrompt": "Choose a GF to Junction",
+  "SQUALL-GF_SELECT.summonPrompt": "Choose a GF to Summon",
+  "SQUALL-GF_SELECT.drawPrompt": "Choose a Magic to draw",
+  "SQUALL-GF_SELECT.castPrompt": "Choose a Magic to cast"
 }

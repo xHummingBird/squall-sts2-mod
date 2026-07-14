@@ -1,32 +1,31 @@
-using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.HoverTips;
+using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Uncommon;
 
-public class DrawMagic() : SquallCard(1, CardType.Skill,
+public class DrawMagic() : SquallCard(2, CardType.Power,
     CardRarity.Uncommon, TargetType.Self)
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        CardKeyword.Exhaust
+        HoverTipFactory.FromPower<DrawMagicPower>()
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, base.Owner);
-        var card = (await CardSelectCmd.FromHandForDiscard(choiceContext, base.Owner,
-            new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1), null, this)).FirstOrDefault();
-        if (card != null)
-        {
-            await CardCmd.Discard(choiceContext, card);
-        }
+        await PowerCmd.Apply<DrawMagicPower>(
+            choiceContext,
+            base.Owner.Creature,
+            1m,
+            base.Owner.Creature,
+            this);
     }
 
     protected override void OnUpgrade()
     {
-        RemoveKeyword(CardKeyword.Exhaust);
+        base.EnergyCost.UpgradeBy(-1);
     }
 }
