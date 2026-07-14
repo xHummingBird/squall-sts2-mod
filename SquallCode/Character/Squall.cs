@@ -96,7 +96,7 @@ public class Squall : PlaceholderCharacterModel
     private const string CustomVisualScenePath = "res://Squall/scenes/squall.tscn";
     public override string CustomRestSiteAnimPath => "res://Squall/scenes/Squall_rest_site.tscn";
     
-    // public override string CustomCharacterSelectBg => "char_selection_bg_squall.tscn".CharacterUiPath();
+    public override string CustomCharacterSelectBg => "res://Squall/scenes/char_selection_bg_squall.tscn";
     public override string CustomMerchantAnimPath => "res://Cloud/scenes/Squall_merchant.tscn";
     public override string CustomIconTexturePath => "character_icon_squall.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_squall.png".CharacterUiPath();
