@@ -27,6 +27,7 @@ using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Cards.Ancient;
 using Squall.SquallCode.Cards.Basic;
 using Squall.SquallCode.Mechanics.Crisis;
 using Squall.SquallCode.Relics;

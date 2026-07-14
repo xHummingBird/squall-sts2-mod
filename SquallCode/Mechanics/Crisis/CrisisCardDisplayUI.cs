@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards;
 using Squall.SquallCode.Cards;
+using Squall.SquallCode.Cards.Ancient;
 using Squall.SquallCode.Cards.Basic;
 using Squall.SquallCode.Relics;
 

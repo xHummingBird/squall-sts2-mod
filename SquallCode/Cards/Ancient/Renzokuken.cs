@@ -12,10 +12,10 @@ using Squall.SquallCode.Mechanics.Crisis;
 using Squall.SquallCode.Powers;
 using Squall.SquallCode.Relics;
 
-namespace Squall.SquallCode.Cards.Basic;
+namespace Squall.SquallCode.Cards.Ancient;
 
 public class Renzokuken() : SquallCard(2, CardType.Attack,
-    CardRarity.Basic, TargetType.AnyEnemy)
+    CardRarity.Ancient, TargetType.AnyEnemy)
 {
     private bool _finisher;
     public bool IsPerformingFinisher => _finisher;
