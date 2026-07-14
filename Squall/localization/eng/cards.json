@@ -164,7 +164,7 @@
   "SQUALL-ICE_ARMOR.description": "Gain {PlatingPower:diff()} [gold]Plating[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain double [gold]Plating[/gold].",
   "SQUALL-ICE_ARMOR.title": "Ice Armor",
 
-  "SQUALL-COMBAT_FOCUS.description": "Gain {Block:diff()} [gold]Block[/gold]. \n\nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
+  "SQUALL-COMBAT_FOCUS.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
   "SQUALL-COMBAT_FOCUS.title": "Combat Focus",
 
   "SQUALL-RICOCHET.description": "Deal {Damage:diff()} damage. \nIf the target is [gold]Marked[/gold], damage ALL other enemies equal to the damage dealt.",

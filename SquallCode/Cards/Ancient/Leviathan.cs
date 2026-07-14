@@ -1,4 +1,4 @@
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -10,8 +10,8 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Ancient;
 
-public class Leviathan() : SquallCard (0, CardType.Attack,
-    CardRarity.Ancient, TargetType.AnyEnemy), IGFCard
+public class Leviathan() : SquallCard(0, CardType.Attack,
+    CardRarity.Ancient, TargetType.AllEnemies), IGFCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

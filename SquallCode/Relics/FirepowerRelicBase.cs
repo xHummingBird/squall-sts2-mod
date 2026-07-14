@@ -117,7 +117,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
                 null
             );
         }
-        
+
         if (base.Owner.Creature.HasPower<LeviathanPower>())
         {
             await CreatureCmd.Heal(
@@ -244,7 +244,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
 
         if (base.Owner.HasPower<IfritPower>())
             amount++;
-        
+
         await PowerCmd.Apply<FirepowerPower>(
             choiceContext,
             base.Owner.Creature,
@@ -308,27 +308,33 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
     {
         if (side != base.Owner.Creature.Side)
             return;
-        
+
         if (combatState.RoundNumber <= 1)
         {
             int crisisGainFromHpLoss = base.Owner.Creature.MaxHp - base.Owner.Creature.CurrentHp;
             CrisisManager.GainCrisis(Owner, crisisGainFromHpLoss);
-            var choiceContext = new ThrowingPlayerChoiceContext();
+        }
 
+        if (base.Owner.Creature.HasPower<DiabolosPower>())
+            CrisisManager.GainCrisis(Owner, 5);
+
+        await Owner.Creature.CheckCrisisReady(
+            null,
+            Owner.Creature,
+            null
+        );
+    }
+
+    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext,
+        ICombatState combatState)
+    {
+        if (player == base.Owner.Creature.Player && combatState.RoundNumber <= 1)
+        {
             await GfRegistry.JunctionNewGf(choiceContext, base.Owner);
 
             //Junction Ring grants one additional Junction.
             if (base.Owner.GetRelic<JunctionRing>() != null)
                 await GfRegistry.JunctionNewGf(choiceContext, base.Owner);
         }
-        
-        if (base.Owner.Creature.HasPower<DiabolosPower>())
-            CrisisManager.GainCrisis(Owner, 5);
-        
-        await Owner.Creature.CheckCrisisReady(
-            null,
-            Owner.Creature,
-            null
-        );
     }
 }

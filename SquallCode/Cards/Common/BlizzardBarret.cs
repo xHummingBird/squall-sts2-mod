@@ -43,14 +43,14 @@ public class BlizzardBarret() : SquallCard(1, CardType.Attack,
             
             SfxCmd.Play("res://Squall/sounds/ice.wav");
             float duration = squall.PlayAnimation(ownerCreature, "shoot").total;
-            if (duration > 0f)
-                await Task.Delay((int)(0.36f * 1000f));
-            SfxCmd.Play("res://Squall/sfx/gunblade_explosion.wav");
             squall.PlayVfxOnTarget(
-                play.Target,
-                "res://Squall/scenes/vfx.tscn",
-                "ice_1"
-            );
+                    play.Target,
+                    "res://Squall/scenes/vfx.tscn",
+                    "ice_1"
+                );
+            await Task.Delay((int)(0.36f * 1000f));
+            SfxCmd.Play("res://Squall/sfx/gunblade_explosion.wav");
+            
         }
 
         await CommonActions.CardAttack(this, play.Target)

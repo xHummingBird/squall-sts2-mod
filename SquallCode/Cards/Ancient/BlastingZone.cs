@@ -27,6 +27,7 @@ public class BlastingZone() : SquallCard(0, CardType.Attack,
         CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
         if (ownerCreature != null && squall != null)
         {
+            squall.PlayAnimation(ownerCreature, "blasting_zone");
             SfxCmd.Play("res://Squall/sounds/koredetodomeda.wav");
             await Task.Delay((int)(0.1f * 1000f));
             SfxCmd.Play("res://Squall/sfx/blasting_zone_charge.wav");
