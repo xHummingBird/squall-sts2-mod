@@ -20,7 +20,7 @@ public class SummonGf() : SquallCard(2, CardType.Skill,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(8m, ValueProp.Move),
-        new PowerVar<ChannelingGfPower>(2m)
+        new PowerVar<ChannelingGfPower>(3m)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
