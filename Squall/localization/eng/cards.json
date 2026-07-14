@@ -158,7 +158,7 @@
   "SQUALL-DEFENSIVE_MANEUVER.description": "Gain {Block:diff()} [gold]Block[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain [blue]Block[/blue] an additional time.",
   "SQUALL-DEFENSIVE_MANEUVER.title": "Defensive Maneuver",
 
-  "SQUALL-UPPER_BLUES.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nGain [blue]Block[/gold] equal to damage dealt.",
+  "SQUALL-UPPER_BLUES.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nGain [blue]Block[/blue] equal to damage dealt.",
   "SQUALL-UPPER_BLUES.title": "Upper Blues",
 
   "SQUALL-ICE_ARMOR.description": "Gain {PlatingPower:diff()} [gold]Plating[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain double [gold]Plating[/gold].",

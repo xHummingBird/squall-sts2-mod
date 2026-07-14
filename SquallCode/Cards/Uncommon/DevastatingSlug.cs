@@ -17,7 +17,7 @@ public class DevastatingSlug() : SquallCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(10m, ValueProp.Move),
+        new DamageVar(12m, ValueProp.Move),
         new EnergyVar(1)
     ];
 
@@ -44,7 +44,7 @@ public class DevastatingSlug() : SquallCard(2, CardType.Attack,
             else await CommonActions.CardAttack(this, play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
                 .Execute(choiceContext);
-            await PowerCmd.Apply<FreeAttackPower>(choiceContext, play.Target, 1, base.Owner.Creature, this);
+            await PowerCmd.Apply<FreeAttackPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
         }
     }
 

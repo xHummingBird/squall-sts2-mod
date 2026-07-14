@@ -105,7 +105,7 @@ public partial class CrisisDisplayOverlay : Control
 
         // Same position as Cloud Limit.
         // Adjust this if Squall gets multiple overlays like Crisis/AP/Firepower.
-        _crisisDisplay.Position = new Vector2(95, 95);
+        _crisisDisplay.Position = new Vector2(35, 35);
         _crisisDisplay.Visible = true;
 
         _label = _crisisDisplay.GetNodeOrNull<RichTextLabel>("%CrisisLabel");

@@ -104,7 +104,7 @@ public partial class FirepowerDisplayOverlay : Control
 
         // Adjust this later if needed
         _display.Position =
-            new Vector2(130, 40);
+            new Vector2(70, -20);
 
         _fire1 =
             _display.GetNodeOrNull<TextureRect>(

@@ -301,30 +301,21 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         CrisisManager.GainCrisis(Owner, gain);
     }
 
-    public override async Task AfterSideTurnStart(
-        CombatSide side,
-        IReadOnlyList<Creature> participants,
+    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
-        if (side != base.Owner.Creature.Side)
-            return;
-        
-        if (combatState.RoundNumber <= 1)
+        if (player == base.Owner.Creature.Player && combatState.RoundNumber <= 1)
         {
-            int crisisGainFromHpLoss = base.Owner.Creature.MaxHp - base.Owner.Creature.CurrentHp;
-            CrisisManager.GainCrisis(Owner, crisisGainFromHpLoss);
-            var choiceContext = new ThrowingPlayerChoiceContext();
-            
             CardModel? selectedJunction = null;
             LeviathanScale? hasLeviathan = base.Owner?.GetRelic<LeviathanScale>();
             MagicLamp? hasDiabolos = base.Owner?.GetRelic<MagicLamp>();
-        
+
             var ifrit = combatState.CreateCard<Ifrit>(base.Owner);
             var shiva = combatState.CreateCard<Shiva>(base.Owner);
             var quezacoatl = combatState.CreateCard<Quezacoatl>(base.Owner);
             var leviathan = combatState.CreateCard<Leviathan>(base.Owner);
             var diabolos = combatState.CreateCard<Diabolos>(base.Owner);
-            
+
             List<CardModel> cards = [];
 
             if (!base.Owner.HasPower<IfritPower>())
@@ -341,19 +332,40 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
 
             if (hasDiabolos != null && !base.Owner.HasPower<DiabolosPower>())
                 cards.Add(diabolos);
-            
-            selectedJunction = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards.ToList(), base.Owner, canSkip: false);
+
+            selectedJunction = await CardSelectCmd.FromChooseACardScreen(choiceContext,
+                cards.ToList(), base.Owner, canSkip: false);
 
             if (selectedJunction == ifrit)
-                await PowerCmd.Apply<IfritPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+                await PowerCmd.Apply<IfritPower>(choiceContext, base.Owner.Creature, 1m,
+                    base.Owner.Creature, null);
             if (selectedJunction == shiva)
-                await PowerCmd.Apply<ShivaPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+                await PowerCmd.Apply<ShivaPower>(choiceContext, base.Owner.Creature, 1m,
+                    base.Owner.Creature, null);
             if (selectedJunction == diabolos)
-                await PowerCmd.Apply<DiabolosPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+                await PowerCmd.Apply<DiabolosPower>(choiceContext, base.Owner.Creature, 1m,
+                    base.Owner.Creature, null);
             if (selectedJunction == quezacoatl)
-                await PowerCmd.Apply<QuezacoatlPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+                await PowerCmd.Apply<QuezacoatlPower>(choiceContext, base.Owner.Creature, 1m,
+                    base.Owner.Creature, null);
             if (selectedJunction == leviathan)
-                await PowerCmd.Apply<LeviathanPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, null);
+                await PowerCmd.Apply<LeviathanPower>(choiceContext, base.Owner.Creature, 1m,
+                    base.Owner.Creature, null);
+        }
+    }
+
+    public override async Task AfterSideTurnStart(
+        CombatSide side,
+        IReadOnlyList<Creature> participants,
+        ICombatState combatState)
+    {
+        if (side != base.Owner.Creature.Side)
+            return;
+        
+        if (combatState.RoundNumber <= 1)
+        {
+            int crisisGainFromHpLoss = base.Owner.Creature.MaxHp - base.Owner.Creature.CurrentHp;
+            CrisisManager.GainCrisis(Owner, crisisGainFromHpLoss);
         }
         
         if (base.Owner.Creature.HasPower<DiabolosPower>())
