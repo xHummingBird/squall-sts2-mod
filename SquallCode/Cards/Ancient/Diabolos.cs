@@ -22,6 +22,11 @@ public class Diabolos() : SquallCard (0, CardType.Attack,
     [
         HoverTipFactory.FromPower<DiabolosPower>()
     ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {

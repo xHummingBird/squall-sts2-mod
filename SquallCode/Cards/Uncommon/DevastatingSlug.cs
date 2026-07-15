@@ -17,7 +17,7 @@ public class DevastatingSlug() : SquallCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(10m, ValueProp.Move),
+        new DamageVar(12m, ValueProp.Move),
         new EnergyVar(1)
     ];
 

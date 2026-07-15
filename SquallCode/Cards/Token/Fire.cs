@@ -1,7 +1,11 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Squall.SquallCode.Cards.Token;
@@ -18,14 +22,25 @@ public class Fire() : SquallCard(0, CardType.Attack,
     [
         new DamageVar(3m, ValueProp.Move)
     ];
-
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext,
+        CardPlay play)
     {
-        SfxCmd.Play("res://Squall/sounds/fire.wav");
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this, play)
-            .Targeting(play.Target)
-            .WithHitFx(null, "event:/sfx/characters/attack_fire")
+        var ownerCreature = Owner?.Creature;
+
+        if (ownerCreature != null && Owner?.Character is Character.Squall squall)
+        {
+            SfxCmd.Play("res://Squall/sounds/fire.wav");
+            float duration = squall.PlayAnimation(ownerCreature, "cast").total;
+            if (duration > 0f)
+                await Task.Delay((int)(0.2f * 1000f));
+        }
+        await CommonActions.CardAttack(this, play.Target)
+            .BeforeDamage(async delegate
+            {
+                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NGroundFireVfx.Create(play.Target));
+                SfxCmd.Play("event:/sfx/characters/attack_fire");
+            })
             .Execute(choiceContext);
     }
 

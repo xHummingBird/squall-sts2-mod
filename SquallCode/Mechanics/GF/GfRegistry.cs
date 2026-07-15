@@ -18,6 +18,8 @@ namespace Squall.SquallCode.Mechanics.GF;
 public sealed class GfEntry
 {
     public required string Name { get; init; }
+    
+    public string ScenePath { get; init; }
 
     //Junction state.
     public required Func<Creature, bool> IsJunctioned { get; init; }
@@ -37,7 +39,7 @@ public sealed class GfEntry
     public required Func<bool, IHoverTip> CastMagicTip { get; init; }
 
     //Icon shown on junction-related cards.
-    public required string IconPath { get; init; }
+    
 }
 
 public static class GfRegistry
@@ -52,6 +54,7 @@ public static class GfRegistry
         new GfEntry
         {
             Name = "Ifrit",
+            ScenePath = "res://Squall/scenes/GFCardDisplay_Ifrit.tscn",
             IsJunctioned = c => c.HasPower<IfritPower>(),
             ApplyJunctionPower = async (ctx, p, src) =>
                 await PowerCmd.Apply<IfritPower>(ctx, p.Creature, 1, p.Creature, src),
@@ -62,12 +65,12 @@ public static class GfRegistry
             GfCardTip = up => HoverTipFactory.FromCard<Ifrit>(up),
             DrawTokenTip = up => HoverTipFactory.FromCard<Fire>(up),
             CastMagicTip = up => HoverTipFactory.FromCard<Firaga>(up),
-            IconPath = "ifrit_power.png".BigPowerImagePath()
         },
 
         new GfEntry
         {
             Name = "Shiva",
+            ScenePath = "res://Squall/scenes/GFCardDisplay_Shiva.tscn",
             IsJunctioned = c => c.HasPower<ShivaPower>(),
             ApplyJunctionPower = async (ctx, p, src) =>
                 await PowerCmd.Apply<ShivaPower>(ctx, p.Creature, 1, p.Creature, src),
@@ -78,12 +81,12 @@ public static class GfRegistry
             GfCardTip = up => HoverTipFactory.FromCard<Shiva>(up),
             DrawTokenTip = up => HoverTipFactory.FromCard<Blizzard>(up),
             CastMagicTip = up => HoverTipFactory.FromCard<Blizzaga>(up),
-            IconPath = "shiva_power.png".BigPowerImagePath()
         },
 
         new GfEntry
         {
             Name = "Quezacoatl",
+            ScenePath = "res://Squall/scenes/GFCardDisplay_Quezacoatl.tscn",
             IsJunctioned = c => c.HasPower<QuezacoatlPower>(),
             ApplyJunctionPower = async (ctx, p, src) =>
                 await PowerCmd.Apply<QuezacoatlPower>(ctx, p.Creature, 1, p.Creature, src),
@@ -94,12 +97,12 @@ public static class GfRegistry
             GfCardTip = up => HoverTipFactory.FromCard<Quezacoatl>(up),
             DrawTokenTip = up => HoverTipFactory.FromCard<Thunder>(up),
             CastMagicTip = up => HoverTipFactory.FromCard<Thundaga>(up),
-            IconPath = "quezacoatl_power.png".BigPowerImagePath()
         },
 
         new GfEntry
         {
             Name = "Leviathan",
+            ScenePath = "res://Squall/scenes/GFCardDisplay_Leviathan.tscn",
             IsJunctioned = c => c.HasPower<LeviathanPower>(),
             ApplyJunctionPower = async (ctx, p, src) =>
                 await PowerCmd.Apply<LeviathanPower>(ctx, p.Creature, 1, p.Creature, src),
@@ -110,13 +113,13 @@ public static class GfRegistry
             GfCardTip = up => HoverTipFactory.FromCard<Leviathan>(up),
             DrawTokenTip = up => HoverTipFactory.FromCard<Water>(up),
             CastMagicTip = up => HoverTipFactory.FromCard<Flood>(up),
-            IconPath = "leviathan_power.png".BigPowerImagePath()
         },
 
         new GfEntry
         {
             Name = "Diabolos",
             IsJunctioned = c => c.HasPower<DiabolosPower>(),
+            ScenePath = "res://Squall/scenes/GFCardDisplay_Diabolos.tscn",
             ApplyJunctionPower = async (ctx, p, src) =>
                 await PowerCmd.Apply<DiabolosPower>(ctx, p.Creature, 1, p.Creature, src),
             IsUnlocked = p => p.GetRelic<MagicLamp>() != null,
@@ -126,7 +129,6 @@ public static class GfRegistry
             GfCardTip = up => HoverTipFactory.FromCard<Diabolos>(up),
             DrawTokenTip = up => HoverTipFactory.FromCard<Demi>(up),
             CastMagicTip = up => HoverTipFactory.FromCard<Graviga>(up),
-            IconPath = "diabolos_power.png".BigPowerImagePath()
         }
     ];
 

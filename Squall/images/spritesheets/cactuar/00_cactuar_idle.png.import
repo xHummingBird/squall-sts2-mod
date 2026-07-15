@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de2deqro41n6j"
-path="res://.godot/imported/mighty_guard.png-a8d3000b9a24cbe6a9150cc1a15d9d32.ctex"
+uid="uid://dadvt06c7wiob"
+path="res://.godot/imported/00_cactuar_idle.png-1c1944864d190d08db4d0c2a3a3aba4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squall/images/card_portraits/big/mighty_guard.png"
-dest_files=["res://.godot/imported/mighty_guard.png-a8d3000b9a24cbe6a9150cc1a15d9d32.ctex"]
+source_file="res://Squall/images/spritesheets/cactuar/00_cactuar_idle.png"
+dest_files=["res://.godot/imported/00_cactuar_idle.png-1c1944864d190d08db4d0c2a3a3aba4f.ctex"]
 
 [params]
 

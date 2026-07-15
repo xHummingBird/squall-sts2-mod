@@ -10,7 +10,7 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Common;
 
-public class CuttingTrigger() : SquallCard(0, CardType.Attack,
+public class UnrefinedEdge() : SquallCard(0, CardType.Attack,
     CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>

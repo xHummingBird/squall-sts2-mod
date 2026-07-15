@@ -1,7 +1,11 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Squall.SquallCode.Cards.Token;
@@ -20,20 +24,32 @@ public class Blizzard() : SquallCard(0, CardType.Attack,
         new BlockVar(2m, ValueProp.Move)
     ];
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    protected override async Task OnPlay(
+        PlayerChoiceContext choiceContext,
+        CardPlay play)
     {
-        SfxCmd.Play("res://Squall/sounds/ice.wav");
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this, play)
-            .Targeting(play.Target)
-            .WithHitFx(null, "res://Squall/sfx/ice.wav")
-            .Execute(choiceContext);
+        var ownerCreature = Owner?.Creature;
 
-        await CreatureCmd.GainBlock(
-            base.Owner.Creature,
-            DynamicVars.Block.BaseValue,
-            ValueProp.Move,
-            play);
+        if (ownerCreature != null && Owner?.Character is Character.Squall squall)
+        {
+            
+            SfxCmd.Play("res://Squall/sounds/ice.wav");
+            float duration = squall.PlayAnimation(ownerCreature, "cast").total;
+            squall.PlayVfxOnTarget(
+                play.Target,
+                "res://Squall/scenes/vfx.tscn",
+                "ice_1"
+            );
+            await Task.Delay((int)(0.20f * 1000f));
+        }
+        
+        await CommonActions.CardAttack(this, play.Target)
+            .WithHitFx(null, "res://Squall/sfx/ice.wav")
+            .BeforeDamage(async delegate
+            {
+                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NGroundFireVfx.Create(play.Target, VfxColor.Blue));
+            })
+            .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()

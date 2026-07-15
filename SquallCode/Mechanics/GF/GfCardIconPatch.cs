@@ -100,40 +100,65 @@ public static class GfCardIconPatch
         };
     }
 
-    private static Control? CreateIcon(NHandCardHolder holder, Control hitbox, GfEntry entry)
-    {
-        var texture = GetTexture(entry.IconPath);
+    private static readonly Dictionary<string, PackedScene> SceneCache = new();
 
-        if (texture == null)
+    private static Control? CreateIcon(
+        NHandCardHolder holder,
+        Control hitbox,
+        GfEntry entry)
+    {
+        var scene = GetScene(entry.ScenePath);
+
+        if (scene == null)
             return null;
 
-        var container = new Control
-        {
-            Name = ContainerName(entry),
-            Size = new Vector2(IconSize, IconSize),
-            // The only interactive node, same as CrisisCardPatch.
-            MouseFilter = Control.MouseFilterEnum.Pass
-        };
+        var container = scene.Instantiate<Control>();
 
-        var icon = new TextureRect
-        {
-            Texture = texture,
-            Size = new Vector2(IconSize, IconSize),
-            ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
-            StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered,
-            MouseFilter = Control.MouseFilterEnum.Ignore
-        };
+        container.Name = ContainerName(entry);
 
-        container.AddChild(icon);
+        // Root receives hover
+        container.MouseFilter = Control.MouseFilterEnum.Pass;
+
         hitbox.AddChild(container);
         hitbox.MoveChild(container, hitbox.GetChildCount() - 1);
 
-        var capturedEntry = entry;
+        // Children don't steal mouse events
+        SetChildControlsToIgnore(container);
 
-        container.MouseEntered += () => OnHovered(holder, capturedEntry);
-        container.MouseExited += () => OnUnhovered(holder);
+        var capturedEntry = entry;
+        var capturedHolder = holder;
+
+        container.MouseEntered += () =>
+            OnHovered(capturedHolder, capturedEntry);
+
+        container.MouseExited += () =>
+            OnUnhovered(capturedHolder);
 
         return container;
+    }
+    
+    private static PackedScene? GetScene(string path)
+    {
+        if (SceneCache.TryGetValue(path, out var cached))
+            return cached;
+
+        var scene = GD.Load<PackedScene>(path);
+
+        if (scene != null)
+            SceneCache[path] = scene;
+
+        return scene;
+    }
+
+    private static void SetChildControlsToIgnore(Node root)
+    {
+        foreach (Node child in root.GetChildren())
+        {
+            if (child is Control control)
+                control.MouseFilter = Control.MouseFilterEnum.Ignore;
+
+            SetChildControlsToIgnore(child);
+        }
     }
 
     private static void OnHovered(NHandCardHolder holder, GfEntry entry)

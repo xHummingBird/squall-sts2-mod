@@ -42,7 +42,6 @@ public class Fusillade() : SquallCard(2, CardType.Attack,
             float duration = squall.PlayAnimation(ownerCreature, "cast").total;
             if (duration > 0f)
                 await Task.Delay((int)(0.2f * 1000f));
-            SfxCmd.Play("res://Squall/sfx/gunblade_explosion.wav");
             var targets = base.CombatState.HittableEnemies;
             foreach (var target in targets)
             {

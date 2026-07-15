@@ -28,10 +28,20 @@ public class Cactuar() : SquallCard(1, CardType.Skill,
         new PowerVar<ThornsPower>(3m)
     ];
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext,
+        CardPlay play)
     {
-        AudioHelper.PlayRandomDefend();
+        var ownerCreature = Owner?.Creature;
+
+        if (ownerCreature != null && Owner?.Character is Character.Squall squall)
+        {
+            AudioHelper.PlayRandomDefend();
+            float duration = squall.PlayAnimation(ownerCreature, "cactuar").total;
+            if (duration > 0f)
+                await Task.Delay((int)(0.2f * 1000f));
+        }
         await PowerCmd.Apply<ThornsPower>(choiceContext, base.Owner.Creature, DynamicVars["ThornsPower"].BaseValue, base.Owner.Creature, this);
+        await Task.Delay((int)(0.5f * 1000f));
     }
 
     protected override void OnUpgrade()

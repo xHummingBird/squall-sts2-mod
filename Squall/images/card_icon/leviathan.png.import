@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3vko7t7qed0d"
-path="res://.godot/imported/apoocalypse.png-9d60ea969fc5dbf9397cf779f9c9742a.ctex"
+uid="uid://c0uj7kk2vly2y"
+path="res://.godot/imported/leviathan.png-fc6cb878e644092f708c0bcf226dedda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squall/images/card_portraits/big/apoocalypse.png"
-dest_files=["res://.godot/imported/apoocalypse.png-9d60ea969fc5dbf9397cf779f9c9742a.ctex"]
+source_file="res://Squall/images/card_icon/leviathan.png"
+dest_files=["res://.godot/imported/leviathan.png-fc6cb878e644092f708c0bcf226dedda.ctex"]
 
 [params]
 

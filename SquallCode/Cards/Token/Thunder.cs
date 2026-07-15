@@ -22,7 +22,15 @@ public class Thunder() : SquallCard(0, CardType.Attack,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        SfxCmd.Play("res://Squall/sounds/thunder.wav");
+        var ownerCreature = Owner?.Creature;
+
+        if (ownerCreature != null && Owner?.Character is Character.Squall squall)
+        {
+            SfxCmd.Play("res://Squall/sounds/thunder.wav");
+            float duration = squall.PlayAnimation(ownerCreature, "cast").total;
+            if (duration > 0f)
+                await Task.Delay((int)(0.2f * 1000f));
+        }
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, play)
             .TargetingRandomOpponents(base.CombatState)

@@ -51,7 +51,7 @@ public class Squall : PlaceholderCharacterModel
         ModelDb.Card<StrikeSquall>(),
         ModelDb.Card<Quickshot>(),
         ModelDb.Card<Renzokuken>(),
-        //ModelDb.Card<SummonGf>(),
+        ModelDb.Card<SummonGf>(),
         ModelDb.Card<DefendSquall>(),
         ModelDb.Card<DefendSquall>(),
         ModelDb.Card<DefendSquall>(),

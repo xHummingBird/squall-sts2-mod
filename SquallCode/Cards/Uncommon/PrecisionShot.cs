@@ -15,6 +15,7 @@ namespace Squall.SquallCode.Cards.Uncommon;
 public class PrecisionShot() : SquallCard(1, CardType.Attack,
     CardRarity.Uncommon, TargetType.AnyEnemy)
 {
+    protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<MarkedPower>()

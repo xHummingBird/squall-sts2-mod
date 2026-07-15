@@ -13,7 +13,7 @@ public class SeedTraining() : SquallCard(1, CardType.Skill,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(5m, ValueProp.Move),
+        new BlockVar(6m, ValueProp.Move),
         new CardsVar(1)
     ];
 

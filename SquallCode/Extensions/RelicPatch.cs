@@ -31,18 +31,18 @@ internal static class SquallArchaicToothTranscendencePatch
 }
 
 
-// [HarmonyPatch(typeof(DustyTome), nameof(DustyTome.AfterObtained))]
-// public static class DustyTomePatch
-// {
-//     [HarmonyPrefix]
-//     public static void Prefix(DustyTome __instance)
-//     {
-//         if (__instance.Owner?.Character is not Character.Squall)
-//             return;
-//
-//         if (__instance.AncientCard == null)
-//         {
-//             __instance.AncientCard = ModelDb.Card<HerosLastWish>().Id;
-//         }
-//     }
-// }
+[HarmonyPatch(typeof(DustyTome), nameof(DustyTome.AfterObtained))]
+public static class DustyTomePatch
+{
+    [HarmonyPrefix]
+    public static void Prefix(DustyTome __instance)
+    {
+        if (__instance.Owner?.Character is not Character.Squall)
+            return;
+
+        if (__instance.AncientCard == null)
+        {
+            __instance.AncientCard = ModelDb.Card<HeartOfLion>().Id;
+        }
+    }
+}

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dore1pr2fg306"
-path="res://.godot/imported/shear_trigger.png-8e89ee6e634c1831998211219adf4fc0.ctex"
+uid="uid://c68kbk1rdll8m"
+path="res://.godot/imported/hidden_charm.png-87ff8424bcaef6f59cadf57c00af4b5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squall/images/card_portraits/big/shear_trigger.png"
-dest_files=["res://.godot/imported/shear_trigger.png-8e89ee6e634c1831998211219adf4fc0.ctex"]
+source_file="res://Squall/images/card_portraits/big/hidden_charm.png"
+dest_files=["res://.godot/imported/hidden_charm.png-87ff8424bcaef6f59cadf57c00af4b5b.ctex"]
 
 [params]
 

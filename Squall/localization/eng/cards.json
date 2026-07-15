@@ -50,8 +50,8 @@
   "SQUALL-PUNISHMENT.description": "Deal {Damage:diff()} damage.",
   "SQUALL-PUNISHMENT.title": "Punishment",
 
-  "SQUALL-CUTTING_TRIGGER.description": "Deal {Damage:diff()} damage.",
-  "SQUALL-CUTTING_TRIGGER.title": "Cutting Trigger",
+  "SQUALL-UNREFINED_EDGE.description": "Deal {Damage:diff()} damage.",
+  "SQUALL-UNREFINED_EDGE.title": "Unrefined Edge",
 
   "SQUALL-PROTECT.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-PROTECT.title": "Protect",
@@ -74,17 +74,17 @@
   "SQUALL-SHELL.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-SHELL.title": "Shell",
 
-  "SQUALL-SHEAR_TRIGGER.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
-  "SQUALL-SHEAR_TRIGGER.title": "Shear Trigger",
+  "SQUALL-AGILE_EDGE.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SQUALL-AGILE_EDGE.title": "Agile Edge",
 
   "SQUALL-HASTE.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "SQUALL-HASTE.title": "Haste",
 
-  "SQUALL-TORNADO.description": "Deal {Damage:diff()} damage to ALL enemies.",
-  "SQUALL-TORNADO.title": "Tornado",
+  "SQUALL-HIDDEN_CHARM.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain 5 [gold]Crisis[/gold].",
+  "SQUALL-HIDDEN_CHARM.title": "Hidden Charm",
 
-  "SQUALL-STR_JUNCTION.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
-  "SQUALL-STR_JUNCTION.title": "Str Junction",
+  "SQUALL-LIONS_MIGHT.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
+  "SQUALL-LIONS_MIGHT.title": "Lion's Might",
 
   "SQUALL-VIT_JUNCTION.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
   "SQUALL-VIT_JUNCTION.title": "Vit Junction",
@@ -101,7 +101,7 @@
   "SQUALL-DRAW_MAGIC.description": "At the start of your turn, add a Magic card to your hand based on your [gold]Junctioned[/gold] GF.",
   "SQUALL-DRAW_MAGIC.title": "Draw",
 
-  "SQUALL-CACTUAR.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {ThornsPower:diff()} [gold]Thorns[/gold].",
+  "SQUALL-CACTUAR.description": "Gain {ThornsPower:diff()} [gold]Thorns[/gold].",
   "SQUALL-CACTUAR.title": "Cactuar",
 
   "SQUALL-PULSE_AMMO.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and double [gold]Vigor[/gold] gain.",
@@ -170,19 +170,19 @@
   "SQUALL-RICOCHET.description": "Deal {Damage:diff()} damage. \nIf the target is [gold]Marked[/gold], damage ALL other enemies equal to the damage dealt.",
   "SQUALL-RICOCHET.title": "Ricochet",
 
-  "SQUALL-SHIVA.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-SHIVA.description": "[gold]Junction[/gold]: Gain 3 [blue]Block[/gold] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies. \nGain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-SHIVA.title": "Junction Shiva",
 
-  "SQUALL-QUEZACOATL.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
+  "SQUALL-QUEZACOATL.description": "[gold]Junction[/gold]: Draw 1 card on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
   "SQUALL-QUEZACOATL.title": "Junction Quezacoatl",
 
-  "SQUALL-LEVIATHAN.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and {WeakPower:diff()} [gold]Weak[/gold].",
+  "SQUALL-LEVIATHAN.description": "[gold]Junction[/gold]: Heal 2 [gold]HP[/gold] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold].",
   "SQUALL-LEVIATHAN.title": "Junction Leviathan",
 
-  "SQUALL-DIABOLOS.description": "Deal {Damage:diff()} damage, plus {HpPercent:diff()}% of the target's current HP.",
+  "SQUALL-DIABOLOS.description": "[gold]Junction[/gold]: Gain 5 [gold]Crisis[/gold] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: ALL enemies lose {Damage:diff()} HP and {HpPercent:diff()}% of their current HP.",
   "SQUALL-DIABOLOS.title": "Junction Diabolos",
 
-  "SQUALL-IFRIT.description": "Deal {Damage:diff()} damage to ALL enemies.",
+  "SQUALL-IFRIT.description": "[gold]Junction[/gold]: [gold]Firepower[/gold] gain 1 additional damage. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies.",
   "SQUALL-IFRIT.title": "Junction Ifrit",
 
   "SQUALL-SUMMON_GF.description": "Gain {Block:diff()} [gold]Block[/gold]. \nSummon your [gold]Junctioned[/gold] GF in {ChannelingGfPower} turns.",
@@ -226,6 +226,18 @@
 
   "SQUALL-GRAVIGA.description": "Deal damage equal to {HpPercent:diff()}% of each enemy's current HP.",
   "SQUALL-GRAVIGA.title": "Graviga",
+
+  "SQUALL-LIGHT_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
+  "SQUALL-LIGHT_BARRET.title": "Light Barret",
+
+  "SQUALL-DARK_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDeal additional damage equal to 5% of the target's [gold]Max HP[/gold].",
+  "SQUALL-DARK_BARRET.title": "Dark Barret",
+
+  "SQUALL-REARM.description": "Put 2 cards from your Discard Pile into your Hand. \n[gold]Firepower[/gold]\nGain {Energy:energyIcons()}.",
+  "SQUALL-REARM.title": "Rearm",
+
+  "SQUALL-HEART_OF_LION.description": "",
+  "SQUALL-HEART_OF_LION.title": "Heart Of A Lion",
 
   "SQUALL-GF_SELECT.junctionPrompt": "Choose a GF to Junction",
   "SQUALL-GF_SELECT.summonPrompt": "Choose a GF to Summon",
