@@ -170,7 +170,7 @@
   "SQUALL-RICOCHET.description": "Deal {Damage:diff()} damage. \nIf the target is [gold]Marked[/gold], damage ALL other enemies equal to the damage dealt.",
   "SQUALL-RICOCHET.title": "Ricochet",
 
-  "SQUALL-SHIVA.description": "[gold]Junction[/gold]: Gain 3 [blue]Block[/gold] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies. \nGain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-SHIVA.description": "[gold]Junction[/gold]: Gain 3 [blue]Block[/blue] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies. \nGain {Block:diff()} [blue]Block[/blue].",
   "SQUALL-SHIVA.title": "Junction Shiva",
 
   "SQUALL-QUEZACOATL.description": "[gold]Junction[/gold]: Draw 1 card on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
