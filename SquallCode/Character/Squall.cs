@@ -103,15 +103,12 @@ public class Squall : PlaceholderCharacterModel
     public override string CustomCharacterSelectIconPath => "char_select_squall.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_squall.png".CharacterUiPath();
-    // public override string CharacterSelectSfx => "res://Cloud/sounds/not_interested.wav";
-    // public override string CharacterTransitionSfx => "res://Cloud/sfx/sword_swing_heavy.wav";
-    
-    // public override string CustomCharacterSelectTransitionPath =>
-    //    "res://Cloud/images/transition/cloud_transition_mat.tres";
+    public override string CharacterSelectSfx => "res://Squall/sounds/run_start.wav";
+    public override string CharacterTransitionSfx => "res://Squall/sfx/gunblade_effect.wav";
     
     public override NCreatureVisuals? CreateCustomVisuals()
     {
-        // SquallAssets.EnsurePreloaded();
+        SquallAssets.EnsurePreloaded();
         return NodeFactory<NCreatureVisuals>.CreateFromScene(CustomVisualScenePath);
     }
     
