@@ -3,11 +3,12 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Mechanics.GF;
 
 namespace Squall.SquallCode.Cards.Token;
 
 public class Demi() : SquallCard(0, CardType.Attack,
-    CardRarity.Token, TargetType.AnyEnemy)
+    CardRarity.Token, TargetType.AnyEnemy), IGFCard
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [

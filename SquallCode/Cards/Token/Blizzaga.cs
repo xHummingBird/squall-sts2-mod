@@ -7,11 +7,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Mechanics.GF;
 
 namespace Squall.SquallCode.Cards.Token;
 
 public class Blizzaga() : SquallCard(0, CardType.Attack,
-    CardRarity.Token, TargetType.AllEnemies)
+    CardRarity.Token, TargetType.AllEnemies), IGFCard
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [

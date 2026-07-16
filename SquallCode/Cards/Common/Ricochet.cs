@@ -14,7 +14,7 @@ namespace Squall.SquallCode.Cards.Uncommon;
 public class Ricochet() : SquallCard(
     1,
     CardType.Attack,
-    CardRarity.Uncommon,
+    CardRarity.Common,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>

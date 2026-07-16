@@ -12,10 +12,10 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Powers;
 
-namespace Squall.SquallCode.Cards.Rare;
+namespace Squall.SquallCode.Cards.Uncommon;
 
 public class Fusillade() : SquallCard(2, CardType.Attack,
-    CardRarity.Common, TargetType.AllEnemies)
+    CardRarity.Uncommon, TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
@@ -53,7 +53,6 @@ public class Fusillade() : SquallCard(2, CardType.Attack,
                 }
             }
             await Task.Delay((int)(0.2f * 1000f));
-            SfxCmd.Play("res://Squall/sfx/ice.wav");
             foreach (var target in targets)
             {
                 squall.PlayVfxOnTarget(

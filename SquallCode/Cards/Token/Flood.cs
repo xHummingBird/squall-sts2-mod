@@ -5,11 +5,12 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Mechanics.GF;
 
 namespace Squall.SquallCode.Cards.Token;
 
 public class Flood() : SquallCard(0, CardType.Attack,
-    CardRarity.Token, TargetType.AllEnemies)
+    CardRarity.Token, TargetType.AllEnemies), IGFCard
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
