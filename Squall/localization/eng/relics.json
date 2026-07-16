@@ -21,5 +21,9 @@
 
   "SQUALL-JUNCTION_RING.description": "[gold]Junction[/gold] an additional GF at the start of combat.",
   "SQUALL-JUNCTION_RING.flavor": "",
-  "SQUALL-JUNCTION_RING.title": "Junction Ring"
+  "SQUALL-JUNCTION_RING.title": "Junction Ring",
+
+  "SQUALL-SLEEPING_LION.description": "Upgrade your [gold]Finisher[/gold].",
+  "SQUALL-SLEEPING_LION.flavor": "",
+  "SQUALL-SLEEPING_LION.title": "Sleeping Lion"
 }

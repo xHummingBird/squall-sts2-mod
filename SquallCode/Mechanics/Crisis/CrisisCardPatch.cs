@@ -90,7 +90,7 @@ public static class CrisisCardPatch
         if (hitbox == null)
             return;
 
-        if (model is not Renzokuken)
+        if (model is not (Renzokuken or HeartOfLion))
         {
             HideAll(hitbox);
             return;

@@ -52,7 +52,7 @@ public class Fusillade() : SquallCard(2, CardType.Attack,
                     SfxCmd.Play("event:/sfx/characters/attack_fire");
                 }
             }
-            await Task.Delay((int)(0.1f * 1000f));
+            await Task.Delay((int)(0.2f * 1000f));
             SfxCmd.Play("res://Squall/sfx/ice.wav");
             foreach (var target in targets)
             {
@@ -63,7 +63,8 @@ public class Fusillade() : SquallCard(2, CardType.Attack,
                 );
             }
             await Task.Delay((int)(0.2f * 1000f));
-            
+            SfxCmd.Play("res://Squall/sfx/ice.wav");
+
         }
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx("vfx/vfx_attack_lightning", "event:/sfx/characters/defect/defect_lightning_passive")

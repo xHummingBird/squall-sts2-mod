@@ -18,7 +18,7 @@ public class SavageClaw() : SquallCard(3, CardType.Attack,
     CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(14, ValueProp.Move),
+        new DamageVar(15, ValueProp.Move),
         new EnergyVar(1)
     ];
 

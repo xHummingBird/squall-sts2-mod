@@ -6,5 +6,5 @@ namespace Squall.SquallCode.Relics;
 //Handled in FirepowerRelicBase's first-turn junction flow.
 public class JunctionRing() : SquallRelic
 {
-    public override RelicRarity Rarity => RelicRarity.Rare;
+    public override RelicRarity Rarity => RelicRarity.Uncommon;
 }

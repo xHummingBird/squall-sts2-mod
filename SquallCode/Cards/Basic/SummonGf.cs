@@ -19,7 +19,7 @@ public class SummonGf() : SquallCard(2, CardType.Skill,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(8m, ValueProp.Move),
+        new BlockVar(5m, ValueProp.Move),
         new PowerVar<ChannelingGfPower>(3m)
     ];
 
@@ -67,6 +67,6 @@ public class SummonGf() : SquallCard(2, CardType.Skill,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(4m);
+        DynamicVars.Block.UpgradeValueBy(3m);
     }
 }

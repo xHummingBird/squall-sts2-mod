@@ -47,7 +47,7 @@ public class Quezacoatl() : SquallCard (0, CardType.Attack,
             .WithHitCount(DynamicVars.Repeat.IntValue)
             .WithHitFx("vfx/vfx_attack_lightning", "event:/sfx/characters/defect/defect_lightning_passive")
             .Execute(choiceContext);
-        await Task.Delay((int)(1.8f * 1000f));
+        await Task.Delay((int)(0.8f * 1000f));
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
     }
 

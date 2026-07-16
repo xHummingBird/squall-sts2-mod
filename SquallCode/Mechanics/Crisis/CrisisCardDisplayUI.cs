@@ -78,7 +78,7 @@ public static class CrisisCardDisplayUI
         if (model == null || body == null)
             return;
 
-        if (model is not Renzokuken)
+        if (model is not (Renzokuken or HeartOfLion))
         {
             HideAll(body);
             return;

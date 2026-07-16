@@ -12,7 +12,7 @@ public class MightyGuard() : SquallCard(2, CardType.Skill,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(20m, ValueProp.Move)
+        new BlockVar(18m, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

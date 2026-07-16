@@ -31,11 +31,15 @@
   "SQUALL-SHIVA_POWER.smartDescription": "Gain 3 Block on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Shiva.",
   "SQUALL-SHIVA_POWER.title": "Junction Shiva",
 
-  "SQUALL-CHANNELING_GF_POWER.description": "Summoning [gold]Junctioned[/gold] GF in [blue]{Amount}[/blue] turns.",
+  "SQUALL-CHANNELING_GF_POWER.description": "Summoning [gold]Junctioned[/gold] GF in [blue]3[/blue] turns.",
   "SQUALL-CHANNELING_GF_POWER.smartDescription": "Summoning [gold]Junctioned[/gold] GF in [blue]{Amount}[/blue] turns.",
   "SQUALL-CHANNELING_GF_POWER.title": "Channeling GF",
 
   "SQUALL-DRAW_MAGIC_POWER.description": "At the start of your turn, add a Magic card to your hand based on your [gold]Junctioned[/gold] GF.",
   "SQUALL-DRAW_MAGIC_POWER.smartDescription": "At the start of your turn, add a Magic card to your hand based on your [gold]Junctioned[/gold] GF.",
-  "SQUALL-DRAW_MAGIC_POWER.title": "Draw Magic"
+  "SQUALL-DRAW_MAGIC_POWER.title": "Draw Magic",
+
+  "SQUALL-GUNBLADE_MASTERY_POWER.description": "Gain 1 [gold]Strength[/gold] on [gold]Firepower[/gold] consumption.",
+  "SQUALL-GUNBLADE_MASTERY_POWER.smartDescription": "Gain [blue]{Amount}[/blue] Strength on [gold]Firepower[/gold] consumption.",
+  "SQUALL-GUNBLADE_MASTERY_POWER.title": "Gunblade Mastery"
 }

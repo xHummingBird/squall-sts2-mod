@@ -22,7 +22,7 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
     protected override bool ShouldGlowGoldInternal => Owner.HasPower<FinisherPower>();
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(14, ValueProp.Move),
+        new DamageVar(13, ValueProp.Move),
     ];
 
     protected override async Task OnPlay(
@@ -37,10 +37,11 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
         var lh = CombatState.CreateCard<LionheartCard>(base.Owner);
         
         Lionheart? lionheart = base.Owner?.GetRelic<Lionheart>();
+        SleepingLion? sleepingLion = base.Owner?.GetRelic<SleepingLion>();
         
         if (CrisisManager.GetCrisis(base.Owner) >= 100)
         {
-            if (base.IsUpgraded)
+            if (sleepingLion != null)
             {
                 CardCmd.Upgrade(rd);
                 CardCmd.Upgrade(fc);
@@ -55,7 +56,6 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
                 cards.Add(lh);
             }
             selectedFinisher = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards.ToList(), base.Owner, canSkip: false);
-            CrisisManager.SetCrisis(base.Owner, 0);
             _finisher = true;
         }
         
@@ -111,6 +111,6 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
     }
     protected override void OnUpgrade()
     {
-        
+        DynamicVars.Damage.UpgradeValueBy(5m);
     }
 }

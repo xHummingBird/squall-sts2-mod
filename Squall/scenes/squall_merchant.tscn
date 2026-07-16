@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvav8dhfb4511"]
+
+[ext_resource type="Script" uid="uid://dpkvpir1pjtwl" path="res://SquallCode/Nodes/SquallNMerchantCharacter.cs" id="1_6vuf4"]
+[ext_resource type="Texture2D" uid="uid://cf2r26xrgn4ah" path="res://Squall/images/spritesheets/merchant/squall_merchant.png" id="1_dp20p"]
+
+[sub_resource type="Animation" id="Animation_75rig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_e2xak"]
+resource_name = "merchant"
+length = 0.533
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_dp20p")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5qtd8"]
+_data = {
+&"RESET": SubResource("Animation_75rig"),
+&"merchant": SubResource("Animation_e2xak")
+}
+
+[node name="SquallMerchant" type="Node2D"]
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_6vuf4")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+position = Vector2(-13.333333, -46)
+scale = Vector2(-1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5qtd8")
+}
+autoplay = "merchant"

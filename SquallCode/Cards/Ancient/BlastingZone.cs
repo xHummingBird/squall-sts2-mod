@@ -16,7 +16,7 @@ public class BlastingZone() : SquallCard(0, CardType.Attack,
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(30m, ValueProp.Move),
+        new DamageVar(24m, ValueProp.Move),
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -54,6 +54,6 @@ public class BlastingZone() : SquallCard(0, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(5);
+        DynamicVars.Damage.UpgradeValueBy(8);
     }
 }

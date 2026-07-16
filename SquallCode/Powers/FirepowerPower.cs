@@ -93,14 +93,4 @@ public class FirepowerPower : SquallPower
         }
         return base.Amount;
     }
-
-    public override async Task AfterAttack(PlayerChoiceContext choiceContext, AttackCommand command)
-    {
-        Data internalData = GetInternalData<Data>();
-        
-        if (command == internalData.commandToModify)
-        {
-            await PowerCmd.ModifyAmount(choiceContext, this, -internalData.amountWhenAttackStarted, null, null);
-        }
-    }
 }

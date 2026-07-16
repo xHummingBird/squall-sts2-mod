@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3fsldo7plb6i"]
+
+[ext_resource type="Script" uid="uid://bgenegu7cslt3" path="res://SquallCode/Nodes/SquallNRestSiteCharacter.cs" id="1_2edbv"]
+[ext_resource type="Texture2D" uid="uid://gvonrsapg3ne" path="res://Squall/images/spritesheets/rest_site/00_rest_site.png" id="2_wcghy"]
+[ext_resource type="Texture2D" uid="uid://dn52rg6icu5qp" path="res://Squall/images/spritesheets/rest_site/01_rest_site.png" id="3_h6h3a"]
+[ext_resource type="Script" uid="uid://c40kpk5uabdwr" path="res://SquallCode/Nodes/SquallNSelectionReticle.cs" id="3_pr50u"]
+[ext_resource type="Texture2D" uid="uid://0v2w5nn2ym3p" path="res://Squall/images/spritesheets/rest_site/02_rest_site.png" id="4_wdoki"]
+[ext_resource type="Texture2D" uid="uid://dn4mmv4ilt275" path="res://Squall/images/spritesheets/rest_site/03_rest_site.png" id="5_ck7er"]
+
+[sub_resource type="Animation" id="Animation_dhhn8"]
+resource_name = "rest_site"
+length = 0.533
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_wcghy"), ExtResource("3_h6h3a"), ExtResource("4_wdoki"), ExtResource("5_ck7er")]
+}
+
+[sub_resource type="Animation" id="Animation_86dm2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wcghy")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwksx"]
+_data = {
+&"RESET": SubResource("Animation_86dm2"),
+&"rest_site": SubResource("Animation_dhhn8")
+}
+
+[node name="SoraRestSite" type="Node2D"]
+scale = Vector2(1.75, 1.75)
+script = ExtResource("1_2edbv")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+position = Vector2(112.57143, 24)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_wcghy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lwksx")
+}
+autoplay = "rest_site"
+
+[node name="ControlRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SelectionReticle" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 1.514
+anchor_top = -3.2860003
+anchor_right = 5.0
+anchor_bottom = 3.2
+offset_left = 0.011425018
+offset_top = 0.011444092
+offset_right = -1.5258789e-05
+offset_bottom = -3.0517578e-05
+script = ExtResource("3_pr50u")
+
+[node name="Hitbox" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 1.386
+anchor_top = -3.2710001
+anchor_right = 5.0860004
+anchor_bottom = 3.1430001
+offset_left = -0.011425018
+offset_top = -0.017120361
+offset_right = -0.011459351
+offset_bottom = -0.005722046
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 193.7143
+offset_top = -105.14285
+offset_right = 193.7143
+offset_bottom = -105.14285
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 62.28571
+offset_top = -98.85714
+offset_right = 62.28571
+offset_bottom = -98.85714

@@ -16,8 +16,8 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Rare;
 
-public class LightBarret() : SquallCard(1, CardType.Skill,
-    CardRarity.Rare, TargetType.Self)
+public class LightBarret() : SquallCard(1, CardType.Attack,
+    CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -37,8 +37,6 @@ public class LightBarret() : SquallCard(1, CardType.Skill,
         if (ownerCreature != null && Owner?.Character is Character.Squall squall)
         {
             AudioHelper.PlayRandomPhrase();
-            
-               
             float duration = squall.PlayAnimation(ownerCreature, "shoot").total;
             if (duration > 0f)
                 await Task.Delay((int)(0.36f * 1000f));

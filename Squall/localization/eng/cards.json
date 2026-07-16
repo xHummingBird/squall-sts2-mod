@@ -17,7 +17,7 @@
   "SQUALL-FATED_CIRCLE.description": "Deal {Damage:diff()} damage ALL enemies. \n[gold]Stun[/gold] the selected enemy.",
   "SQUALL-FATED_CIRCLE.title": "Fated Circle",
 
-  "SQUALL-ROUGH_DIVIDE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold[Vulnerable[/gold].",
+  "SQUALL-ROUGH_DIVIDE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "SQUALL-ROUGH_DIVIDE.title": "Rough Divide",
 
   "SQUALL-LIONHEART_CARD.description": "Test",
@@ -46,9 +46,6 @@
 
   "SQUALL-CRISIS_TEST.description": "Test",
   "SQUALL-CRISIS_TEST.title": "CrisisTest",
-
-  "SQUALL-PUNISHMENT.description": "Deal {Damage:diff()} damage.",
-  "SQUALL-PUNISHMENT.title": "Punishment",
 
   "SQUALL-UNREFINED_EDGE.description": "Deal {Damage:diff()} damage.",
   "SQUALL-UNREFINED_EDGE.title": "Unrefined Edge",
@@ -86,8 +83,8 @@
   "SQUALL-LIONS_MIGHT.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
   "SQUALL-LIONS_MIGHT.title": "Lion's Might",
 
-  "SQUALL-VIT_JUNCTION.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
-  "SQUALL-VIT_JUNCTION.title": "Vit Junction",
+  "SQUALL-LIONS_COMPOSURE.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
+  "SQUALL-LIONS_COMPOSURE.title": "Lion's Composure",
 
   "SQUALL-PRECISION_SHOT.description": "Deal {Damage:diff()} damage. \nIf enemy is [gold]Marked[/gold], apply [gold]Marked[/gold].",
   "SQUALL-PRECISION_SHOT.title": "Precision Shot",
@@ -107,12 +104,6 @@
   "SQUALL-PULSE_AMMO.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and double [gold]Vigor[/gold] gain.",
   "SQUALL-PULSE_AMMO.title": "Pulse Ammo",
 
-  "SQUALL-ULTIMA.description": "Deal {Damage:diff()} damage to ALL enemies.",
-  "SQUALL-ULTIMA.title": "Ultima",
-
-  "SQUALL-APOCALYPSE.description": "Deal {Damage:diff()} damage.",
-  "SQUALL-APOCALYPSE.title": "Apocalypse",
-
   "SQUALL-AURA.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
   "SQUALL-AURA.title": "Aura",
 
@@ -121,15 +112,6 @@
 
   "SQUALL-BERSERK.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and gain 1 [gold]Strength[/gold].",
   "SQUALL-BERSERK.title": "Berserk",
-
-  "SQUALL-CARBUNCLE.description": "Gain {BufferPower:diff()} [gold]Buffer[/gold].",
-  "SQUALL-CARBUNCLE.title": "Carbuncle",
-
-  "SQUALL-CURAGA.description": "Heal {Heal:diff()} HP.",
-  "SQUALL-CURAGA.title": "Curaga",
-
-  "SQUALL-METEOR.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
-  "SQUALL-METEOR.title": "Meteor",
 
   "SQUALL-PERFECT_TRIGGER.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
   "SQUALL-PERFECT_TRIGGER.title": "Perfect Trigger",
@@ -158,7 +140,7 @@
   "SQUALL-DEFENSIVE_MANEUVER.description": "Gain {Block:diff()} [gold]Block[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain [blue]Block[/blue] an additional time.",
   "SQUALL-DEFENSIVE_MANEUVER.title": "Defensive Maneuver",
 
-  "SQUALL-UPPER_BLUES.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nGain [blue]Block[/gold] equal to damage dealt.",
+  "SQUALL-UPPER_BLUES.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nGain [blue]Block[/blue] equal to damage dealt.",
   "SQUALL-UPPER_BLUES.title": "Upper Blues",
 
   "SQUALL-ICE_ARMOR.description": "Gain {PlatingPower:diff()} [gold]Plating[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain double [gold]Plating[/gold].",
@@ -234,11 +216,21 @@
   "SQUALL-DARK_BARRET.title": "Dark Barret",
 
   "SQUALL-REARM.description": "Put 2 cards from your Discard Pile into your Hand. \n[gold]Firepower[/gold]\nGain {Energy:energyIcons()}.",
+  "SQUALL-REARM.selectionScreenPrompt": "Choose {Amount} {Amount:plural:Card|Cards} to return to your Hand",
   "SQUALL-REARM.title": "Rearm",
 
-  "SQUALL-HEART_OF_LION.description": "",
+  "SQUALL-HEART_OF_LION.description": "Perform a [gold]Finisher[/gold].",
   "SQUALL-HEART_OF_LION.title": "Heart Of A Lion",
 
+  "SQUALL-CRISIS_GUARD.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "SQUALL-CRISIS_GUARD.title": "Crisis Guard",
+
+  "SQUALL-REVOLVER_DRIVE.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SQUALL-REVOLVER_DRIVE.title": "Revolver Drive",
+
+  "SQUALL-GUNBLADE_MASTERY.description": "Gain 1 [gold]Strength[/gold] on [gold]Firepower[/gold] consumption.",
+  "SQUALL-GUNBLADE_MASTERY.title": "Gunblade Mastery",
+  
   "SQUALL-GF_SELECT.junctionPrompt": "Choose a GF to Junction",
   "SQUALL-GF_SELECT.summonPrompt": "Choose a GF to Summon",
   "SQUALL-GF_SELECT.drawPrompt": "Choose a Magic to draw",

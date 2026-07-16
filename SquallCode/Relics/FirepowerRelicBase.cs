@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Cards.Ancient;
@@ -134,6 +135,17 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         if (base.Owner.Creature.HasPower<DiabolosPower>())
             CrisisManager.GainCrisis(Owner, 10);
         else CrisisManager.GainCrisis(Owner, 5);
+
+        if (base.Owner.Creature.HasPower<GunbladeMasteryPower>())
+        {
+            decimal GMAmount = base.Owner.Creature.GetPowerAmount<GunbladeMasteryPower>();
+            await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, GMAmount, base.Owner.Creature, null);
+        }
+        
+        if (base.Owner.Creature.HasPower<FirepowerPower>())
+        {
+            await PowerCmd.Remove<FirepowerPower>(base.Owner.Creature);
+        }
     }
 
     public int GetFirepowerProgressForUI()

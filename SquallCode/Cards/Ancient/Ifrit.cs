@@ -47,20 +47,43 @@ CardRarity.Ancient, TargetType.AllEnemies), IGFCard
             if (duration > 0f)
                 await Task.Delay((int)(1.2f * 1000f));
         }
-        NCreature nCreature = NCombatRoom.Instance?.GetCreatureNode(cardPlay.Target);
-        if (nCreature != null)
         {
-            NLargeMagicMissileVfx nLargeMagicMissileVfx = NLargeMagicMissileVfx.Create(nCreature.GetBottomOfHitbox(), new Color(Colors.Red));
-            NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(nLargeMagicMissileVfx);
-            await Cmd.Wait(nLargeMagicMissileVfx.WaitTime);
+            var enemies = base.CombatState.HittableEnemies.ToList();
+            if (enemies.Count == 0)
+                return;
+            Vector2 center = Vector2.Zero;
+            int count = 0;
+            foreach (var enemy in enemies)
+            {
+                var node = NCombatRoom.Instance?.GetCreatureNode(enemy);
+                if (node != null)
+                {
+                    center += node.GetBottomOfHitbox();
+                    count++;
+                }
+            }
+            if (count == 0)
+                return;
+            center /= count;
+            NLargeMagicMissileVfx vfx = NLargeMagicMissileVfx.Create(center, new Color("50b598"));
+            NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(vfx);
+            await Cmd.Wait(vfx.WaitTime);
         }
-        await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
-            .WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+        await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
+            .WithHitFx("vfx/vfx_heavy_blunt", null, "blunt_attack.mp3")
+            .WithHitVfxSpawnedAtBase()
             .BeforeDamage(async delegate
             {
-                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NGroundFireVfx.Create(cardPlay.Target));
-                SfxCmd.Play("event:/sfx/characters/attack_fire");
-                NGame.Instance.ScreenShake(ShakeStrength.Strong, ShakeDuration.Normal);
+                var targets = base.CombatState.HittableEnemies;
+                foreach (var target in targets)
+                {
+                    var vfx = NGroundFireVfx.Create(target, VfxColor.Red);
+                    if (vfx != null)
+                    {
+                        NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(vfx);
+                        SfxCmd.Play("event:/sfx/characters/attack_fire");
+                    }
+                }
             })
             .Execute(choiceContext);
         await Task.Delay((int)(1.9f * 1000f));

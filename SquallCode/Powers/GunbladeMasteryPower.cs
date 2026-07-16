@@ -1,6 +1,10 @@
-﻿namespace Squall.SquallCode.Powers;
+﻿using MegaCrit.Sts2.Core.Entities.Powers;
 
-public class GunbladeMasteryPower
+namespace Squall.SquallCode.Powers;
+
+public class GunbladeMasteryPower: SquallPower
 {
-    
+    public override PowerType Type => PowerType.Buff;
+
+    public override PowerStackType StackType => PowerStackType.Counter;
 }
