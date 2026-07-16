@@ -1,7 +1,7 @@
 {
   "SQUALL_CRISIS.title": "Crisis Level",
-  "SQUALL_CRISIS.description": "Reflects Squall's current danger level.\n\nGain 5 Crisis at the start of your turn, from attacks, and Firepower consumptions from attacks.\nGain Crisis equal to damage taken. \nGain Crisis equal to HP lost at the start of combat.\n\nAt 100 Crisis, put [gold]Renzokuken[/gold] into your Hand from anywhere and reduce its cost to 0.\n\nAfter using [gold]Renzokuken[/gold], consume [blue]100[/blue] Crisis to unleash a Finisher.",
+  "SQUALL_CRISIS.description": "Reflects Squall's current danger level.\n\nGain 5 Crisis from attacks and Firepower consumptions.\nGain Crisis equal to damage taken. \nGain Crisis equal to HP lost at the start of combat.\n\nAt 100 Crisis, put [gold]Renzokuken[/gold] into your Hand from anywhere and reduce its cost to 0.\n\nAfter using [gold]Renzokuken[/gold], consume [blue]100[/blue] Crisis to unleash a Finisher.",
 
   "SQUALL_FIREPOWER.title": "Firepower",
-  "SQUALL_FIREPOWER.description": "Build [gold]Firepower[/gold] by attacking. After 3 attacks, your next Attack consumes Firepower and deals bonus damage. At full [gold]Crisis Level[/gold], Firepower will be consumed by "
+  "SQUALL_FIREPOWER.description": "Build [gold]Firepower[/gold] by attacking. After 3 attacks, your next Attack consumes [gold]Firepower[/gold] and deals bonus damage."
 }

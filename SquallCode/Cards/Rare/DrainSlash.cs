@@ -30,7 +30,7 @@ public class DrainSlash() : SquallCard(1, CardType.Attack,
         if (base.Owner.HasPower<FirepowerPower>())
             hasFirePower = true;
         var ownerCreature = Owner?.Creature;
-        decimal healAmount = DynamicVars.Damage.PreviewValue * (1.0m + DynamicVars.Heal.BaseValue / 100m);
+        decimal healAmount = DynamicVars.Damage.PreviewValue * (DynamicVars.Heal.BaseValue / 100m);
         if (ownerCreature != null && Owner?.Character is Character.Squall squall)
         {
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
