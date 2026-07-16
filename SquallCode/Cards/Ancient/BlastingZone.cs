@@ -18,6 +18,11 @@ public class BlastingZone() : SquallCard(0, CardType.Attack,
     [
         new DamageVar(24m, ValueProp.Move),
     ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {

@@ -197,7 +197,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         if (card.Owner != Owner)
             return;
 
-        if (card is not IFinisherCard && card is not IGFCard)
+        if (card is not IFinisherCard && card is not IGFCard && card.Type == CardType.Attack)
         {
             CrisisManager.GainCrisis(Owner, 5);
         }

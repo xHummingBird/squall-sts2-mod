@@ -19,6 +19,11 @@ public class RoughDivide() : SquallCard(0, CardType.Attack,
         new DamageVar(27m, ValueProp.Move),
         new PowerVar<VulnerablePower>(2m)
     ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {

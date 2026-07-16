@@ -55,9 +55,9 @@ public class Shiva() : SquallCard (0, CardType.Attack,
                 );
             }
             await Task.Delay((int)(0.2333f * 1000f));
-            SfxCmd.Play("res://Cloud/sfx/ice.wav");
+            SfxCmd.Play("res://Squall/sfx/ice.wav");
             await Task.Delay((int)(0.7f * 1000f));
-            SfxCmd.Play("res://Cloud/sfx/ice_2.wav");
+            SfxCmd.Play("res://Squall/sfx/ice_2.wav");
         }
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, play).TargetingAllOpponents(base.CombatState)
             .BeforeDamage(async delegate

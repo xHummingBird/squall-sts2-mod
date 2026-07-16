@@ -102,9 +102,7 @@ public partial class CrisisDisplayOverlay : Control
 
         _crisisDisplay.MouseFilter = MouseFilterEnum.Ignore;
         _crisisDisplay.SetAnchorsPreset(LayoutPreset.BottomLeft);
-
-        // Same position as Cloud Limit.
-        // Adjust this if Squall gets multiple overlays like Crisis/AP/Firepower.
+        
         _crisisDisplay.Position = new Vector2(-70, 120);
         _crisisDisplay.Visible = true;
 
