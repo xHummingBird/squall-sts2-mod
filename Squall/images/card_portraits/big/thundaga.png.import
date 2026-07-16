@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b27jaayamqbsl"
-path="res://.godot/imported/hyper_shot.png-e831cefc9ec453f6b6b867118af13055.ctex"
+uid="uid://dbti4nby2ksrc"
+path="res://.godot/imported/thundaga.png-54f2dce9636d6bd2c510755621014cf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squall/images/card_portraits/big/hyper_shot.png"
-dest_files=["res://.godot/imported/hyper_shot.png-e831cefc9ec453f6b6b867118af13055.ctex"]
+source_file="res://Squall/images/card_portraits/big/thundaga.png"
+dest_files=["res://.godot/imported/thundaga.png-54f2dce9636d6bd2c510755621014cf0.ctex"]
 
 [params]
 
