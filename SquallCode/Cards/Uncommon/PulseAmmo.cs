@@ -1,3 +1,4 @@
+using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -14,6 +15,7 @@ namespace Squall.SquallCode.Cards.Uncommon;
 public class PulseAmmo() : SquallCard(1, CardType.Skill,
     CardRarity.Uncommon, TargetType.Self)
 {
+    protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
         CardKeyword.Exhaust

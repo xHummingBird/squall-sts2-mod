@@ -67,11 +67,7 @@ public class Squall : PlaceholderCharacterModel
     public override CardPoolModel CardPool => ModelDb.CardPool<SquallCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<SquallRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<SquallPotionPool>();
-
-    /*  PlaceholderCharacterModel will utilize placeholder basegame assets for most of your character assets until you
-        override all the other methods that define those assets.
-        These are just some of the simplest assets, given some placeholders to differentiate your character with.
-        You don't have to, but you're suggested to rename these images. */
+    
     public override Control CustomIcon
     {
         get
@@ -405,7 +401,7 @@ public class Squall : PlaceholderCharacterModel
 
             uint choiceId = RunManager.Instance.PlayerChoiceSynchronizer.ReserveChoiceId(player);
 
-            await context.SignalPlayerChoiceBegun(PlayerChoiceOptions.None);
+            await context.SignalPlayerChoiceBegun(player, PlayerChoiceOptions.None);
 
             CardModel? result;
 			

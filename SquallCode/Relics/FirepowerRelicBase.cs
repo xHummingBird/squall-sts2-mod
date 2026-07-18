@@ -328,7 +328,8 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         }
 
         if (base.Owner.Creature.HasPower<DiabolosPower>())
-            CrisisManager.GainCrisis(Owner, 5);
+            CrisisManager.GainCrisis(Owner, 10);
+        else CrisisManager.GainCrisis(Owner, 5);
 
         await Owner.Creature.CheckCrisisReady(
             null,

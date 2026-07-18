@@ -13,7 +13,7 @@ using Squall.SquallCode.Powers;
 namespace Squall.SquallCode.Cards.Rare;
 
 public class RevolverDrive() : SquallCard(2, CardType.Attack,
-    CardRarity.Uncommon, TargetType.AnyEnemy)
+    CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
 

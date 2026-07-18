@@ -14,7 +14,7 @@ public class Backshot() : SquallCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(10m, ValueProp.Move),
+        new DamageVar(8m, ValueProp.Move),
         new BlockVar(5m, ValueProp.Move)
     ];
 

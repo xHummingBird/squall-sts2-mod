@@ -13,6 +13,7 @@ namespace Squall.SquallCode.Cards.Rare;
 public class Berserk() : SquallCard(2, CardType.Skill,
     CardRarity.Rare, TargetType.Self)
 {
+    protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<StrengthPower>()
