@@ -1,4 +1,4 @@
-﻿using BaseLib.Extensions;
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -104,12 +104,18 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         }
     }
 
+    //Resonance: Junction bonuses apply one additional time per stack.
+    private int JunctionBonusTimes =>
+        1 + base.Owner.Creature.GetPowerAmount<ResonancePower>();
+
     public async Task ConsumeFirepower(PlayerChoiceContext? choiceContext)
     {
         FirepowerPrimed = false;
         FirepowerProgress = 0;
 
         Creature owner = base.Owner.Creature;
+
+        int times = JunctionBonusTimes;
 
         decimal shivaAmount = owner.GetPowerAmount<ShivaPower>();
         decimal leviathanAmount = owner.GetPowerAmount<LeviathanPower>();
@@ -120,7 +126,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         {
             await CreatureCmd.GainBlock(
                 owner,
-                3m * shivaAmount,
+                3m * shivaAmount * times,
                 ValueProp.Unpowered,
                 null
             );
@@ -130,7 +136,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         {
             await CreatureCmd.Heal(
                 owner,
-                2m * leviathanAmount,
+                2m * leviathanAmount * times,
                 true
             );
         }
@@ -139,17 +145,22 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         {
             await CardPileCmd.Draw(
                 choiceContext,
-                (int)quezacoatlAmount,
+                (int)quezacoatlAmount * times,
                 base.Owner
             );
         }
 
         // Base Firepower consume gives 5 Crisis.
-        // Each Diabolos stack adds another 5 Crisis.
+        // Each Diabolos stack adds another 3 Crisis (scaled by Resonance).
         CrisisManager.GainCrisis(
             Owner,
-            5 + ((int)diabolosAmount * 3)
+            5 + ((int)diabolosAmount * 3 * times)
         );
+
+        var barrage = owner.GetPower<BarrageProtocolPower>();
+
+        if (barrage != null)
+            await barrage.OnFirepowerConsumed(choiceContext);
 
         if (owner.HasPower<GunbladeMasteryPower>())
         {
@@ -278,7 +289,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         int ifritAmount = Owner.Creature.GetPowerAmount<IfritPower>();
 
         if (ifritAmount > 0)
-            amount += 2 * ifritAmount;
+            amount += 2 * ifritAmount * JunctionBonusTimes;
 
         await PowerCmd.Apply<FirepowerPower>(
             choiceContext,
@@ -371,7 +382,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
             //Junction Ring grants one additional Junction.
             if (base.Owner.GetRelic<JunctionRing>() != null)
                 await GfRegistry.JunctionNewGf(choiceContext, base.Owner);
-            
+
             if (base.Owner.GetRelic<LeviathanScale>() != null)
             {
                 FirepowerProgress = base.DynamicVars.Cards.IntValue;

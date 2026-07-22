@@ -35,11 +35,35 @@
   "SQUALL-CHANNELING_GF_POWER.smartDescription": "Summoning [gold]Junctioned[/gold] GF in [blue]{Amount}[/blue] turns.",
   "SQUALL-CHANNELING_GF_POWER.title": "Channeling GF",
 
-  "SQUALL-DRAW_MAGIC_POWER.description": "At the start of your turn, add a Magic card to your hand based on your [gold]Junctioned[/gold] GF.",
-  "SQUALL-DRAW_MAGIC_POWER.smartDescription": "At the start of your turn, add a Magic card to your hand based on your [gold]Junctioned[/gold] GF.",
+  "SQUALL-DRAW_MAGIC_POWER.description": "At the start of your turn, add the chosen GF's Magic to your hand.",
+  "SQUALL-DRAW_MAGIC_POWER.smartDescription": "At the start of your turn, add the chosen GF's Magic to your hand.",
   "SQUALL-DRAW_MAGIC_POWER.title": "Draw Magic",
 
   "SQUALL-GUNBLADE_MASTERY_POWER.description": "Gain 1 [gold]Strength[/gold] on [gold]Firepower[/gold] consumption.",
   "SQUALL-GUNBLADE_MASTERY_POWER.smartDescription": "Gain [blue]{Amount}[/blue] Strength on [gold]Firepower[/gold] consumption.",
-  "SQUALL-GUNBLADE_MASTERY_POWER.title": "Gunblade Mastery"
+  "SQUALL-GUNBLADE_MASTERY_POWER.title": "Gunblade Mastery",
+
+  "SQUALL-RESONANCE_POWER.description": "[gold]Junction[/gold] bonuses apply an additional time.",
+  "SQUALL-RESONANCE_POWER.smartDescription": "[gold]Junction[/gold] bonuses apply [blue]{Amount}[/blue] additional {Amount:plural:time|times}.",
+  "SQUALL-RESONANCE_POWER.title": "Resonance",
+
+  "SQUALL-FULL_BURST_POWER.description": "While [gold]Firepower[/gold] is full, your Attacks cost 0.",
+  "SQUALL-FULL_BURST_POWER.smartDescription": "While [gold]Firepower[/gold] is full, {OnPlayer:your|[gold]{OwnerName}'s[/gold]} Attacks cost 0.",
+  "SQUALL-FULL_BURST_POWER.title": "Full Burst",
+
+  "SQUALL-BARRAGE_PROTOCOL_POWER.description": "Whenever [gold]Firepower[/gold] is consumed, deal 5 damage to ALL enemies.",
+  "SQUALL-BARRAGE_PROTOCOL_POWER.smartDescription": "Whenever [gold]Firepower[/gold] is consumed, deal [blue]{Amount}[/blue] damage to ALL enemies.",
+  "SQUALL-BARRAGE_PROTOCOL_POWER.title": "Barrage Protocol",
+
+  "SQUALL-MARK_OF_THE_LION_POWER.description": "At the start of your turn, apply 1 [gold]Marked[/gold] to a random enemy.",
+  "SQUALL-MARK_OF_THE_LION_POWER.smartDescription": "At the start of your turn, apply [blue]{Amount}[/blue] [gold]Marked[/gold] to random enemies.",
+  "SQUALL-MARK_OF_THE_LION_POWER.title": "Mark of the Lion",
+
+  "SQUALL-TARGET_ACQUIRED_POWER.description": "The first time [gold]Marked[/gold] is triggered each turn, reapply 1 [gold]Marked[/gold].",
+  "SQUALL-TARGET_ACQUIRED_POWER.smartDescription": "The first time [gold]Marked[/gold] is triggered each turn, reapply [blue]{Amount}[/blue] [gold]Marked[/gold].",
+  "SQUALL-TARGET_ACQUIRED_POWER.title": "Target Acquired",
+
+  "SQUALL-KILL_SECURED_POWER.description": "The first time you apply [gold]Marked[/gold] from a card each turn, gain 1 Energy.",
+  "SQUALL-KILL_SECURED_POWER.smartDescription": "The first time you apply [gold]Marked[/gold] from a card each turn, gain [blue]{Amount}[/blue] Energy.",
+  "SQUALL-KILL_SECURED_POWER.title": "Kill Secured"
 }

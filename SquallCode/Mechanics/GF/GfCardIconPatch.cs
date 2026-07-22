@@ -35,7 +35,7 @@ public static class GfCardIconPatch
         if (hitbox == null)
             return;
 
-        if (model is not (SummonGf or PerfectJunction or DrawMagic or CastMagic or Stock))
+        if (model is not (SummonGf or PerfectJunction or QuickSummon or DrawMagic or CastMagic or Stock))
         {
             HideAll(hitbox);
             return;

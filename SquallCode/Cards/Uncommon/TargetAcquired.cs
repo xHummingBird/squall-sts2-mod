@@ -6,33 +6,34 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using Squall.SquallCode.Powers;
 
-namespace Squall.SquallCode.Cards.Rare;
+namespace Squall.SquallCode.Cards.Uncommon;
 
-public class BarrageProtocol() : SquallCard(2, CardType.Power,
-    CardRarity.Rare, TargetType.Self)
+public class TargetAcquired() : SquallCard(1, CardType.Power,
+    CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<BarrageProtocolPower>()
+        HoverTipFactory.FromPower<TargetAcquiredPower>(),
+        HoverTipFactory.FromPower<MarkedPower>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<BarrageProtocolPower>(5m)
+        new PowerVar<TargetAcquiredPower>(1m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await PowerCmd.Apply<BarrageProtocolPower>(
+        await PowerCmd.Apply<TargetAcquiredPower>(
             choiceContext,
             base.Owner.Creature,
-            DynamicVars["BarrageProtocolPower"].BaseValue,
+            DynamicVars["TargetAcquiredPower"].BaseValue,
             base.Owner.Creature,
             this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["BarrageProtocolPower"].UpgradeValueBy(2m);
+        DynamicVars["TargetAcquiredPower"].UpgradeValueBy(1m);
     }
 }

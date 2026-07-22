@@ -4,16 +4,16 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Models;
 
 namespace Squall.SquallCode.Powers;
 
 /// <summary>
-/// The first time you apply Marked from a card each turn, gain Amount
-/// Energy. Requires a card source, so Marked applied by powers
-/// (Mark of the Lion, Target Acquired) never triggers this.
+/// The first time Marked is triggered each turn, reapply Amount Marked to
+/// the creature it triggered on. Invoked by MarkedPower when its trigger
+/// consumes a stack. Reapplies with no card source so KillSecuredPower
+/// never triggers from it.
 /// </summary>
-public class KillSecuredPower : SquallPower
+public class TargetAcquiredPower : SquallPower
 {
     private class Data
     {
@@ -44,40 +44,27 @@ public class KillSecuredPower : SquallPower
         return Task.CompletedTask;
     }
 
-    public override async Task AfterPowerAmountChanged(
+    public async Task TryReapplyMarked(
         PlayerChoiceContext choiceContext,
-        PowerModel power,
-        decimal amount,
-        Creature? applier,
-        CardModel? cardSource)
+        Creature markedTarget)
     {
-        if (power is not MarkedPower)
-            return;
-
-        if (amount <= 0)
-            return;
-
-        if (applier != base.Owner)
-            return;
-
-        //Only Marked applied from a card counts.
-        if (cardSource == null)
-            return;
-
         Data data = GetInternalData<Data>();
 
         if (data.triggeredThisTurn)
             return;
 
-        var player = base.Owner.Player;
-
-        if (player == null)
+        if (!markedTarget.IsAlive)
             return;
 
         data.triggeredThisTurn = true;
 
         Flash();
 
-        await PlayerCmd.GainEnergy(base.Amount, player);
+        await PowerCmd.Apply<MarkedPower>(
+            choiceContext,
+            markedTarget,
+            base.Amount,
+            base.Owner,
+            null);
     }
 }
