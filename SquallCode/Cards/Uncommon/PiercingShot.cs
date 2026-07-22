@@ -16,7 +16,7 @@ public class PiercingShot() : SquallCard(1, CardType.Attack,
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(6m, ValueProp.Move),
+        new DamageVar(8m, ValueProp.Move),
         new PowerVar<MarkedPower>(1m)
     ];
     
@@ -55,6 +55,7 @@ public class PiercingShot() : SquallCard(1, CardType.Attack,
 
     protected override void OnUpgrade()
     {
+        DynamicVars.Damage.UpgradeValueBy(3m);
         DynamicVars["MarkedPower"].UpgradeValueBy(1m);
     }
 }
