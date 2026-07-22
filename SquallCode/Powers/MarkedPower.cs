@@ -110,6 +110,13 @@ public class MarkedPower : SquallPower
         if (shouldRemove)
         {
             await PowerCmd.Decrement(this);
+
+            //Target Acquired: the first time Marked is triggered each turn,
+            //the attacker reapplies Marked to this creature.
+            var targetAcquired = command.Attacker?.GetPower<TargetAcquiredPower>();
+
+            if (targetAcquired != null)
+                await targetAcquired.TryReapplyMarked(choiceContext, base.Owner);
         }
     }
 }

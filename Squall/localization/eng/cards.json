@@ -95,7 +95,7 @@
   "SQUALL-FAST_AMMO.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
   "SQUALL-FAST_AMMO.title": "Fast Ammo",
 
-  "SQUALL-DRAW_MAGIC.description": "At the start of your turn, add a Magic card to your hand based on your [gold]Junctioned[/gold] GF.",
+  "SQUALL-DRAW_MAGIC.description": "Choose a [gold]Junctioned[/gold] GF. \nAt the start of your turn, add that GF's Magic to your hand.",
   "SQUALL-DRAW_MAGIC.title": "Draw",
 
   "SQUALL-CACTUAR.description": "Gain {ThornsPower:diff()} [gold]Thorns[/gold].",
@@ -246,6 +246,27 @@
   "SQUALL-LIBRA.description": "If target has [gold]Marked[/gold], draw {Cards:diff()} {Cards:plural:card|cards}. \nApply {MarkedPower:diff()} [gold]Marked[/gold].",
   "SQUALL-LIBRA.title": "Libra",
   
+  "SQUALL-RESONANCE.description": "[gold]Junction[/gold] bonuses apply an additional time.",
+  "SQUALL-RESONANCE.title": "Resonance",
+
+  "SQUALL-QUICK_SUMMON.description": "[gold]Summon[/gold] a [gold]Junctioned[/gold] GF immediately.",
+  "SQUALL-QUICK_SUMMON.title": "Quick Summon",
+
+  "SQUALL-FULL_BURST.description": "While [gold]Firepower[/gold] is full, Attacks cost 0.",
+  "SQUALL-FULL_BURST.title": "Full Burst",
+
+  "SQUALL-BARRAGE_PROTOCOL.description": "Whenever [gold]Firepower[/gold] is consumed, deal {BarrageProtocolPower:diff()} damage to ALL enemies.",
+  "SQUALL-BARRAGE_PROTOCOL.title": "Barrage Protocol",
+
+  "SQUALL-MARK_OF_THE_LION.description": "At the start of your turn, apply {MarkOfTheLionPower:diff()} [gold]Marked[/gold] to a random enemy.",
+  "SQUALL-MARK_OF_THE_LION.title": "Mark of the Lion",
+
+  "SQUALL-TARGET_ACQUIRED.description": "The first time [gold]Marked[/gold] is triggered each turn, reapply {TargetAcquiredPower:diff()} [gold]Marked[/gold].",
+  "SQUALL-TARGET_ACQUIRED.title": "Target Acquired",
+
+  "SQUALL-KILL_SECURED.description": "The first time you apply [gold]Marked[/gold] from a card each turn, gain {KillSecuredPower:diff()} Energy.",
+  "SQUALL-KILL_SECURED.title": "Kill Secured",
+
   "SQUALL-GF_SELECT.junctionPrompt": "Choose a GF to Junction",
   "SQUALL-GF_SELECT.summonPrompt": "Choose a GF to Summon",
   "SQUALL-GF_SELECT.drawPrompt": "Choose a Magic to draw",
