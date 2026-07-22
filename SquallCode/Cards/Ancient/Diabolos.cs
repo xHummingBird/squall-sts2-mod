@@ -65,10 +65,10 @@ public class Diabolos() : SquallCard (0, CardType.Attack,
             damage = base.DynamicVars.Damage.BaseValue + (target.CurrentHp * percentDamage);
             await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered, this, play);
         }
-        
+        await Task.Delay((int)(1.4f * 1000f));
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
     }
-
+    
     protected override void OnUpgrade()
     {
         DynamicVars["HpPercent"].UpgradeValueBy(5m);
