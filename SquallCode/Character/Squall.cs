@@ -369,79 +369,79 @@ public class Squall : PlaceholderCharacterModel
         }
     }
     
-    [HarmonyPatch(typeof(CardSelectCmd), nameof(CardSelectCmd.FromChooseACardScreen))]
-    public static class SquallCardSelectCmd_FromChooseACardScreen_Patch
-    {
-        [HarmonyPrefix]
-        public static bool Prefix(
-            PlayerChoiceContext context,
-            IReadOnlyList<CardModel> cards,
-            Player player,
-            bool canSkip,
-            ref Task<CardModel?> __result)
-        {
-            __result = PatchedChoose(context, cards, player, canSkip);
-            return false; 
-        }
-
-        private static async Task<CardModel?> PatchedChoose(
-            PlayerChoiceContext context,
-            IReadOnlyList<CardModel> cards,
-            Player player,
-            bool canSkip)
-        {
-            if (cards.Count > 5)
-            {
-                throw new ArgumentException("Only works with 5 or fewer cards", nameof(cards));
-            }
-
-            if (cards.Count == 0)
-            {
-                return null;
-            }
-
-            uint choiceId = RunManager.Instance.PlayerChoiceSynchronizer.ReserveChoiceId(player);
-
-            await context.SignalPlayerChoiceBegun(player, PlayerChoiceOptions.None);
-
-            CardModel? result;
-			
-            if (LocalContext.IsMe(player))
-            {
-                NPlayerHand.Instance?.CancelAllCardPlay();
-
-                var screen = NChooseACardSelectionScreen.ShowScreen(cards, canSkip);
-
-                if (screen == null)
-                {
-                    await context.SignalPlayerChoiceEnded();
-                    return null;
-                }
-				
-                foreach (var card in cards)
-                {
-                    SaveManager.Instance.MarkCardAsSeen(card);
-                }
-
-                result = (await screen.CardsSelected()).FirstOrDefault();
-
-                int index = cards.IndexOf(result);
-                var choiceResult = PlayerChoiceResult.FromIndex(index);
-
-                RunManager.Instance.PlayerChoiceSynchronizer.SyncLocalChoice(player, choiceId, choiceResult);
-            }
-            else
-            {
-                int index = (await RunManager.Instance.PlayerChoiceSynchronizer
-                        .WaitForRemoteChoice(player, choiceId))
-                    .AsIndex();
-
-                result = index < 0 ? null : cards[index];
-            }
-
-            await context.SignalPlayerChoiceEnded();
-
-            return result;
-        }
-    }
+    // [HarmonyPatch(typeof(CardSelectCmd), nameof(CardSelectCmd.FromChooseACardScreen))]
+    // public static class SquallCardSelectCmd_FromChooseACardScreen_Patch
+    // {
+    //     [HarmonyPrefix]
+    //     public static bool Prefix(
+    //         PlayerChoiceContext context,
+    //         IReadOnlyList<CardModel> cards,
+    //         Player player,
+    //         bool canSkip,
+    //         ref Task<CardModel?> __result)
+    //     {
+    //         __result = PatchedChoose(context, cards, player, canSkip);
+    //         return false; 
+    //     }
+    //
+    //     private static async Task<CardModel?> PatchedChoose(
+    //         PlayerChoiceContext context,
+    //         IReadOnlyList<CardModel> cards,
+    //         Player player,
+    //         bool canSkip)
+    //     {
+    //         if (cards.Count > 5)
+    //         {
+    //             throw new ArgumentException("Only works with 5 or fewer cards", nameof(cards));
+    //         }
+    //
+    //         if (cards.Count == 0)
+    //         {
+    //             return null;
+    //         }
+    //
+    //         uint choiceId = RunManager.Instance.PlayerChoiceSynchronizer.ReserveChoiceId(player);
+    //
+    //         await context.SignalPlayerChoiceBegun(player, PlayerChoiceOptions.None);
+    //
+    //         CardModel? result;
+			 //
+    //         if (LocalContext.IsMe(player))
+    //         {
+    //             NPlayerHand.Instance?.CancelAllCardPlay();
+    //
+    //             var screen = NChooseACardSelectionScreen.ShowScreen(cards, canSkip);
+    //
+    //             if (screen == null)
+    //             {
+    //                 await context.SignalPlayerChoiceEnded();
+    //                 return null;
+    //             }
+				//
+    //             foreach (var card in cards)
+    //             {
+    //                 SaveManager.Instance.MarkCardAsSeen(card);
+    //             }
+    //
+    //             result = (await screen.CardsSelected()).FirstOrDefault();
+    //
+    //             int index = cards.IndexOf(result);
+    //             var choiceResult = PlayerChoiceResult.FromIndex(index);
+    //
+    //             RunManager.Instance.PlayerChoiceSynchronizer.SyncLocalChoice(player, choiceId, choiceResult);
+    //         }
+    //         else
+    //         {
+    //             int index = (await RunManager.Instance.PlayerChoiceSynchronizer
+    //                     .WaitForRemoteChoice(player, choiceId))
+    //                 .AsIndex();
+    //
+    //             result = index < 0 ? null : cards[index];
+    //         }
+    //
+    //         await context.SignalPlayerChoiceEnded();
+    //
+    //         return result;
+    //     }
+    // }
 }

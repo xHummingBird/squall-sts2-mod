@@ -173,7 +173,7 @@
   "SQUALL-PERFECT_JUNCTION.description": "Gain {Block:diff()} [gold]Block[/gold]. \nSummon your [gold]Junctioned[/gold] GF next turn.",
   "SQUALL-PERFECT_JUNCTION.title": "Perfect Junction",
 
-  "SQUALL-CAST_MAGIC.description": "Cast a powerful Magic based on your [gold]Junctioned[/gold] GF. \nUpgrades with this card.",
+  "SQUALL-CAST_MAGIC.description": "Cast a powerful Magic based on your [gold]Junctioned[/gold] GF.",
   "SQUALL-CAST_MAGIC.title": "Cast",
 
   "SQUALL-STOCK.description": "[gold]Junction[/gold] another GF.",

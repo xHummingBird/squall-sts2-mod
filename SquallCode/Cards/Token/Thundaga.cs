@@ -17,8 +17,8 @@ public class Thundaga() : SquallCard(0, CardType.Attack,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(4m, ValueProp.Move),
-        new RepeatVar(4)
+        new DamageVar(3m, ValueProp.Move),
+        new RepeatVar(6)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

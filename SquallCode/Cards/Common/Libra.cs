@@ -5,7 +5,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Squall.SquallCode.Powers;
 
-namespace Squall.SquallCode.Cards.Uncommon;
+namespace Squall.SquallCode.Cards.Common;
 
 public class Libra() : SquallCard(1,
     CardType.Skill, CardRarity.Common,

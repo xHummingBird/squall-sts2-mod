@@ -21,8 +21,8 @@ public class Blizzard() : SquallCard(0, CardType.Attack,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(2m, ValueProp.Move),
-        new BlockVar(2m, ValueProp.Move)
+        new DamageVar(3m, ValueProp.Move),
+        new BlockVar(3m, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(

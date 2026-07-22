@@ -11,7 +11,7 @@ using Squall.SquallCode.Extensions;
 namespace Squall.SquallCode.Cards.Uncommon;
 
 public class Shellshock() : SquallCard(1, CardType.Skill,
-    CardRarity.Common, TargetType.AnyEnemy)
+    CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

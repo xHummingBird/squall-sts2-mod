@@ -1,3 +1,4 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -76,6 +77,7 @@ public class Shiva() : SquallCard (0, CardType.Attack,
             .Execute(choiceContext);
         await Task.Delay((int)(1.1f * 1000f));
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
+        await CommonActions.CardBlock(this, play);
     }
 
     protected override void OnUpgrade()

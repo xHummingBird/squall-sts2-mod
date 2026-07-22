@@ -39,10 +39,7 @@ public static class DustyTomePatch
     {
         if (__instance.Owner?.Character is not Character.Squall)
             return;
-
-        if (__instance.AncientCard == null)
-        {
-            __instance.AncientCard = ModelDb.Card<HeartOfLion>().Id;
-        }
+        
+        __instance.AncientCard = ModelDb.Card<HeartOfLion>().Id;
     }
 }

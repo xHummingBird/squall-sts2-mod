@@ -47,7 +47,7 @@ public class Flood() : SquallCard(0, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4m);
+        DynamicVars.Damage.UpgradeValueBy(3m);
         DynamicVars.Weak.UpgradeValueBy(1m);
     }
 }
