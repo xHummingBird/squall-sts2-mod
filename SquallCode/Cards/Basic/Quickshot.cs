@@ -19,7 +19,7 @@ public class Quickshot() : SquallCard(0, CardType.Attack,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
-            new CalculationBaseVar(3m),
+            new CalculationBaseVar(4m),
             new ExtraDamageVar(3m),
             new CalculatedDamageVar(ValueProp.Move)
                 .WithMultiplier((CardModel card, Creature? _) =>
