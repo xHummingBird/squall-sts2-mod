@@ -70,7 +70,7 @@ CardRarity.Ancient, TargetType.AllEnemies), IGFCard
             await Cmd.Wait(vfx.WaitTime);
         }
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
-            .WithHitFx("vfx/vfx_heavy_blunt", null, "blunt_attack.mp3")
+            .WithHitFx(null, null, "blunt_attack.mp3")
             .WithHitVfxSpawnedAtBase()
             .BeforeDamage(async delegate
             {

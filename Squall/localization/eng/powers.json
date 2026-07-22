@@ -8,7 +8,7 @@
   "SQUALL-FINISHER_POWER.title": "Finisher Ready",
 
   "SQUALL-MARKED_POWER.description": "Marked creatures take 50% more damage from the next attack.",
-  "SQUALL-MARKED_POWER.smartDescription": "Take 50% more damage from the next [gold]{amount}[/gold] {Amount:plural:attack|attacks}.",
+  "SQUALL-MARKED_POWER.smartDescription": "Take 50% more damage from the next [gold]{Amount}[/gold] {Amount:plural:attack|attacks}.",
   "SQUALL-MARKED_POWER.title": "Marked",
 
   "SQUALL-DIABOLOS_POWER.description": "Gain 3 [gold]Crisis[/gold] from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
