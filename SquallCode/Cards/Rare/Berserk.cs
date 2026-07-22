@@ -10,7 +10,7 @@ using Squall.SquallCode.Relics;
 
 namespace Squall.SquallCode.Cards.Rare;
 
-public class Berserk() : SquallCard(2, CardType.Skill,
+public class Berserk() : SquallCard(2, CardType.Power,
     CardRarity.Rare, TargetType.Self)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();

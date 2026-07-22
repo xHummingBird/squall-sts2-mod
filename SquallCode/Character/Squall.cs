@@ -291,6 +291,7 @@ public class Squall : PlaceholderCharacterModel
         {
             if (__instance.Entity?.Player?.Character is Squall character)
             {
+                AudioHelper.PlayRandomGameover();
                 character.PlayAnimation(__instance.Entity, "die");
                 var animPlayer = __instance.Visuals.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
                 __result = animPlayer?.GetAnimation("die")?.Length ?? 1.5f;

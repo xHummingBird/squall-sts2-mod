@@ -37,19 +37,19 @@ public class DarkBarret() : SquallCard(1, CardType.Attack,
         {
             AudioHelper.PlayRandomPhrase();
             float duration = squall.PlayAnimation(ownerCreature, "shoot").total;
-            if (duration > 0f)
-                await Task.Delay((int)(0.36f * 1000f));
+            await Task.Delay((int)(0.26f * 1000f));
+            squall.PlayVfxOnTarget(
+                play.Target,
+                "res://Squall/scenes/vfx.tscn",
+                "demi"
+            );
+            SfxCmd.Play("res://Squall/sfx/dark_messenger_vfx_2.wav");
+            await Task.Delay((int)(0.10f * 1000f));
             SfxCmd.Play("res://Squall/sfx/gunblade_explosion.wav");
         }
         if (hasFirePower)
             finalDamage = DynamicVars.Damage.BaseValue + ((DynamicVars["HpLoss"].BaseValue / 100m)* play.Target.MaxHp);
-            
         await DamageCmd.Attack(finalDamage).FromCard(this, play).Targeting(play.Target)
-            .BeforeDamage(async delegate
-            {
-                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NGroundFireVfx.Create(play.Target, VfxColor.DarkGray));
-                SfxCmd.Play("event:/sfx/characters/attack_fire");
-            })
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
     }

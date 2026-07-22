@@ -55,14 +55,14 @@ public class SolidBarrel() : SquallCard(2, CardType.Attack,
             SquallExtensions.CombatHelpers.SquallFakeHit(play.Target);
             SfxCmd.Play("res://Squall/sfx/gunblade_explosion.wav");
             await CommonActions.CardAttack(this, play.Target)
-                .WithHitFx("res://Squall/sfx/gunblade_effect.wav")
+                .WithHitFx(null, "res://Squall/sfx/gunblade_effect.wav")
                 .Execute(choiceContext);
-            await Task.Delay((int)(0.350f * 1000f));
+            await Task.Delay((int)(0.35f * 1000f));
             await squall.Retreat(ownerCreature);
             CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
         }
         else await CommonActions.CardAttack(this, play.Target)
-            .WithHitFx("res://Squall/sfx/gunblade_effect.wav")
+            .WithHitFx(null, "res://Squall/sfx/gunblade_effect.wav")
             .Execute(choiceContext);
        
     }

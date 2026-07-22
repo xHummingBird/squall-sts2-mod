@@ -12,13 +12,13 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Rare;
 
-public class Hypershot() : SquallCard(3, CardType.Skill,
-    CardRarity.Rare, TargetType.Self)
+public class Hypershot() : SquallCard(2, CardType.Attack,
+    CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(15m, ValueProp.Move),
+        new DamageVar(13m, ValueProp.Move),
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

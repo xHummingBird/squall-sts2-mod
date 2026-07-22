@@ -3,12 +3,13 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Extensions;
 using Squall.SquallCode.Mechanics.GF;
 
 namespace Squall.SquallCode.Cards.Token;
 
 public class Graviga() : SquallCard(0, CardType.Attack,
-    CardRarity.Token, TargetType.AllEnemies), IGFCard
+    CardRarity.Token, TargetType.AnyEnemy), IGFCard
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
@@ -22,28 +23,36 @@ public class Graviga() : SquallCard(0, CardType.Attack,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        SfxCmd.Play("res://Squall/sfx/gunblade_explosion.wav");
+        if (play.Target is not { IsAlive: true })
+            return;
+        
+        decimal damage = Math.Ceiling(
+            play.Target.CurrentHp * DynamicVars["HpPercent"].BaseValue / 100m);
+        
+        var ownerCreature = Owner?.Creature;
 
-        //Gravity damage: a percentage of each enemy's current HP.
-        //Unpowered so it doesn't scale with Strength or similar effects.
-        foreach (var enemy in base.CombatState.HittableEnemies.ToList())
+        if (ownerCreature != null && Owner?.Character is Character.Squall squall)
         {
-            if (enemy is not { IsAlive: true })
-                continue;
-
-            decimal damage = Math.Ceiling(
-                enemy.CurrentHp * DynamicVars["HpPercent"].BaseValue / 100m);
-
-            if (damage > 0)
-            {
-                await CreatureCmd.Damage(
-                    choiceContext,
-                    enemy,
-                    damage,
-                    ValueProp.Unpowered,
-                    this,
-                    play);
-            }
+            AudioHelper.PlayRandomPhrase();
+            float duration = squall.PlayAnimation(ownerCreature, "cast").total;
+            squall.PlayVfxOnTarget(
+                play.Target,
+                "res://Squall/scenes/vfx.tscn",
+                "demi"
+            );
+            SfxCmd.Play("res://Squall/sfx/dark_messenger_vfx_2.wav");
+            await Task.Delay((int)(0.10f * 1000f));
+        }
+        
+        if (damage > 0)
+        {
+            await CreatureCmd.Damage(
+                choiceContext,
+                play.Target,
+                damage,
+                ValueProp.Unpowered,
+                this,
+                play);
         }
     }
 

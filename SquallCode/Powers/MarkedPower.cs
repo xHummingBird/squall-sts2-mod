@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -6,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Squall.SquallCode.Relics;
 
 namespace Squall.SquallCode.Powers;
 
@@ -57,7 +59,12 @@ public class MarkedPower : SquallPower
         if (!props.IsPoweredAttack())
             return 1m;
 
-        return 1.50m;
+        bool hasHyperion = base.Owner.CombatState?.Players
+            .Any(p => p.GetRelic<Hyperion>() != null) == true;
+
+        return hasHyperion
+            ? 1.75m
+            : 1.50m;
     }
 
     public override Task AfterDamageReceived(

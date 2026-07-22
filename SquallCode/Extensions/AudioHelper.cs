@@ -51,6 +51,14 @@ public static class AudioHelper
         "res://Squall/sounds/victory_3.wav",
         "res://Squall/sounds/victory_4.wav",
     };
+
+    private static readonly string[] gameoverSfx =
+    {
+        "res://Squall/sounds/defeat_1.wav",
+        "res://Squall/sounds/defeat_2.wav",
+        "res://Squall/sounds/defeat_3.wav",
+        "res://Squall/sounds/defeat_4.wav",
+    };
     
     private static readonly string[] phraseSfx =
     {
@@ -86,6 +94,11 @@ public static class AudioHelper
     public static void PlayRandomDamagedHigh()
     {
         PlayRandom(highDamagedSfx);
+    }
+
+    public static void PlayRandomGameover()
+    {
+        PlayRandom(gameoverSfx);
     }
 
     public static void PlayRandomDamagedCritical()

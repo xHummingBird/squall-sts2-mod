@@ -35,7 +35,7 @@ public class Backshot() : SquallCard(1, CardType.Attack,
             await CommonActions.CardAttack(this, play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
                 .Execute(choiceContext);
-            await Task.Delay(250);
+            await Task.Delay(200);
             await squall.Retreat(ownerCreature, null, true, 0.467f);
             await Task.Delay(100);
             CenterCardCinematic.End(RunManager.Instance.NetService.NetId);

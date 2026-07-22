@@ -5,7 +5,7 @@
   "SQUALL-DEFEND_SQUALL.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-DEFEND_SQUALL.title": "Defend",
 
-  "SQUALL-QUICKSHOT.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
+  "SQUALL-QUICKSHOT.description": "Deal {CalculatedDamage:diff()} damage. \n{FirepowerIcon}: Deal {ExtraDamage:diff()} additional damage.",
   "SQUALL-QUICKSHOT.title": "Quickshot",
 
   "SQUALL-RENZOKUKEN.description": "Deal {Damage:diff()} damage. \nConsume [blue]100[/blue] [gold]Crisis[/gold] to perform a [gold]Finisher[/gold].",
@@ -23,13 +23,13 @@
   "SQUALL-LIONHEART_CARD.description": "Test",
   "SQUALL-LIONHEART_CARD.title": "Lionheart",
 
-  "SQUALL-BLIZZARD_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "SQUALL-BLIZZARD_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Apply {WeakPower:diff()} [gold]Weak[/gold].",
   "SQUALL-BLIZZARD_BARRET.title": "Blizzard Barret",
 
-  "SQUALL-FIRE_BARRET.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
+  "SQUALL-FIRE_BARRET.description": "Deal {CalculatedDamage:diff()} damage. \n{FirepowerIcon}: Deal {ExtraDamage:diff()} additional damage.",
   "SQUALL-FIRE_BARRET.title": "Fire Barret",
 
-  "SQUALL-THUNDER_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SQUALL-THUNDER_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "SQUALL-THUNDER_BARRET.title": "Thunder Barret",
 
   "SQUALL-TRIGGER_HAPPY.description": "Deal {Damage:diff()} damage {Repeat:diff()} times to random enemies.",
@@ -38,11 +38,11 @@
   "SQUALL-FOCUS_FIRE.description": "Apply {MarkedPower:diff()} [gold]Marked[/gold].",
   "SQUALL-FOCUS_FIRE.title": "Focus Fire",
 
-  "SQUALL-SOLID_BARREL.description": "Deal {Damage:diff()} damage.\n[gold]Firepower[/gold]\nGain {Energy:energyIcons()}.",
+  "SQUALL-SOLID_BARREL.description": "Deal {Damage:diff()} damage.\n{FirepowerIcon}: Gain {Energy:energyIcons()}.",
   "SQUALL-SOLID_BARREL.title": "Solid Barrel",
 
-  "SQUALL-RELOAD.description": "Gain {Block:diff()} [gold]Block[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and draw {Cards:diff()} {Cards:plural:card|cards}.",
-  "SQUALL-RELOAD.title": "Reload",
+  "SQUALL-QUICKDRAW.description": "Gain {Block:diff()} [gold]Block[/gold]. \n{FirepowerIcon}: Consume [gold]Firepower[/gold] and draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SQUALL-QUICKDRAW.title": "Quickdraw",
 
   "SQUALL-CRISIS_TEST.description": "Test",
   "SQUALL-CRISIS_TEST.title": "CrisisTest",
@@ -65,13 +65,13 @@
   "SQUALL-BLIND_AMMO.description": "Apply {WeakPower:diff()} [gold]Weak[/gold].",
   "SQUALL-BLIND_AMMO.title": "Blind Ammo",
 
-  "SQUALL-SCATTERSHOT.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDamage ALL enemies.",
+  "SQUALL-SCATTERSHOT.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Damage ALL enemies.",
   "SQUALL-SCATTERSHOT.title": "Scattershot",
 
   "SQUALL-SHELL.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-SHELL.title": "Shell",
 
-  "SQUALL-AGILE_EDGE.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SQUALL-AGILE_EDGE.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Draw {Cards:diff()} {Cards:plural:card|cards}.",
   "SQUALL-AGILE_EDGE.title": "Agile Edge",
 
   "SQUALL-HASTE.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
@@ -101,7 +101,7 @@
   "SQUALL-CACTUAR.description": "Gain {ThornsPower:diff()} [gold]Thorns[/gold].",
   "SQUALL-CACTUAR.title": "Cactuar",
 
-  "SQUALL-PULSE_AMMO.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and double [gold]Vigor[/gold] gain.",
+  "SQUALL-PULSE_AMMO.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \n{FirepowerIcon}: Consume [gold]Firepower[/gold] and double [gold]Vigor[/gold] gain.",
   "SQUALL-PULSE_AMMO.title": "Pulse Ammo",
 
   "SQUALL-AURA.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
@@ -110,22 +110,22 @@
   "SQUALL-MIGHTY_GUARD.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-MIGHTY_GUARD.title": "Mighty Guard",
 
-  "SQUALL-BERSERK.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold] and gain 1 [gold]Strength[/gold].",
+  "SQUALL-BERSERK.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold]. \n{FirepowerIcon}: Consume [gold]Firepower[/gold] and gain 1 [gold]Strength[/gold].",
   "SQUALL-BERSERK.title": "Berserk",
 
-  "SQUALL-PERFECT_TRIGGER.description": "Deal {CalculatedDamage:diff()} damage. \n[gold]Firepower[/gold]\nDeal {ExtraDamage:diff()} additional damage.",
+  "SQUALL-PERFECT_TRIGGER.description": "Deal {CalculatedDamage:diff()} damage. \n{FirepowerIcon}: Deal {ExtraDamage:diff()} additional damage.",
   "SQUALL-PERFECT_TRIGGER.title": "Perfect Trigger",
 
-  "SQUALL-HYPERSHOT.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nTriple damage dealt.",
+  "SQUALL-HYPERSHOT.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Triple damage dealt.",
   "SQUALL-HYPERSHOT.title": "Hypershot",
 
   "SQUALL-BEAT_FANG.description": "Deal {Damage:diff()} damage. \nApply {MarkedPower:diff()} [gold]Marked[/gold].",
   "SQUALL-BEAT_FANG.title": "Beat Fang",
 
-  "SQUALL-PIERCING_SHOT.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nApply {MarkedPower:diff()} [gold]Marked[/gold].",
+  "SQUALL-PIERCING_SHOT.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Apply {MarkedPower:diff()} [gold]Marked[/gold].",
   "SQUALL-PIERCING_SHOT.title": "Piercing Shot",
 
-  "SQUALL-DRAIN_SLASH.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nHeal equal to [blue]{Heal:diff()}%[/blue] of damage dealt.",
+  "SQUALL-DRAIN_SLASH.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Heal equal to [blue]{Heal:diff()}%[/blue] of damage dealt.",
   "SQUALL-DRAIN_SLASH.title": "Drain Slash",
 
   "SQUALL-FUSILLADE.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {WeakPower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold] to ALL enemies.",
@@ -137,13 +137,13 @@
   "SQUALL-DEVASTATING_SLUG.description": "Deal {Damage:diff()} damage. \nNext attack cost 0 {Energy:energyIcons()}.",
   "SQUALL-DEVASTATING_SLUG.title": "Devastating Slug",
 
-  "SQUALL-DEFENSIVE_MANEUVER.description": "Gain {Block:diff()} [gold]Block[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain [blue]Block[/blue] an additional time.",
+  "SQUALL-DEFENSIVE_MANEUVER.description": "Gain {Block:diff()} [gold]Block[/gold]. \n{FirepowerIcon}: Consume [gold]Firepower[/gold], gain [blue]Block[/blue] an additional time.",
   "SQUALL-DEFENSIVE_MANEUVER.title": "Defensive Maneuver",
 
-  "SQUALL-UPPER_BLUES.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nGain [blue]Block[/blue] equal to damage dealt.",
+  "SQUALL-UPPER_BLUES.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Gain [blue]Block[/blue] equal to damage dealt.",
   "SQUALL-UPPER_BLUES.title": "Upper Blues",
 
-  "SQUALL-ICE_ARMOR.description": "Gain {PlatingPower:diff()} [gold]Plating[/gold]. \n[gold]Firepower[/gold]\nConsume [gold]Firepower[/gold], gain double [gold]Plating[/gold].",
+  "SQUALL-ICE_ARMOR.description": "Gain {PlatingPower:diff()} [gold]Plating[/gold]. \n{FirepowerIcon}: Consume [gold]Firepower[/gold], gain double [gold]Plating[/gold].",
   "SQUALL-ICE_ARMOR.title": "Ice Armor",
 
   "SQUALL-COMBAT_FOCUS.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
@@ -161,10 +161,10 @@
   "SQUALL-LEVIATHAN.description": "[gold]Junction[/gold]: Heal 2 [gold]HP[/gold] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold].",
   "SQUALL-LEVIATHAN.title": "Junction Leviathan",
 
-  "SQUALL-DIABOLOS.description": "[gold]Junction[/gold]: Gain 5 [gold]Crisis[/gold] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: ALL enemies lose {Damage:diff()} HP and {HpPercent:diff()}% of their current HP.",
+  "SQUALL-DIABOLOS.description": "[gold]Junction[/gold]: Gain 3 [gold]Crisis[/gold] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: ALL enemies lose {Damage:diff()} HP and {HpPercent:diff()}% of their current HP.",
   "SQUALL-DIABOLOS.title": "Junction Diabolos",
 
-  "SQUALL-IFRIT.description": "[gold]Junction[/gold]: [gold]Firepower[/gold] gain 1 additional damage. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies.",
+  "SQUALL-IFRIT.description": "[gold]Junction[/gold]: [gold]Firepower[/gold] gain 2 additional damage. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies.",
   "SQUALL-IFRIT.title": "Junction Ifrit",
 
   "SQUALL-SUMMON_GF.description": "Gain {Block:diff()} [gold]Block[/gold]. \nSummon your [gold]Junctioned[/gold] GF in {ChannelingGfPower} turns.",
@@ -209,13 +209,13 @@
   "SQUALL-GRAVIGA.description": "Deal damage equal to {HpPercent:diff()}% of each enemy's current HP.",
   "SQUALL-GRAVIGA.title": "Graviga",
 
-  "SQUALL-LIGHT_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nGain {FinisherPower:diff()} [gold]Crisis[/gold].",
+  "SQUALL-LIGHT_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Gain {FinisherPower:diff()} [gold]Crisis[/gold].",
   "SQUALL-LIGHT_BARRET.title": "Light Barret",
 
-  "SQUALL-DARK_BARRET.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nDeal additional damage equal to 5% of the target's [gold]Max HP[/gold].",
+  "SQUALL-DARK_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Deal additional damage equal to 5% of the target's [gold]Max HP[/gold].",
   "SQUALL-DARK_BARRET.title": "Dark Barret",
 
-  "SQUALL-REARM.description": "Put 2 cards from your Discard Pile into your Hand. \n[gold]Firepower[/gold]\nGain {Energy:energyIcons()}.",
+  "SQUALL-REARM.description": "Put 2 cards from your Discard Pile into your Hand. \n{FirepowerIcon}: Gain {Energy:energyIcons()}.",
   "SQUALL-REARM.selectionScreenPrompt": "Choose {Amount} {Amount:plural:Card|Cards} to return to your Hand",
   "SQUALL-REARM.title": "Rearm",
 
@@ -225,11 +225,26 @@
   "SQUALL-CRISIS_GUARD.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SQUALL-CRISIS_GUARD.title": "Crisis Guard",
 
-  "SQUALL-REVOLVER_DRIVE.description": "Deal {Damage:diff()} damage. \n[gold]Firepower[/gold]\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SQUALL-REVOLVER_DRIVE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "SQUALL-REVOLVER_DRIVE.title": "Revolver Drive",
 
   "SQUALL-GUNBLADE_MASTERY.description": "Gain 1 [gold]Strength[/gold] on [gold]Firepower[/gold] consumption.",
   "SQUALL-GUNBLADE_MASTERY.title": "Gunblade Mastery",
+
+  "SQUALL-PREEMPTIVE_SHOT.description": "Deal {Damage:diff()} damage. \nApply {MarkedPower:diff()} [gold]Marked[/gold].",
+  "SQUALL-PREEMPTIVE_SHOT.title": "Preemptive Shot",
+  
+  "SQUALL-TACTICAL_RELOAD.description": "Gain {Block:diff()} [gold]Block[/gold]. \nNext turn, gain {Energy:energyIcons()}",
+  "SQUALL-TACTICAL_RELOAD.title": "Tactical Reload",
+
+  "SQUALL-LASER_SIGHT.description": "Gain {Block:diff()} [gold]Block[/gold]. \nApply {MarkedPower:diff()} [gold]Marked[/gold].",
+  "SQUALL-LASER_SIGHT.title": "Laser Sight",
+
+  "SQUALL-SHELLSHOCK.description": "Gain {Block:diff()} [gold]Block[/gold]. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SQUALL-SHELLSHOCK.title": "Shellshock",
+
+  "SQUALL-LIBRA.description": "If target has [gold]Marked[/gold], draw {Cards:diff()} {Cards:plural:card|cards}. \nApply {MarkedPower:diff()} [gold]Marked[/gold].",
+  "SQUALL-LIBRA.title": "Libra",
   
   "SQUALL-GF_SELECT.junctionPrompt": "Choose a GF to Junction",
   "SQUALL-GF_SELECT.summonPrompt": "Choose a GF to Summon",

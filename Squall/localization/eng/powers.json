@@ -11,24 +11,24 @@
   "SQUALL-MARKED_POWER.smartDescription": "Take 50% more damage from the next [gold]{amount}[/gold] {Amount:plural:attack|attacks}.",
   "SQUALL-MARKED_POWER.title": "Marked",
 
-  "SQUALL-DIABOLOS_POWER.description": "Gain 5 [gold]Crisis[/gold] per turn and from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
-  "SQUALL-DIABOLOS_POWER.smartDescription": "Double [gold]Crisis[/gold] gain per turn and from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
+  "SQUALL-DIABOLOS_POWER.description": "Gain 3 [gold]Crisis[/gold] from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
+  "SQUALL-DIABOLOS_POWER.smartDescription": "Gain 3 [gold]Crisis[/gold] per stack from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
   "SQUALL-DIABOLOS_POWER.title": "Junction Diabolos",
 
-  "SQUALL-IFRIT_POWER.description": "Increase [gold]Firepower[/gold] damage by 1. You can now [gold]Summon[/gold] Ifrit.",
-  "SQUALL-IFRIT_POWER.smartDescription": "Increase [gold]Firepower[/gold] damage by 1. You can now [gold]Summon[/gold] Ifrit.",
+  "SQUALL-IFRIT_POWER.description": "Increase [gold]Firepower[/gold] damage by 2. You can now [gold]Summon[/gold] Ifrit.",
+  "SQUALL-IFRIT_POWER.smartDescription": "Increase [gold]Firepower[/gold] damage by 2. You can now [gold]Summon[/gold] Ifrit.",
   "SQUALL-IFRIT_POWER.title": "Junction Ifrit",
 
   "SQUALL-LEVIATHAN_POWER.description": "Heal 2 HP on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Leviathan.",
-  "SQUALL-LEVIATHAN_POWER.smartDescription": "Heal 2 HP on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Leviathan.",
+  "SQUALL-LEVIATHAN_POWER.smartDescription": "Heal 2 HP per stack on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Leviathan.",
   "SQUALL-LEVIATHAN_POWER.title": "Junction Leviathan",
 
   "SQUALL-QUEZACOATL_POWER.description": "Draw 1 card on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Quezacoatl.",
-  "SQUALL-QUEZACOATL_POWER.smartDescription": "Draw 1 card on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Quezacoatl.",
+  "SQUALL-QUEZACOATL_POWER.smartDescription": "Draw {Amount} {Amount:plural:card|cards} on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Quezacoatl.",
   "SQUALL-QUEZACOATL_POWER.title": "Junction Quezacoatl",
 
   "SQUALL-SHIVA_POWER.description": "Gain 3 Block on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Shiva.",
-  "SQUALL-SHIVA_POWER.smartDescription": "Gain 3 Block on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Shiva.",
+  "SQUALL-SHIVA_POWER.smartDescription": "Gain 3 Block per stack on [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Shiva.",
   "SQUALL-SHIVA_POWER.title": "Junction Shiva",
 
   "SQUALL-CHANNELING_GF_POWER.description": "Summoning [gold]Junctioned[/gold] GF in [blue]3[/blue] turns.",

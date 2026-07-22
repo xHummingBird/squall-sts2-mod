@@ -15,11 +15,9 @@ namespace Squall.SquallCode.Cards.Rare;
 public class RevolverDrive() : SquallCard(2, CardType.Attack,
     CardRarity.Rare, TargetType.AnyEnemy)
 {
-    protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
-
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(18, ValueProp.Move),
+        new DamageVar(16, ValueProp.Move),
         new PowerVar<VulnerablePower>(2m)
     ];
 
@@ -27,9 +25,7 @@ public class RevolverDrive() : SquallCard(2, CardType.Attack,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        bool hasFirePower = false;
-        if (base.Owner.HasPower<FirepowerPower>())
-            hasFirePower = true;
+        
         var ownerCreature = Owner?.Creature;
         var squall = Owner?.Character as Character.Squall;
 
@@ -57,15 +53,13 @@ public class RevolverDrive() : SquallCard(2, CardType.Attack,
             await CommonActions.CardAttack(this, play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
                 .Execute(choiceContext);
-
-        if (hasFirePower && play.Target != null)
+        if (play.Target != null)
             await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, DynamicVars.Vulnerable.BaseValue,
                 base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(5);
-        DynamicVars.Vulnerable.UpgradeValueBy(1);
+        DynamicVars.Damage.UpgradeValueBy(4);
     }
 }

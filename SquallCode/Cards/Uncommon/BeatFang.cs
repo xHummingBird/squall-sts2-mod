@@ -11,12 +11,12 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Uncommon;
 
-public class BeatFang() : SquallCard(2, CardType.Attack,
+public class BeatFang() : SquallCard(1, CardType.Attack,
     CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(12m, ValueProp.Move),
+        new DamageVar(8m, ValueProp.Move),
         new PowerVar<MarkedPower>(1m)
     ];
     

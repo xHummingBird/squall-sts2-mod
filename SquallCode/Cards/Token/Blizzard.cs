@@ -51,6 +51,7 @@ public class Blizzard() : SquallCard(0, CardType.Attack,
                 NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NGroundFireVfx.Create(play.Target, VfxColor.Blue));
             })
             .Execute(choiceContext);
+        await CommonActions.CardBlock(this, play);
     }
 
     protected override void OnUpgrade()

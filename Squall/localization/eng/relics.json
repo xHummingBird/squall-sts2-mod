@@ -1,13 +1,13 @@
 {
-  "SQUALL-REVOLVER.description": "After 3 attacks, gain 2 [gold]Firepower[/gold]. At the start of combat, [gold]Junction[/gold] 1 Guardian Force (GF).",
+  "SQUALL-REVOLVER.description": "After 3 attacks, gain 2 [img]res://Squall/images/display/firepower_power_small.png[/img][gold]Firepower[/gold]. At the start of combat, [gold]Junction[/gold] 1 Guardian Force (GF).",
   "SQUALL-REVOLVER.flavor": "",
   "SQUALL-REVOLVER.title": "Revolver",
 
-  "SQUALL-LIONHEART.description": "Gain [gold]Lionheart[/gold] finisher. After 3 attacks, gain 5 [gold]Firepower[/gold]. At the start of combat, [gold]Junction[/gold] 1 Guardian Force (GF)",
+  "SQUALL-LIONHEART.description": "Gain [gold]Lionheart[/gold] finisher. After 3 attacks, gain 4 [img]res://Squall/images/display/firepower_power_small.png[/img][gold]Firepower[/gold]. At the start of combat, [gold]Junction[/gold] 1 Guardian Force (GF)",
   "SQUALL-LIONHEART.flavor": "Heart of a Lion",
   "SQUALL-LIONHEART.title": "Lionheart",
 
-  "SQUALL-LEVIATHAN_SCALE.description": "You can now [gold[Junction[/gold] Leviathan at the start of combat.",
+  "SQUALL-LEVIATHAN_SCALE.description": "Start combat with full [gold]Firepower[/gold]. You can now [gold[Junction[/gold] Leviathan at the start of combat.",
   "SQUALL-LEVIATHAN_SCALE.flavor": "",
   "SQUALL-LEVIATHAN_SCALE.title": "Leviathan Scale",
 
@@ -25,5 +25,9 @@
 
   "SQUALL-SLEEPING_LION.description": "Upgrade your [gold]Finisher[/gold].",
   "SQUALL-SLEEPING_LION.flavor": "",
-  "SQUALL-SLEEPING_LION.title": "Sleeping Lion"
+  "SQUALL-SLEEPING_LION.title": "Sleeping Lion",
+
+  "SQUALL-HYPERION.description": "Marked enemies take [gold]75%[/gold] more damage instead of 50%.",
+  "SQUALL-HYPERION.flavor": "",
+  "SQUALL-HYPERION.title": "Hyperion"
 }

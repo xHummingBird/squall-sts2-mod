@@ -109,42 +109,64 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
         FirepowerPrimed = false;
         FirepowerProgress = 0;
 
-        if (base.Owner.Creature.HasPower<ShivaPower>())
+        Creature owner = base.Owner.Creature;
+
+        decimal shivaAmount = owner.GetPowerAmount<ShivaPower>();
+        decimal leviathanAmount = owner.GetPowerAmount<LeviathanPower>();
+        decimal quezacoatlAmount = owner.GetPowerAmount<QuezacoatlPower>();
+        decimal diabolosAmount = owner.GetPowerAmount<DiabolosPower>();
+
+        if (shivaAmount > 0)
         {
             await CreatureCmd.GainBlock(
-                base.Owner.Creature,
-                3m,
+                owner,
+                3m * shivaAmount,
                 ValueProp.Unpowered,
                 null
             );
         }
 
-        if (base.Owner.Creature.HasPower<LeviathanPower>())
+        if (leviathanAmount > 0)
         {
             await CreatureCmd.Heal(
-                base.Owner.Creature,
-                2m, true
+                owner,
+                2m * leviathanAmount,
+                true
             );
         }
 
-        if (base.Owner.Creature.HasPower<QuezacoatlPower>())
+        if (quezacoatlAmount > 0)
         {
-            await CardPileCmd.Draw(choiceContext, 1, base.Owner);
+            await CardPileCmd.Draw(
+                choiceContext,
+                (int)quezacoatlAmount,
+                base.Owner
+            );
         }
 
-        if (base.Owner.Creature.HasPower<DiabolosPower>())
-            CrisisManager.GainCrisis(Owner, 10);
-        else CrisisManager.GainCrisis(Owner, 5);
+        // Base Firepower consume gives 5 Crisis.
+        // Each Diabolos stack adds another 5 Crisis.
+        CrisisManager.GainCrisis(
+            Owner,
+            5 + ((int)diabolosAmount * 3)
+        );
 
-        if (base.Owner.Creature.HasPower<GunbladeMasteryPower>())
+        if (owner.HasPower<GunbladeMasteryPower>())
         {
-            decimal GMAmount = base.Owner.Creature.GetPowerAmount<GunbladeMasteryPower>();
-            await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, GMAmount, base.Owner.Creature, null);
+            decimal gunbladeMasteryAmount = owner.GetPowerAmount<GunbladeMasteryPower>();
+
+            await PowerCmd.Apply<StrengthPower>(
+                choiceContext,
+                owner,
+                gunbladeMasteryAmount,
+                owner,
+                null
+            );
         }
-        
-        if (base.Owner.Creature.HasPower<FirepowerPower>())
+
+        if (owner.HasPower<FirepowerPower>())
         {
-            await PowerCmd.Remove<FirepowerPower>(base.Owner.Creature);
+            await PowerCmd.Remove<FirepowerPower>(owner);
         }
     }
 
@@ -253,9 +275,10 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
     private async Task ApplyFirepower(PlayerChoiceContext choiceContext)
     {
         int amount = base.DynamicVars["AmountVar"].IntValue;
+        int ifritAmount = Owner.Creature.GetPowerAmount<IfritPower>();
 
-        if (base.Owner.HasPower<IfritPower>())
-            amount++;
+        if (ifritAmount > 0)
+            amount += 2 * ifritAmount;
 
         await PowerCmd.Apply<FirepowerPower>(
             choiceContext,
@@ -327,7 +350,7 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
             CrisisManager.GainCrisis(Owner, crisisGainFromHpLoss);
         }
 
-        if (base.Owner.Creature.HasPower<DiabolosPower>())
+        if (base.Owner.Creature.Player.GetRelic<MagicLamp>() != null)
             CrisisManager.GainCrisis(Owner, 10);
         else CrisisManager.GainCrisis(Owner, 5);
 
@@ -348,6 +371,17 @@ public abstract class FirepowerRelicBase : SquallRelic, IFirepowerRelic
             //Junction Ring grants one additional Junction.
             if (base.Owner.GetRelic<JunctionRing>() != null)
                 await GfRegistry.JunctionNewGf(choiceContext, base.Owner);
+            
+            if (base.Owner.GetRelic<LeviathanScale>() != null)
+            {
+                FirepowerProgress = base.DynamicVars.Cards.IntValue;
+                FirepowerPrimed = true;
+                if (!base.Owner.Creature.HasPower<FirepowerPower>())
+                {
+                    await ApplyFirepower(choiceContext);
+                }
+                TaskHelper.RunSafely(DoActivateVisuals());
+            }
         }
     }
 }

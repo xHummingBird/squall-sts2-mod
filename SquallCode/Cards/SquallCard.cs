@@ -5,6 +5,7 @@ using Squall.SquallCode.Character;
 using Squall.SquallCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Localization;
 
 namespace Squall.SquallCode.Cards;
 
@@ -41,5 +42,15 @@ public abstract class SquallCard(int cost, CardType type, CardRarity rarity, Tar
         {
             return false;
         }
+    }
+    
+    protected override void AddExtraArgsToDescription(
+        LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+
+        description.Add(
+            "FirepowerIcon",
+            "[img]res://Squall/images/display/firepower_power_small.png[/img]");
     }
 }

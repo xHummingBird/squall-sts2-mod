@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Squall.SquallCode.Cards.Uncommon;
 
-public class LionsMight() : SquallCard(2, CardType.Power,
+public class LionsMight() : SquallCard(1, CardType.Power,
     CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

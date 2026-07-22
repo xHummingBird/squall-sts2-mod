@@ -13,7 +13,7 @@ using Squall.SquallCode.Relics;
 
 namespace Squall.SquallCode.Cards.Common;
 
-public class Reload() : SquallCard(1, CardType.Skill,
+public class Quickdraw() : SquallCard(1, CardType.Skill,
     CardRarity.Common, TargetType.Self)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();

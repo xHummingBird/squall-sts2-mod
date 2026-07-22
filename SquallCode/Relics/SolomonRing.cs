@@ -6,5 +6,5 @@ namespace Squall.SquallCode.Relics;
 //Checked via GfRegistry.HasSummonUpgrade.
 public class SolomonRing() : SquallRelic
 {
-    public override RelicRarity Rarity => RelicRarity.Rare;
+    public override RelicRarity Rarity => RelicRarity.Uncommon;
 }

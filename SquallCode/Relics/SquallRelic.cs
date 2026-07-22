@@ -4,6 +4,7 @@ using BaseLib.Utils;
 using Squall.SquallCode.Character;
 using Squall.SquallCode.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Localization;
 
 namespace Squall.SquallCode.Relics;
 
