@@ -19,7 +19,7 @@ public class Fusillade() : SquallCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(11m, ValueProp.Move),
+        new DamageVar(12m, ValueProp.Move),
         new PowerVar<WeakPower>(1m),
         new PowerVar<VulnerablePower>(1m)
     ];

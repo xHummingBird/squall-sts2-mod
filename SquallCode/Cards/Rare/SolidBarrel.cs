@@ -11,13 +11,13 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Rare;
 
-public class SolidBarrel() : SquallCard(2, CardType.Attack,
+public class SolidBarrel() : SquallCard(1, CardType.Attack,
     CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(18, ValueProp.Move),
+        new DamageVar(12, ValueProp.Move),
         new EnergyVar(1)
     ];
 

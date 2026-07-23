@@ -77,7 +77,7 @@
   "SQUALL-HASTE.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "SQUALL-HASTE.title": "Haste",
 
-  "SQUALL-HIDDEN_CHARM.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain 5 [gold]Crisis[/gold].",
+  "SQUALL-HIDDEN_CHARM.description": "Gain {Block:diff()} [gold]Block[/gold]. \nApply {WeakPower:diff()} [gold]Weak[/gold].",
   "SQUALL-HIDDEN_CHARM.title": "Hidden Charm",
 
   "SQUALL-LIONS_MIGHT.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
@@ -266,6 +266,9 @@
 
   "SQUALL-KILL_SECURED.description": "The first time you apply [gold]Marked[/gold] from a card each turn, gain {KillSecuredPower:diff()} Energy.",
   "SQUALL-KILL_SECURED.title": "Kill Secured",
+
+  "SQUALL-MYSTIC_FLURRY.description": "Deal {Damage:diff()} damage to ALL enemies. \n{FirepowerIcon}: Apply {WeakPower:diff()} [gold]Weak[/gold] and [gold]Vulnerable[/gold] to ALL enemies.",
+  "SQUALL-MYSTIC_FLURRY.title": "Mystic Flurry",
 
   "SQUALL-GF_SELECT.junctionPrompt": "Choose a GF to Junction",
   "SQUALL-GF_SELECT.summonPrompt": "Choose a GF to Summon",

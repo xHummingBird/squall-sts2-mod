@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcw0rf1qf4rol"
-path="res://.godot/imported/gun_maintenance.png-f97409648ba49cced884ae51caba1259.ctex"
+uid="uid://d8f551atcqoa"
+path="res://.godot/imported/preemptive_shot.png-857d9dbb31b1fd991e265071dd3cf757.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squall/images/card_portraits/big/gun_maintenance.png"
-dest_files=["res://.godot/imported/gun_maintenance.png-f97409648ba49cced884ae51caba1259.ctex"]
+source_file="res://Squall/images/card_portraits/big/preemptive_shot.png"
+dest_files=["res://.godot/imported/preemptive_shot.png-857d9dbb31b1fd991e265071dd3cf757.ctex"]
 
 [params]
 
