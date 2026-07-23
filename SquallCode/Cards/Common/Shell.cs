@@ -5,10 +5,10 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
 
-namespace Squall.SquallCode.Cards.Uncommon;
+namespace Squall.SquallCode.Cards.Common;
 
 public class Shell() : SquallCard(2, CardType.Skill,
-    CardRarity.Uncommon, TargetType.Self)
+    CardRarity.Common, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

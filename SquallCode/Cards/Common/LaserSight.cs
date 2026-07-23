@@ -22,7 +22,7 @@ public class LaserSight() : SquallCard(1, CardType.Skill,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<WeakPower>()
+        HoverTipFactory.FromPower<MarkedPower>()
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

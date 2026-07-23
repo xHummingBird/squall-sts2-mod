@@ -20,7 +20,7 @@
   "SQUALL-ROUGH_DIVIDE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "SQUALL-ROUGH_DIVIDE.title": "Rough Divide",
 
-  "SQUALL-LIONHEART_CARD.description": "Test",
+  "SQUALL-LIONHEART_CARD.description": "Deal {CalculatedDamage:diff()} damage. \nDeal additional damage equal to [gold]{HpPercent:diff()}%[/gold] of your missing HP.",
   "SQUALL-LIONHEART_CARD.title": "Lionheart",
 
   "SQUALL-BLIZZARD_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Apply {WeakPower:diff()} [gold]Weak[/gold].",
@@ -209,7 +209,7 @@
   "SQUALL-GRAVIGA.description": "Deal damage equal to {HpPercent:diff()}% of each enemy's current HP.",
   "SQUALL-GRAVIGA.title": "Graviga",
 
-  "SQUALL-LIGHT_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Gain {FinisherPower:diff()} [gold]Crisis[/gold].",
+  "SQUALL-LIGHT_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Gain [gold]Crisis[/gold] equal to damage dealt.",
   "SQUALL-LIGHT_BARRET.title": "Light Barret",
 
   "SQUALL-DARK_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Deal additional damage equal to 5% of the target's [gold]Max HP[/gold].",

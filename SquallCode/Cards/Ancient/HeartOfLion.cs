@@ -52,12 +52,12 @@ public class HeartOfLion() : SquallCard(2, CardType.Attack,
         
         if (ownerCreature != null && squall != null)
         {
-            SfxCmd.Play("res://Squall/sounds/ikuzo.wav");
             if (selectedFinisher == bz)
                 await CardCmd.AutoPlay(choiceContext, selectedFinisher, null);
             
             else if (selectedFinisher != null)
             {
+                await squall.DashTo(ownerCreature, play.Target, distance: 300f);
                 await CardCmd.AutoPlay(choiceContext, selectedFinisher, play.Target);
             }
         }

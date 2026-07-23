@@ -15,7 +15,7 @@ public class FatedCircle() : SquallCard(0, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(15m, ValueProp.Move),
+        new DamageVar(12m, ValueProp.Move),
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>

@@ -32,5 +32,6 @@ public class TacticalReload() : SquallCard(1, CardType.Skill,
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(3m);
+        DynamicVars.Energy.UpgradeValueBy(1);
     }
 }

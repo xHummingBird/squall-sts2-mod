@@ -22,8 +22,7 @@ public class LightBarret() : SquallCard(1, CardType.Attack,
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(11m, ValueProp.Move),
-        new PowerVar<FinisherPower>(5m)
+        new DamageVar(10m, ValueProp.Move),
     ];
 
     protected override async Task OnPlay(
@@ -51,12 +50,11 @@ public class LightBarret() : SquallCard(1, CardType.Attack,
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
         if (hasFirePower)
-            CrisisManager.GainCrisis(base.Owner, DynamicVars["FinisherPower"].IntValue);
+            CrisisManager.GainCrisis(base.Owner, (int)DynamicVars.Damage.PreviewValue);
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(4m);
-        DynamicVars["FinisherPower"].UpgradeValueBy(3m);
     }
 }

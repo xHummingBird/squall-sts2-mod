@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqpfocmlbm8ig"
-path="res://.godot/imported/foresight.png-33714da8d502060e1dc35d88187a97cf.ctex"
+uid="uid://cyteni4bx05ts"
+path="res://.godot/imported/17_lionheart.png-fdc74b39bf6a0c2ec59eabcf02e1ec0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squall/images/card_portraits/big/foresight.png"
-dest_files=["res://.godot/imported/foresight.png-33714da8d502060e1dc35d88187a97cf.ctex"]
+source_file="res://Squall/images/spritesheets/attacks/lionheart/17_lionheart.png"
+dest_files=["res://.godot/imported/17_lionheart.png-fdc74b39bf6a0c2ec59eabcf02e1ec0d.ctex"]
 
 [params]
 

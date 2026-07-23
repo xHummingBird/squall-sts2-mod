@@ -56,7 +56,7 @@ public class Squall : PlaceholderCharacterModel
         ModelDb.Card<DefendSquall>(),
         ModelDb.Card<DefendSquall>(),
         ModelDb.Card<DefendSquall>(),
-        ModelDb.Card<DefendSquall>()
+        ModelDb.Card<DefendSquall>(),
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>

@@ -7,14 +7,14 @@ using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Squall.SquallCode.Extensions;
 
-namespace Squall.SquallCode.Cards.Uncommon;
+namespace Squall.SquallCode.Cards.Common;
 
 public class Backshot() : SquallCard(1, CardType.Attack,
-    CardRarity.Uncommon, TargetType.AnyEnemy)
+    CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(8m, ValueProp.Move),
+        new DamageVar(7m, ValueProp.Move),
         new BlockVar(5m, ValueProp.Move)
     ];
 

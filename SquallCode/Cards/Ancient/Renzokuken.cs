@@ -75,10 +75,10 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
         {
             SfxCmd.Play("res://Squall/sounds/ikuzo.wav");
             await squall.DashTo(ownerCreature, play.Target, distance: 300f, overrideAnim:"renzokuken");
-            await fakeHit("res://Squall/sfx/hit_1.wav", 300);
-            await fakeHit("res://Squall/sfx/hit_2.wav", 600);
-            await fakeHit("res://Squall/sfx/hit_3.wav", 300);
-            await fakeHit("res://Squall/sfx/hit_1.wav", 500);
+            await fakeHit("res://Squall/sfx/hit_1.wav", 200);
+            await fakeHit("res://Squall/sfx/hit_2.wav", 400);
+            await fakeHit("res://Squall/sfx/hit_3.wav", 200);
+            await fakeHit("res://Squall/sfx/hit_1.wav", 333);
             SfxCmd.Play("res://Squall/sfx/hit_2.wav");
             SfxCmd.Play("res://Squall/sounds/attack_special_4.wav");
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, play).Targeting(play.Target)

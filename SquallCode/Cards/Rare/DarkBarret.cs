@@ -19,7 +19,7 @@ public class DarkBarret() : SquallCard(1, CardType.Attack,
     protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<FirepowerPower>();
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(11m, ValueProp.Move),
+        new DamageVar(10m, ValueProp.Move),
         new("HpLoss", 5m)
     ];
 
