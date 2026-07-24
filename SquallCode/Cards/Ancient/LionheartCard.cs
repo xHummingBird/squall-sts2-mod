@@ -11,7 +11,7 @@ using Squall.SquallCode.Mechanics.Crisis;
 namespace Squall.SquallCode.Cards.Ancient;
 
 public class LionheartCard() : SquallCard(0, CardType.Attack,
-    CardRarity.Ancient, TargetType.AnyEnemy)
+    CardRarity.Ancient, TargetType.AnyEnemy), IFinisherCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(25m),

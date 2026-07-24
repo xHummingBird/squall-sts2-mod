@@ -36,8 +36,8 @@ public class Renzokuken() : SquallCard(2, CardType.Attack,
         var bz = CombatState.CreateCard<BlastingZone>(base.Owner);
         var lh = CombatState.CreateCard<LionheartCard>(base.Owner);
         
-        Lionheart? lionheart = base.Owner?.GetRelic<Lionheart>();
-        SleepingLion? sleepingLion = base.Owner?.GetRelic<SleepingLion>();
+        Lionheart? lionheart = base.Owner?.GetRelic<Lionheart>(); // Check if Player has Lionheart Relic
+        SleepingLion? sleepingLion = base.Owner?.GetRelic<SleepingLion>(); // Check if player has Sleeping Lion Relic
         
         if (CrisisManager.GetCrisis(base.Owner) >= 100)
         {
