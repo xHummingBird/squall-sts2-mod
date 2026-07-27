@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://fgvoribkajud"]
+[gd_scene load_steps=107 format=3 uid="uid://fgvoribkajud"]
 
 [ext_resource type="Texture2D" uid="uid://bkfd51405fnen" path="res://Squall/images/spritesheets/idle/00_idle.png" id="1_fijmo"]
 [ext_resource type="Texture2D" uid="uid://b68c67ifrvmlr" path="res://Squall/images/spritesheets/vfx/explosion/explosion_1.png" id="1_owxhg"]
@@ -97,7 +97,6 @@
 [ext_resource type="Texture2D" uid="uid://cqid5cnel8nbl" path="res://Squall/images/spritesheets/vfx/water/15_water.png" id="95_iut32"]
 [ext_resource type="Texture2D" uid="uid://bl1t0ijeomc4f" path="res://Squall/images/spritesheets/vfx/water/16_water.png" id="96_3h3ah"]
 [ext_resource type="Texture2D" uid="uid://bpn22nr1j8fu6" path="res://Squall/images/spritesheets/vfx/water/17_water.png" id="97_x7gak"]
-[ext_resource type="AudioStream" uid="uid://bhxqs7di6ks6o" path="res://Squall/sfx/water_2.wav" id="98_03dpt"]
 
 [sub_resource type="Animation" id="Animation_00gry"]
 length = 0.001
@@ -648,51 +647,6 @@ tracks/6/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/7/type = "audio"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("AudioStreamPlayer2D")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("98_03dpt")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/7/use_blend = true
-tracks/8/type = "audio"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("AudioStreamPlayer2D")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("98_03dpt")
-}],
-"times": PackedFloat32Array(0.6666667)
-}
-tracks/8/use_blend = true
-tracks/9/type = "audio"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("AudioStreamPlayer2D")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("98_03dpt")
-}],
-"times": PackedFloat32Array(1)
-}
-tracks/9/use_blend = true
 
 [sub_resource type="Animation" id="Animation_t50e0"]
 resource_name = "ice_1"
@@ -885,5 +839,3 @@ position = Vector2(28, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_wx4fb")
 }
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

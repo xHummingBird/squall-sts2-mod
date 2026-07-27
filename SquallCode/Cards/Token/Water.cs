@@ -40,7 +40,7 @@ public class Water() : SquallCard(0, CardType.Attack,
                 foreach (var target in targets)
                 {
                     squall.PlayVfxOnTarget(
-                        play.Target,
+                        target,
                         "res://Squall/scenes/vfx.tscn",
                         "water"
                     );

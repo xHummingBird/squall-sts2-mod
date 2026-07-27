@@ -57,7 +57,7 @@ public class Diabolos() : SquallCard (0, CardType.Attack,
             await Task.Delay((int)(0.8f * 1000f));
             SfxCmd.Play("res://Squall/sfx/dark_messenger_sfx_1.wav");
             await Task.Delay((int)(0.9f * 1000f));
-            SfxCmd.Play("res://Squall/sfx/dark_messenger_sfx_2.wav");
+            SfxCmd.Play("res://Squall/sfx/dark_messenger_vfx_2.wav");
         }
         foreach (var target in targets)
         {
