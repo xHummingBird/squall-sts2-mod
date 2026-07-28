@@ -8,7 +8,7 @@ using Squall.SquallCode.Powers;
 
 namespace Squall.SquallCode.Cards.Uncommon;
 
-public class TargetAcquired() : SquallCard(1, CardType.Power,
+public class TargetAcquired() : SquallCard(2, CardType.Power,
     CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -34,6 +34,6 @@ public class TargetAcquired() : SquallCard(1, CardType.Power,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["TargetAcquiredPower"].UpgradeValueBy(1m);
+        base.EnergyCost.UpgradeBy(-1);
     }
 }

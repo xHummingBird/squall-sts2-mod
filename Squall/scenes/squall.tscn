@@ -1,4 +1,4 @@
-[gd_scene load_steps=387 format=3 uid="uid://dhhdveualw37j"]
+[gd_scene load_steps=386 format=3 uid="uid://dhhdveualw37j"]
 
 [ext_resource type="Texture2D" uid="uid://bkfd51405fnen" path="res://Squall/images/spritesheets/idle/00_idle.png" id="1_cosyy"]
 [ext_resource type="Texture2D" uid="uid://dlorwxpxhfsvu" path="res://Squall/images/spritesheets/quezacoatl/quezacoatl.png" id="2_p07h6"]
@@ -315,7 +315,6 @@
 [ext_resource type="Texture2D" uid="uid://djxodupgb2cj1" path="res://Squall/images/spritesheets/vfx/explosion/explosion_3.png" id="313_oryfa"]
 [ext_resource type="Texture2D" uid="uid://be7nohymq6loa" path="res://Squall/images/spritesheets/vfx/explosion/explosion_4.png" id="314_a6k66"]
 [ext_resource type="Texture2D" uid="uid://xy61abk84x5s" path="res://Squall/images/spritesheets/vfx/explosion/explosion_5.png" id="315_gf3oq"]
-[ext_resource type="AudioStream" uid="uid://dt4vs18nv7pp7" path="res://Squall/sfx/water.mp3" id="316_5gtcr"]
 [ext_resource type="Texture2D" uid="uid://dkpvqq13y7j7o" path="res://Squall/images/spritesheets/leviathan/Summon/18_leviathan.png" id="316_h45fi"]
 [ext_resource type="Texture2D" uid="uid://dv6lt4e7u6kvn" path="res://Squall/images/spritesheets/leviathan/Summon/19_leviathan.png" id="317_5gtcr"]
 [ext_resource type="Texture2D" uid="uid://d0gth8235i83h" path="res://Squall/images/spritesheets/leviathan/Summon/20_leviathan.png" id="318_hdawm"]
@@ -2384,6 +2383,42 @@ tracks/15/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Visuals/summons:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Visuals/vfx:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Visuals/vfx2:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_8fi1a"]
 resource_name = "diabolos"
@@ -2988,6 +3023,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visuals/victory:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_a5eie"]
 resource_name = "idle"
@@ -3168,6 +3215,18 @@ tracks/14/path = NodePath("Visuals/vfx2:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Visuals/summons:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -5506,6 +5565,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/summons:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_wemdp"]
 resource_name = "leviathan"
@@ -5726,21 +5797,6 @@ tracks/17/keys = {
 "update": 1,
 "values": [Vector2(20, -104), Vector2(42, -100)]
 }
-tracks/18/type = "audio"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("AnimationPlayer/AudioStreamPlayer")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("316_5gtcr")
-}],
-"times": PackedFloat32Array(2.0333333)
-}
-tracks/18/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5t2wr"]
 _data = {

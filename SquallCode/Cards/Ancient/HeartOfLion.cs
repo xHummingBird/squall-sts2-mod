@@ -8,7 +8,7 @@ using Squall.SquallCode.Relics;
 
 namespace Squall.SquallCode.Cards.Ancient;
 
-public class HeartOfLion() : SquallCard(2, CardType.Attack,
+public class HeartOfLion() : SquallCard(3, CardType.Attack,
     CardRarity.Ancient, TargetType.AnyEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -64,6 +64,6 @@ public class HeartOfLion() : SquallCard(2, CardType.Attack,
     }
     protected override void OnUpgrade()
     {
-        RemoveKeyword(CardKeyword.Exhaust);
+        base.EnergyCost.UpgradeBy(-1);
     }
 }

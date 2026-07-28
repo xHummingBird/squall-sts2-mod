@@ -15,8 +15,9 @@ public class LionheartCard() : SquallCard(0, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(25m),
-        new ExtraDamageVar(0.50m),
+        new ExtraDamageVar(25m),
         new DynamicVar("HpPercent", 50),
+
         new CalculatedDamageVar(ValueProp.Move)
             .WithMultiplier(static (card, _) =>
             {
@@ -25,8 +26,18 @@ public class LionheartCard() : SquallCard(0, CardType.Attack,
                 if (owner == null)
                     return 0m;
 
-                return owner.MaxHp - owner.CurrentHp;
+                decimal hpPercent =
+                    owner.CurrentHp * 100m / owner.MaxHp;
+
+                return hpPercent <= 50m
+                    ? 1m
+                    : 0m;
             })
+    ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
     ];
 
     protected override async Task OnPlay(
@@ -88,8 +99,7 @@ public class LionheartCard() : SquallCard(0, CardType.Attack,
     }
     protected override void OnUpgrade()
     {
-        base.DynamicVars.CalculationBase.UpgradeValueBy(5m);
-        base.DynamicVars.ExtraDamage.UpgradeValueBy(0.16m);
-        DynamicVars["HpPercent"].UpgradeValueBy(16m);
+        base.DynamicVars.CalculationBase.UpgradeValueBy(7m);
+        base.DynamicVars.ExtraDamage.UpgradeValueBy(7m);
     }
 }

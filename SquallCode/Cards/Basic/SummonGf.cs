@@ -37,7 +37,7 @@ public class SummonGf() : SquallCard(2, CardType.Skill,
             play);
 
         bool upgraded = GfRegistry.HasSummonUpgrade(base.Owner);
-
+        
         var entry = await GfRegistry.ChooseJunctionedGf(
             choiceContext,
             base.Owner,

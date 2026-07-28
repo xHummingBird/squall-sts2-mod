@@ -46,6 +46,7 @@ public class Diabolos() : SquallCard (0, CardType.Attack,
         {
             float duration = squall.PlayAnimation(ownerCreature, "diabolos").total;
             SfxCmd.Play("res://Squall/sounds/summon.wav");
+            await Task.Delay((int)(0.8f * 1000f));
             foreach (var target in targets)
             {
                 squall.PlayVfxOnTarget(
@@ -54,7 +55,6 @@ public class Diabolos() : SquallCard (0, CardType.Attack,
                     "dark_messenger"
                 );
             }
-            await Task.Delay((int)(0.8f * 1000f));
             SfxCmd.Play("res://Squall/sfx/dark_messenger_sfx_1.wav");
             await Task.Delay((int)(0.9f * 1000f));
             SfxCmd.Play("res://Squall/sfx/dark_messenger_vfx_2.wav");

@@ -20,7 +20,7 @@
   "SQUALL-ROUGH_DIVIDE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "SQUALL-ROUGH_DIVIDE.title": "Rough Divide",
 
-  "SQUALL-LIONHEART_CARD.description": "Deal {CalculatedDamage:diff()} damage. \nDeal additional damage equal to [gold]{HpPercent:diff()}%[/gold] of your missing HP.",
+  "SQUALL-LIONHEART_CARD.description": "Deal {CalculatedDamage:diff()} damage. \nDeal double damage if you have less than [gold]{HpPercent:diff()}%[/gold] HP.",
   "SQUALL-LIONHEART_CARD.title": "Lionheart",
 
   "SQUALL-BLIZZARD_BARRET.description": "Deal {Damage:diff()} damage. \n{FirepowerIcon}: Apply {WeakPower:diff()} [gold]Weak[/gold].",
