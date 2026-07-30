@@ -54,7 +54,7 @@ public class PrecisionShot() : SquallCard(1, CardType.Attack,
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
         if (wasMarked)
-            await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, DynamicVars["MarkPower"].BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

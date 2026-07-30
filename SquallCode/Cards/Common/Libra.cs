@@ -29,7 +29,7 @@ public class Libra() : SquallCard(1,
         {
             await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, base.Owner);
         }
-        await PowerCmd.Apply<MarkPower>(choiceContext, cardPlay.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+        await PowerCmd.Apply<MarkPower>(choiceContext, cardPlay.Target, base.DynamicVars["MarkPower"].BaseValue, base.Owner.Creature, this);
         
     }
 

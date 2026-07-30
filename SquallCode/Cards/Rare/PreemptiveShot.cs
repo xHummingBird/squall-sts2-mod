@@ -53,7 +53,7 @@ public class PreemptiveShot() : SquallCard(0, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
-        await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+        await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, base.DynamicVars["MarkPower"].BaseValue, base.Owner.Creature, this);
     }
     
     protected override void OnUpgrade()

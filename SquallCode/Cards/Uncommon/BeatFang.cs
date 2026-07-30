@@ -48,7 +48,7 @@ public class BeatFang() : SquallCard(1, CardType.Attack,
             else await CommonActions.CardAttack(this, play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
                 .Execute(choiceContext);
-            await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, base.DynamicVars["MarkPower"].BaseValue, base.Owner.Creature, this);
         }
     }
 

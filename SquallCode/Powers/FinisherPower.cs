@@ -21,18 +21,34 @@ public class FinisherPower : SquallPower
 
         if (playerState == null)
             return;
-        
-        if (playerState.AllCards
+
+        var renzokukens = playerState.AllCards
             .OfType<Renzokuken>()
-            .Any(c => c.Pile?.Type == PileType.Hand))
+            .ToList();
+
+        if (!renzokukens.Any())
+        {
+            var card = CombatState.CreateCard<Renzokuken>(Owner.Player);
+
+            await Task.Delay(500);
+            await CardPileCmd.AddGeneratedCardToCombat(
+                card,
+                PileType.Hand,
+                Owner.Player);
+
+            return;
+        }
+
+        if (renzokukens.Any(c => c.Pile?.Type == PileType.Hand))
         {
             return;
         }
-        var cards = playerState.AllCards
-            .OfType<Renzokuken>()
-            .Where(c => c.Pile == null || c.Pile.Type != PileType.Hand);
+
         await Task.Delay(500);
-        await CardPileCmd.Add(cards, PileType.Hand);
+
+        await CardPileCmd.Add(
+            renzokukens.Where(c => c.Pile == null || c.Pile.Type != PileType.Hand),
+            PileType.Hand);
     }
 
     public override bool TryModifyEnergyCostInCombatLate(CardModel card, decimal originalCost, out decimal modifiedCost)

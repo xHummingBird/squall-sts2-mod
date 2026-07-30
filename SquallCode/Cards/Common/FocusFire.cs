@@ -30,7 +30,7 @@ public class FocusFire() : SquallCard(0,
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-        await PowerCmd.Apply<MarkPower>(choiceContext, cardPlay.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+        await PowerCmd.Apply<MarkPower>(choiceContext, cardPlay.Target, base.DynamicVars["MarkPower"].BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

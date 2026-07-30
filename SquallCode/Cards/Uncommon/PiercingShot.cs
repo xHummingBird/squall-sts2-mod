@@ -50,12 +50,12 @@ public class PiercingShot() : SquallCard(1, CardType.Attack,
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
         if (hasFirePower)
-            await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, base.DynamicVars["MarkPower"].BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);
-        DynamicVars["MarkedPower"].UpgradeValueBy(1m);
+        DynamicVars["MarkPower"].UpgradeValueBy(1m);
     }
 }
