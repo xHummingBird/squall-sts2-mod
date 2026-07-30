@@ -14,7 +14,7 @@ public class MarkOfTheLion() : SquallCard(2, CardType.Power,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<MarkOfTheLionPower>(),
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

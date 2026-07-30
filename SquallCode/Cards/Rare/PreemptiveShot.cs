@@ -16,12 +16,12 @@ public class PreemptiveShot() : SquallCard(0, CardType.Attack,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(10m, ValueProp.Move),
-        new PowerVar<MarkedPower>(1m)
+        new PowerVar<MarkPower>(1m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -53,7 +53,7 @@ public class PreemptiveShot() : SquallCard(0, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
-        await PowerCmd.Apply<MarkedPower>(choiceContext, play.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+        await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
     }
     
     protected override void OnUpgrade()

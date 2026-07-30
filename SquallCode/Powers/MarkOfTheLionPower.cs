@@ -19,7 +19,7 @@ public class MarkOfTheLionPower : SquallPower
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     public override async Task AfterPlayerTurnStart(
@@ -43,7 +43,7 @@ public class MarkOfTheLionPower : SquallPower
             if (target == null)
                 break;
 
-            await PowerCmd.Apply<MarkedPower>(
+            await PowerCmd.Apply<MarkPower>(
                 choiceContext,
                 target,
                 1m,

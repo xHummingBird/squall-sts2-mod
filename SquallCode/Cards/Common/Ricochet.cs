@@ -24,7 +24,7 @@ public class Ricochet() : SquallCard(
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override async Task OnPlay(
@@ -42,7 +42,7 @@ public class Ricochet() : SquallCard(
         Creature target = cardPlay.Target;
         Creature ownerCreature = base.Owner.Creature;
 
-        bool targetWasMarked = target.HasPower<MarkedPower>();
+        bool targetWasMarked = target.HasPower<MarkPower>();
 
         if (Owner?.Character is Character.Squall squall)
         {

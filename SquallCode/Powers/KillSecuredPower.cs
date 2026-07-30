@@ -26,7 +26,7 @@ public class KillSecuredPower : SquallPower
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override object InitInternalData()
@@ -51,7 +51,7 @@ public class KillSecuredPower : SquallPower
         Creature? applier,
         CardModel? cardSource)
     {
-        if (power is not MarkedPower)
+        if (power is not MarkPower)
             return;
 
         if (amount <= 0)

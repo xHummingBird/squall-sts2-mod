@@ -11,7 +11,7 @@ using Squall.SquallCode.Relics;
 
 namespace Squall.SquallCode.Powers;
 
-public class MarkedPower : SquallPower
+public class MarkPower : SquallPower
 {
     private class Data
     {

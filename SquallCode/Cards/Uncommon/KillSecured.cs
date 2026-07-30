@@ -14,7 +14,7 @@ public class KillSecured() : SquallCard(1, CardType.Power,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<KillSecuredPower>(),
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

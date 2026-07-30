@@ -17,19 +17,19 @@ public class LaserSight() : SquallCard(1, CardType.Skill,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(6m, ValueProp.Move),
-        new PowerVar<MarkedPower>(1)
+        new PowerVar<MarkPower>(1)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         AudioHelper.PlayRandomDefend();
         await CommonActions.CardBlock(this, play);
-        await PowerCmd.Apply<MarkedPower>(choiceContext, play.Target, 1, base.Owner.Creature, this);
+        await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, 1, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

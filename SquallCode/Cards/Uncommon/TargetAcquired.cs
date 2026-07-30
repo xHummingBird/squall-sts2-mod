@@ -14,7 +14,7 @@ public class TargetAcquired() : SquallCard(2, CardType.Power,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<TargetAcquiredPower>(),
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

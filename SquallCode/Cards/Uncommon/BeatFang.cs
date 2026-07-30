@@ -17,12 +17,12 @@ public class BeatFang() : SquallCard(1, CardType.Attack,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(8m, ValueProp.Move),
-        new PowerVar<MarkedPower>(1m)
+        new PowerVar<MarkPower>(1m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -48,7 +48,7 @@ public class BeatFang() : SquallCard(1, CardType.Attack,
             else await CommonActions.CardAttack(this, play.Target)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Squall/sfx/hit_1.wav")
                 .Execute(choiceContext);
-            await PowerCmd.Apply<MarkedPower>(choiceContext, play.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
         }
     }
 

@@ -14,7 +14,7 @@ public class FocusFire() : SquallCard(0,
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -24,13 +24,13 @@ public class FocusFire() : SquallCard(0,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<MarkedPower>(1m)
+        new PowerVar<MarkPower>(1m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-        await PowerCmd.Apply<MarkedPower>(choiceContext, cardPlay.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+        await PowerCmd.Apply<MarkPower>(choiceContext, cardPlay.Target, base.DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

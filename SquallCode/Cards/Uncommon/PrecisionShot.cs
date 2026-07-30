@@ -17,13 +17,13 @@ public class PrecisionShot() : SquallCard(1, CardType.Attack,
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(7m, ValueProp.Move),
-        new PowerVar<MarkedPower>(1m)
+        new PowerVar<MarkPower>(1m)
     ];
 
     protected override async Task OnPlay(
@@ -31,7 +31,7 @@ public class PrecisionShot() : SquallCard(1, CardType.Attack,
         CardPlay play)
     {
         bool wasMarked = false;
-        if (play.Target.HasPower<MarkedPower>())
+        if (play.Target.HasPower<MarkPower>())
             wasMarked = true;
         var ownerCreature = Owner?.Creature;
 
@@ -54,7 +54,7 @@ public class PrecisionShot() : SquallCard(1, CardType.Attack,
             .Execute(choiceContext);
         await Task.Delay((int)(0.36f * 1000f));
         if (wasMarked)
-            await PowerCmd.Apply<MarkedPower>(choiceContext, play.Target, DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<MarkPower>(choiceContext, play.Target, DynamicVars["MarkedPower"].BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

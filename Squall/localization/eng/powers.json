@@ -7,9 +7,9 @@
   "SQUALL-FINISHER_POWER.smartDescription": "Perform finisher after [gold]Renzokuken[/gold].",
   "SQUALL-FINISHER_POWER.title": "Finisher Ready",
 
-  "SQUALL-MARKED_POWER.description": "Marked creatures take 50% more damage from the next attack.",
-  "SQUALL-MARKED_POWER.smartDescription": "Take 50% more damage from the next [gold]{Amount}[/gold] {Amount:plural:attack|attacks}.",
-  "SQUALL-MARKED_POWER.title": "Marked",
+  "SQUALL-MARK_POWER.description": "Marked creatures take 50% more damage from the next attack.",
+  "SQUALL-MARK_POWER.smartDescription": "Take 50% more damage from the next [gold]{Amount}[/gold] {Amount:plural:attack|attacks}.",
+  "SQUALL-MARK_POWER.title": "Mark",
 
   "SQUALL-DIABOLOS_POWER.description": "Gain 3 [gold]Crisis[/gold] from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
   "SQUALL-DIABOLOS_POWER.smartDescription": "Gain 3 [gold]Crisis[/gold] per stack from [gold]Firepower[/gold] consumption. You can now [gold]Summon[/gold] Diabolos.",
@@ -55,15 +55,15 @@
   "SQUALL-BARRAGE_PROTOCOL_POWER.smartDescription": "Whenever [gold]Firepower[/gold] is consumed, deal [blue]{Amount}[/blue] damage to ALL enemies.",
   "SQUALL-BARRAGE_PROTOCOL_POWER.title": "Barrage Protocol",
 
-  "SQUALL-MARK_OF_THE_LION_POWER.description": "At the start of your turn, apply 1 [gold]Marked[/gold] to a random enemy.",
-  "SQUALL-MARK_OF_THE_LION_POWER.smartDescription": "At the start of your turn, apply [blue]{Amount}[/blue] [gold]Marked[/gold] to random enemies.",
+  "SQUALL-MARK_OF_THE_LION_POWER.description": "At the start of your turn, apply 1 [gold]Mark[/gold] to a random enemy.",
+  "SQUALL-MARK_OF_THE_LION_POWER.smartDescription": "At the start of your turn, apply [blue]{Amount}[/blue] [gold]Mark[/gold] to random enemies.",
   "SQUALL-MARK_OF_THE_LION_POWER.title": "Mark of the Lion",
 
-  "SQUALL-TARGET_ACQUIRED_POWER.description": "The first time [gold]Marked[/gold] is triggered each turn, reapply 1 [gold]Marked[/gold].",
-  "SQUALL-TARGET_ACQUIRED_POWER.smartDescription": "The first time [gold]Marked[/gold] is triggered each turn, reapply [blue]{Amount}[/blue] [gold]Marked[/gold].",
+  "SQUALL-TARGET_ACQUIRED_POWER.description": "The first time [gold]Mark[/gold] is triggered each turn, reapply 1 [gold]Mark[/gold].",
+  "SQUALL-TARGET_ACQUIRED_POWER.smartDescription": "The first time [gold]Mark[/gold] is triggered each turn, reapply [blue]{Amount}[/blue] [gold]Mark[/gold].",
   "SQUALL-TARGET_ACQUIRED_POWER.title": "Target Acquired",
 
-  "SQUALL-KILL_SECURED_POWER.description": "The first time you apply [gold]Marked[/gold] from a card each turn, gain 1 Energy.",
-  "SQUALL-KILL_SECURED_POWER.smartDescription": "The first time you apply [gold]Marked[/gold] from a card each turn, gain [blue]{Amount}[/blue] Energy.",
+  "SQUALL-KILL_SECURED_POWER.description": "The first time you apply [gold]Mark[/gold] from a card each turn, gain 1 Energy.",
+  "SQUALL-KILL_SECURED_POWER.smartDescription": "The first time you apply [gold]Mark[/gold] from a card each turn, gain [blue]{Amount}[/blue] Energy.",
   "SQUALL-KILL_SECURED_POWER.title": "Kill Secured"
 }

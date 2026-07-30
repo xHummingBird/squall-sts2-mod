@@ -26,7 +26,7 @@ public class TargetAcquiredPower : SquallPower
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MarkedPower>()
+        HoverTipFactory.FromPower<MarkPower>()
     ];
 
     protected override object InitInternalData()
@@ -60,7 +60,7 @@ public class TargetAcquiredPower : SquallPower
 
         Flash();
 
-        await PowerCmd.Apply<MarkedPower>(
+        await PowerCmd.Apply<MarkPower>(
             choiceContext,
             markedTarget,
             base.Amount,
