@@ -3,8 +3,8 @@
   "SQUALL-FIREPOWER_POWER.smartDescription": "{OnPlayer:Your|[gold]{OwnerName}'s[/gold]} next Attack deals [blue]{Amount}[/blue] additional damage.",
   "SQUALL-FIREPOWER_POWER.title": "Firepower",
 
-  "SQUALL-FINISHER_POWER.description": "Perform finisher after [gold]Renzokuken[/gold].",
-  "SQUALL-FINISHER_POWER.smartDescription": "Perform finisher after [gold]Renzokuken[/gold].",
+  "SQUALL-FINISHER_POWER.description": "Perform a finisher after [gold]Renzokuken[/gold].",
+  "SQUALL-FINISHER_POWER.smartDescription": "Perform a finisher after [gold]Renzokuken[/gold].",
   "SQUALL-FINISHER_POWER.title": "Finisher Ready",
 
   "SQUALL-MARK_POWER.description": "Marked creatures take 50% more damage from the next attack.",

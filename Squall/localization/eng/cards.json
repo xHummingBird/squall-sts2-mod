@@ -86,7 +86,7 @@
   "SQUALL-LIONS_COMPOSURE.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
   "SQUALL-LIONS_COMPOSURE.title": "Lion's Composure",
 
-  "SQUALL-PRECISION_SHOT.description": "Deal {Damage:diff()} damage. \nIf enemy is [gold]Mark[/gold], apply [gold]Mark[/gold].",
+  "SQUALL-PRECISION_SHOT.description": "Deal {Damage:diff()} damage. \nIf enemy is [gold]Marked[/gold], apply [gold]Mark[/gold].",
   "SQUALL-PRECISION_SHOT.title": "Precision Shot",
 
   "SQUALL-BACKSHOT.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
@@ -164,7 +164,7 @@
   "SQUALL-DIABOLOS.description": "[gold]Junction[/gold]: Gain 3 [gold]Crisis[/gold] on [gold]Firepower[/gold] consumption. \n[gold]Summon[/gold]: ALL enemies lose {Damage:diff()} HP and {HpPercent:diff()}% of their current HP.",
   "SQUALL-DIABOLOS.title": "Junction Diabolos",
 
-  "SQUALL-IFRIT.description": "[gold]Junction[/gold]: [gold]Firepower[/gold] gain 2 additional damage. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies.",
+  "SQUALL-IFRIT.description": "[gold]Junction[/gold]: [gold]Firepower[/gold] deals 2 additional damage. \n[gold]Summon[/gold]: Deal {Damage:diff()} damage to ALL enemies.",
   "SQUALL-IFRIT.title": "Junction Ifrit",
 
   "SQUALL-SUMMON_GF.description": "Gain {Block:diff()} [gold]Block[/gold]. \nSummon your [gold]Junctioned[/gold] GF in {ChannelingGfPower} turns.",
