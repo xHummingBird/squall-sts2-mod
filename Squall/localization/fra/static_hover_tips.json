@@ -1,0 +1,6 @@
+{
+  "SQUALL_CRISIS.description": "Reflète le niveau de danger actuel de Squall.\n\nGagnez 5 Crise au début de votre tour, grâce aux attaques et aux consommations de Puissance de feu.\nGagnez autant de Crise que de dégâts subis. \nGagnez autant de Crise que de PV manquants au début du combat.\n\nÀ 100 Crise, placez [gold]Renzokuken[/gold] dans votre Main depuis n'importe où et réduisez son coût à 0.\n\nAprès avoir utilisé [gold]Renzokuken[/gold], consommez [blue]100[/blue] Crise pour déclencher un Finisher.",
+  "SQUALL_CRISIS.title": "Niveau de crise",
+  "SQUALL_FIREPOWER.description": "Construisez de la [gold]Puissance de feu[/gold] en attaquant. Après 3 attaques, votre prochaine Attaque consomme la [gold]Puissance de feu[/gold] et inflige des dégâts bonus.",
+  "SQUALL_FIREPOWER.title": "Puissance de feu"
+}

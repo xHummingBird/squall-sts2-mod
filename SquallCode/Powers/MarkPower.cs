@@ -80,10 +80,7 @@ public class MarkPower : SquallPower
 
         if (!props.IsPoweredAttack())
             return Task.CompletedTask;
-
-        if (result.UnblockedDamage <= 0)
-            return Task.CompletedTask;
-
+        
         if (dealer == null)
             return Task.CompletedTask;
 

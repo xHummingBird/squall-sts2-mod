@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 using Squall.SquallCode.Cards.Ancient;
@@ -30,6 +31,18 @@ internal static class SquallArchaicToothTranscendencePatch
     }
 }
 
+[HarmonyPatch(typeof(DustyTome), nameof(DustyTome.SetupForPlayer))]
+public static class DustyTomeSetupPatch
+{
+    [HarmonyPostfix]
+    public static void Postfix(DustyTome __instance, Player player)
+    {
+        if (player.Character is not Character.Squall)
+            return;
+
+        __instance.AncientCard = ModelDb.Card<HeartOfLion>().Id;
+    }
+}
 
 [HarmonyPatch(typeof(DustyTome), nameof(DustyTome.AfterObtained))]
 public static class DustyTomePatch

@@ -417,7 +417,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -957,7 +957,7 @@ tracks/49/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/50/type = "value"
 tracks/50/imported = false
@@ -969,7 +969,7 @@ tracks/50/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/51/type = "value"
 tracks/51/imported = false
@@ -1066,6 +1066,18 @@ tracks/58/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("Visuals/idle:z_index")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_63pn3"]
@@ -2751,6 +2763,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/dead:z_index")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_5qgfh"]
 resource_name = "fated_circle"
@@ -3232,6 +3256,18 @@ tracks/15/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Visuals/idle:z_index")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_cioe4"]
 resource_name = "ifrit"
@@ -3451,6 +3487,226 @@ tracks/17/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(20, -104)]
+}
+
+[sub_resource type="Animation" id="Animation_wemdp"]
+resource_name = "leviathan"
+length = 3.334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/cast:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667, 1.2, 1.3333334, 1.4666667, 1.6, 1.7333333, 1.8666667, 2, 2.1333334, 2.266667, 2.4, 2.5333333, 2.7333333, 2.9333332, 3.1333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("65_i3hgx"), ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("65_i3hgx"), ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("65_i3hgx"), ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("65_i3hgx"), ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("1_cosyy"), ExtResource("2_scbuc"), ExtResource("3_6pp1t"), ExtResource("4_lligf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/cast:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/summons:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6333333, 0.73333335, 0.8333333, 0.93333334, 1.0333333, 1.1333333, 1.2333333, 1.3333334, 1.4333333, 1.5333333, 1.6333333, 1.7333333, 1.8333334, 1.9333333, 2.0333333, 2.1333334, 2.2333333, 2.3333333, 2.4333334, 2.5000002, 2.566667, 2.6333337, 2.7000003, 2.766667, 2.8333337, 2.9000003, 2.966667, 3.0333338, 3.1000004, 3.166667, 3.2333336, 3.3000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("316_h45fi"), ExtResource("317_5gtcr"), ExtResource("318_hdawm"), ExtResource("319_21f72"), ExtResource("320_oryfa"), ExtResource("321_a6k66"), ExtResource("322_gf3oq"), ExtResource("323_hgdpn"), ExtResource("324_bqajn"), ExtResource("325_3tyxk"), ExtResource("326_o5bx8"), ExtResource("327_35qod"), ExtResource("328_1py47"), ExtResource("329_uck7o"), ExtResource("330_3ss45"), ExtResource("331_j1l67"), ExtResource("332_bwysf"), ExtResource("333_ci15g"), ExtResource("334_aevda"), ExtResource("335_augyg"), ExtResource("336_i30cy"), ExtResource("337_67x2c"), ExtResource("338_p4n3d"), ExtResource("339_rpu55"), ExtResource("340_b3spd"), ExtResource("341_j1fx8"), ExtResource("342_7rpft"), ExtResource("343_t1rp4"), ExtResource("344_6nn7i"), ExtResource("345_7wvc4"), ExtResource("346_ptoro"), ExtResource("347_yrffr"), ExtResource("348_1yjpw"), ExtResource("349_ng3bm"), ExtResource("350_v3cno"), ExtResource("351_4nu0n"), ExtResource("352_3a4hg"), ExtResource("353_66hpt"), ExtResource("354_7g2y6"), ExtResource("355_s67hn"), ExtResource("356_b1wlk")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/summons:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(43, -374)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/summons:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.3333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/block:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/dead:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/victory:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/dash:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visuals/summons:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Visuals/idle:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/attack:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/renzokuken:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Visuals/finisher:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Visuals/summons:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Visuals/vfx:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Visuals/vfx2:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Visuals/cast:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(20, -104), Vector2(42, -100)]
 }
 
 [sub_resource type="Animation" id="Animation_0eod8"]
@@ -5417,6 +5673,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/victory:z_index")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_lnloj"]
 resource_name = "victory_before"
@@ -5577,225 +5845,17 @@ tracks/12/keys = {
 "update": 1,
 "values": [false]
 }
-
-[sub_resource type="Animation" id="Animation_wemdp"]
-resource_name = "leviathan"
-length = 3.334
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/cast:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667, 1.2, 1.3333334, 1.4666667, 1.6, 1.7333333, 1.8666667, 2, 2.1333334, 2.266667, 2.4, 2.5333333, 2.7333333, 2.9333332, 3.1333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("65_i3hgx"), ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("65_i3hgx"), ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("65_i3hgx"), ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("65_i3hgx"), ExtResource("62_pernq"), ExtResource("63_awaii"), ExtResource("64_tl2g2"), ExtResource("1_cosyy"), ExtResource("2_scbuc"), ExtResource("3_6pp1t"), ExtResource("4_lligf")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/cast:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visuals/summons:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6333333, 0.73333335, 0.8333333, 0.93333334, 1.0333333, 1.1333333, 1.2333333, 1.3333334, 1.4333333, 1.5333333, 1.6333333, 1.7333333, 1.8333334, 1.9333333, 2.0333333, 2.1333334, 2.2333333, 2.3333333, 2.4333334, 2.5000002, 2.566667, 2.6333337, 2.7000003, 2.766667, 2.8333337, 2.9000003, 2.966667, 3.0333338, 3.1000004, 3.166667, 3.2333336, 3.3000002),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("316_h45fi"), ExtResource("317_5gtcr"), ExtResource("318_hdawm"), ExtResource("319_21f72"), ExtResource("320_oryfa"), ExtResource("321_a6k66"), ExtResource("322_gf3oq"), ExtResource("323_hgdpn"), ExtResource("324_bqajn"), ExtResource("325_3tyxk"), ExtResource("326_o5bx8"), ExtResource("327_35qod"), ExtResource("328_1py47"), ExtResource("329_uck7o"), ExtResource("330_3ss45"), ExtResource("331_j1l67"), ExtResource("332_bwysf"), ExtResource("333_ci15g"), ExtResource("334_aevda"), ExtResource("335_augyg"), ExtResource("336_i30cy"), ExtResource("337_67x2c"), ExtResource("338_p4n3d"), ExtResource("339_rpu55"), ExtResource("340_b3spd"), ExtResource("341_j1fx8"), ExtResource("342_7rpft"), ExtResource("343_t1rp4"), ExtResource("344_6nn7i"), ExtResource("345_7wvc4"), ExtResource("346_ptoro"), ExtResource("347_yrffr"), ExtResource("348_1yjpw"), ExtResource("349_ng3bm"), ExtResource("350_v3cno"), ExtResource("351_4nu0n"), ExtResource("352_3a4hg"), ExtResource("353_66hpt"), ExtResource("354_7g2y6"), ExtResource("355_s67hn"), ExtResource("356_b1wlk")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visuals/summons:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(43, -374)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Visuals/summons:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.3333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Visuals/block:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Visuals/dead:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/victory:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/dash:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/summons:scale")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, 1)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/idle:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/attack:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/renzokuken:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/finisher:visible")
+tracks/13/path = NodePath("Visuals/victory:z_index")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Visuals/summons:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Visuals/vfx:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Visuals/vfx2:visible")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Visuals/cast:position")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0, 2.5333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(20, -104), Vector2(42, -100)]
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5t2wr"]
@@ -5835,6 +5895,7 @@ _data = {
 [node name="Visuals" type="Sprite2D" parent="."]
 
 [node name="idle" type="Sprite2D" parent="Visuals"]
+visible = false
 position = Vector2(42, -100)
 scale = Vector2(-1, 1)
 texture = ExtResource("1_cosyy")
@@ -5893,11 +5954,13 @@ position = Vector2(45, -94)
 scale = Vector2(-1, 1)
 
 [node name="vfx" type="Sprite2D" parent="Visuals"]
+visible = false
 z_index = 1
 position = Vector2(336, -137)
 texture = ExtResource("4_erpas")
 
 [node name="vfx2" type="Sprite2D" parent="Visuals"]
+visible = false
 z_index = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

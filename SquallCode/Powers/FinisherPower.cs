@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -15,6 +16,44 @@ public class FinisherPower : SquallPower
     public override PowerStackType StackType => PowerStackType.Single;
 
     public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        var player = Owner.Player;
+        var playerState = player.PlayerCombatState;
+
+        if (playerState == null)
+            return;
+
+        var renzokukens = playerState.AllCards
+            .OfType<Renzokuken>()
+            .ToList();
+
+        if (!renzokukens.Any())
+        {
+            var card = CombatState.CreateCard<Renzokuken>(Owner.Player);
+
+            await Task.Delay(500);
+            await CardPileCmd.AddGeneratedCardToCombat(
+                card,
+                PileType.Hand,
+                Owner.Player);
+
+            return;
+        }
+
+        if (renzokukens.Any(c => c.Pile?.Type == PileType.Hand))
+        {
+            return;
+        }
+
+        await Task.Delay(500);
+
+        await CardPileCmd.Add(
+            renzokukens.Where(c => c.Pile == null || c.Pile.Type != PileType.Hand),
+            PileType.Hand);
+    }
+
+    public override async Task AfterSideTurnStartLate(CombatSide side, IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
         var player = Owner.Player;
         var playerState = player.PlayerCombatState;
